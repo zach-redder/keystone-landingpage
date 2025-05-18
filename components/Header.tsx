@@ -123,6 +123,21 @@ export default function Header() {
             className="nav-link"
           >
             How It Works
+            <style jsx>{`
+              .nav-link::after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 0;
+                height: 2px;
+                background-color: var(--accent);
+                transition: width 0.3s ease;
+              }
+              .nav-link:hover::after {
+                width: 100%;
+              }
+            `}</style>
           </a>
           {/* <a 
             href="#testimonial" 
@@ -149,6 +164,21 @@ export default function Header() {
             className="nav-link"
           >
             FAQ
+            <style jsx>{`
+              .nav-link::after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 0;
+                height: 2px;
+                background-color: var(--accent);
+                transition: width 0.3s ease;
+              }
+              .nav-link:hover::after {
+                width: 100%;
+              }
+            `}</style>
           </a>
         </nav>
         
