@@ -39,7 +39,7 @@ export default function HomePage() {
       <Hero />
       <Features />
       <HowItWorks />
-      <Testimonial />
+      {/*<Testimonial />*/}
       <Waitlist />
       <FAQ />
     </div>

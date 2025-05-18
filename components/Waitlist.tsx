@@ -3,40 +3,12 @@ import WaitlistForm from './WaitlistForm';
 
 export default function Waitlist() {
   return (
-    <section id="waitlist" className="animate-on-scroll" style={{ 
-      padding: '140px 0',
-      position: 'relative',
-      width: '100vw',
-      marginLeft: 'calc(50% - 50vw)',
-      background: 'linear-gradient(to bottom, rgba(40, 40, 40, 0.97) 0%, rgba(42, 42, 42, 0.95) 50%, rgba(40, 40, 40, 0.97) 100%)',
-      transform: 'translateY(20px)'
-    }}>
-      {/* Large decorative element spanning full width */}
-      <div style={{
-        position: 'absolute',
-        top: '-10%',
-        left: '-10%',
-        width: '120%',
-        height: '60%',
-        background: 'radial-gradient(ellipse at top right, rgba(212, 222, 149, 0.02), transparent 70%)',
-        pointerEvents: 'none',
-        zIndex: 0
-      }}></div>
-      
-      <div style={{
-        position: 'absolute',
-        bottom: '-5%',
-        right: '-10%',
-        width: '120%',
-        height: '70%',
-        background: 'radial-gradient(ellipse at bottom center, rgba(212, 222, 149, 0.03), transparent 70%)',
-        pointerEvents: 'none',
-        zIndex: 0
-      }}></div>
-      
-      <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 2rem', position: 'relative', zIndex: 1 }}>
-        <div style={{ maxWidth: '700px', margin: '0 auto' }}>
-          <div className="animate-on-scroll" style={{ 
+    <section id="waitlist" className="section-wrapper animate-on-scroll">
+      <div className="accent-gradient-top" />
+      <div className="accent-gradient-bottom" />
+      <div className="section-content">
+        <div className="container">
+          <div style={{ 
             textAlign: 'center', 
             marginBottom: '4rem',
             transform: 'translateY(20px)'
@@ -51,9 +23,10 @@ export default function Waitlist() {
               color: '#e0e0e0', 
               fontSize: '1.25rem', 
               lineHeight: 1.7,
-              margin: '0 auto'
+              margin: '0 auto',
+              maxWidth: '800px'
             }}>
-              Be the first to know when Keystone launches and get sneak peaks into the development of Keystone.
+              Be among the first to experience Keystone and transform your life.
             </p>
           </div>
           

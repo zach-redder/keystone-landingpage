@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@import './section-transitions.css';
+
 /* CSS Variables for consistent theming */
 :root {
   --background: #2A2A2A;
@@ -16,6 +18,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  -webkit-tap-highlight-color: transparent;
 }
 
 html {
@@ -25,7 +28,7 @@ html {
   min-height: 100%;
   scroll-behavior: smooth;
   font-size: 16px;
-  -webkit-tap-highlight-color: var(--accent);
+  -webkit-tap-highlight-color: transparent;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   line-height: 1.5;
