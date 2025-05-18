@@ -19,7 +19,7 @@ export default function HomePage() {
         }
       });
     }, { threshold: 0.1 });
-    
+  
     animatedElements.forEach(el => observer.observe(el));
     
     return () => {
