@@ -28,7 +28,7 @@ export async function POST(req: NextRequest) {
     // Send confirmation email with Resend
     await resend.emails.send({
       to: email,
-      from: 'zach@thekeystoneapp.com',
+      from: '"Keystone" <zach@thekeystoneapp.com>',
       subject: 'Welcome to the Keystone Waitlist',
       html: `
         <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #333;">
