@@ -6,7 +6,7 @@ import { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Keystone',
-  description: 'Bridge the gap between your actions and your values. Join the waitlist for Keystone, the self-alignment and accountability app.',
+  description: 'Bridge the gap between your actions and your values. Join the waitlist for Keystone, the self-alignment app.',
   
 };
 

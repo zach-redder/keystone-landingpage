@@ -3,7 +3,7 @@ import React, { useEffect } from 'react';
 import Hero from '../components/Hero';
 import Features from '../components/Features';
 import HowItWorks from '../components/HowItWorks';
-import Testimonial from '../components/Testimonial';
+//import Testimonial from '../components/Testimonial';
 import Waitlist from '../components/Waitlist';
 import FAQ from '../components/FAQ';
 
