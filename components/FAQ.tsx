@@ -26,7 +26,7 @@ export default function FAQ() {
               margin: '0 auto',
               padding: '0 1rem'
             }}>
-              Everything you need to know about Keystone
+              Everything you need to know about Keystone.
             </p>
           </div>
           
@@ -67,7 +67,11 @@ export default function FAQ() {
                 lineHeight: '1.7',
                 borderTop: '1px solid rgba(80, 80, 80, 0.3)'
               }}>
-                <p>Keystone is a self-alignment app that helps you bridge the gap between your actions and your values using daily reminders and AI feedback. It&apos;s designed to keep you connected to your authentic self, to stop caring what other's think of you, and to live your life on your own terms.</p>
+                <p>
+                  Keystone is a free self-alignment app that helps you bridge the gap between your actions and your values using daily reminders
+                  and AI feedback. It&apos;s designed to keep you connected to your authentic self, to stop caring what other's think of you,
+                  and to live your life on your own terms.
+                </p>
               </div>
             </details>
             
@@ -101,7 +105,10 @@ export default function FAQ() {
                 lineHeight: '1.7',
                 borderTop: '1px solid rgba(80, 80, 80, 0.3)'
               }}>
-                <p>We&apos;re working hard to launch as soon as possible! Join the waitlist to get notified as soon as we go live. Early waitlist members will get priority access to the beta.</p>
+                <p>
+                  We&apos;re working hard to launch as soon as possible so stay tuned! Join the waitlist to get notified as soon as we go live.
+                  Early waitlist members will get development updates and priority access to the beta.
+                </p>
               </div>
             </details>
             
@@ -135,7 +142,8 @@ export default function FAQ() {
                 lineHeight: '1.7',
                 borderTop: '1px solid rgba(80, 80, 80, 0.3)'
               }}>
-                <p>Your data will be kept private and only used to improve your experience. We&apos;ll never sell your information to third parties. Your identity information is encrypted and secure.</p>
+                <p>Your data will be kept private and only used to improve your experience. We&apos;ll never sell your information to third parties.
+                  Your identity information is encrypted and secure.</p>
               </div>
             </details>
             
@@ -169,7 +177,9 @@ export default function FAQ() {
                 lineHeight: '1.7',
                 borderTop: '1px solid rgba(80, 80, 80, 0.3)'
               }}>
-                <p>Yes, Keystone will be available on both iOS and Android platforms once we launch. We&apos;re building native apps for both platforms to ensure the best experience possible for all users.</p>
+                <p>
+                  Yes, Keystone will be available on both iOS and Android platforms once we launch. We&apos;re building in a way where
+                  no matter what phone you own, you will have the best experience possible.</p>
               </div>
             </details>
             
@@ -203,7 +213,10 @@ export default function FAQ() {
                 lineHeight: '1.7',
                 borderTop: '1px solid rgba(80, 80, 80, 0.3)'
               }}>
-                <p>Yes, we plan to offer both free and premium tiers to ensure everyone can benefit from Keystone. The free version will include core alignment features and everything you need to get started, while premium will offer advanced AI insights and additional tools and benefits.</p>
+                <p>
+                  Yes, we plan to offer both free and premium tiers to ensure everyone can benefit from Keystone. The free version will include
+                  core alignment features and everything you need to use the app properly, while premium will offer advanced AI insights and additional
+                  tools and benefits for committed users.</p>
               </div>
             </details>
           </div>

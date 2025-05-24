@@ -25,7 +25,7 @@ export default function HowItWorks() {
               margin: '0 auto',
               maxWidth: '800px'
             }}>
-              A simple three-step process to help you stay aligned with your values.
+              A simple and free no effort process to help you stay aligned with your values.
             </p>
           </div>
           
@@ -37,8 +37,9 @@ export default function HowItWorks() {
               top: '90px', 
               bottom: '90px', 
               width: '3px', 
-              background: 'linear-gradient(to bottom, rgba(212, 222, 149, 0.4) 0%, rgba(212, 222, 149, 0.1) 100%)',
-              zIndex: 0
+              background: 'rgba(212, 222, 149, 0.4)',
+              zIndex: 0,
+              maskImage: 'linear-gradient(to bottom, transparent 0%, black 5%, black 25%, transparent 32%, transparent 43%, black 62%, black 70%, transparent 80%)'
             }}></div>
             
             <div style={{ display: 'flex', flexDirection: 'column', gap: '8rem' }}>
@@ -79,8 +80,9 @@ export default function HowItWorks() {
                     maxWidth: '650px',
                     marginBottom: '1.5rem'
                   }}>
-                    Answer thoughtful questions about your core values, identity traits, and future self vision. 
-                    Keystone guides you through a process of self-discovery to build your personal foundation.
+                    Identify and define your core values, life goals, identity traits and more! 
+                    Keystone provides you a way to ground yourself in what you hold true, disregarding
+                    other people's opinions to help you achieve your dream life.
                   </p>
                   <div style={{ 
                     display: 'inline-block',
@@ -91,7 +93,7 @@ export default function HowItWorks() {
                     color: 'rgba(212, 222, 149, 0.9)',
                     fontSize: '1rem'
                   }}>
-                    &quot;Who are you at your best, and what values guide your decisions?&quot;
+                    &quot;What values define your ideal unique self?&quot;
                   </div>
                 </div>
               </div>
@@ -134,7 +136,8 @@ export default function HowItWorks() {
                     marginBottom: '1.5rem'
                   }}>
                     Get daily nudges that remind you of who you want to become and how to act accordingly.
-                    These personalized reminders keep you connected to your authentic self throughout the day.
+                    These personalized reminders keep you connected to your authentic self throughout the day,
+                    based completely on the values and goals you entered before.
                   </p>
                   <div style={{ 
                     display: 'inline-block',
@@ -145,7 +148,7 @@ export default function HowItWorks() {
                     color: 'rgba(212, 222, 149, 0.9)',
                     fontSize: '1rem'
                   }}>
-                    &quot;How can you embody your values in this moment?&quot;
+                    &quot;How will you continue to embody your values today?&quot;
                   </div>
                 </div>
               </div>
@@ -187,8 +190,8 @@ export default function HowItWorks() {
                     maxWidth: '650px',
                     marginBottom: '1.5rem'
                   }}>
-                    Log your actions and receive AI-powered feedback on your alignment with your values.
-                    Track your progress and celebrate your growth over time.
+                    Log your unaligned actions and receive powerful AI feedback on your alignment with your values and goals.
+                    Track your progress and see how far you've come over time.
                   </p>
                   <div style={{ 
                     display: 'inline-block',
@@ -199,7 +202,7 @@ export default function HowItWorks() {
                     color: 'rgba(212, 222, 149, 0.9)',
                     fontSize: '1rem'
                   }}>
-                    &quot;How well did your actions align with your values today?&quot;
+                    &quot;How well did your action align with your values and goals?&quot;
                   </div>
                 </div>
               </div>

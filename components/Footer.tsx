@@ -237,7 +237,7 @@ export default function Footer() {
                 `}</style>
               </a>
               <a 
-                href="mailto:info@thekeystoneapp.com" 
+                href="mailto:zach@thekeystoneapp.com" 
                 style={{ 
                   color: '#a0a0a0', 
                   transition: 'all 0.2s',
@@ -462,40 +462,38 @@ export default function Footer() {
               </h3>
               <ul style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                 <li>
-                    <a 
-                      href="#" 
-                      target="_blank"
-                      style={{ color: '#a0a0a0', transition: 'all 0.2s ease', display: 'inline-block' }}
-                      className="footer-link"
-                    >
-                      Privacy Policy
-                      <style jsx>{`
-                        .footer-link:hover {
-                          color: var(--accent);
-                          transform: translateX(5px);
-                        }
-                      `}</style>
-                    </a>
-                  </li>
+                  <a
+                    href="/privacy-policy" 
+                    style={{ color: '#a0a0a0', transition: 'all 0.2s ease', display: 'inline-block' }}
+                    className="footer-link"
+                  >
+                    Privacy Policy
+                    <style jsx>{`
+                      .footer-link:hover {
+                        color: var(--accent);
+                        transform: translateX(5px);
+                      }
+                    `}</style>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/terms" 
+                    style={{ color: '#a0a0a0', transition: 'all 0.2s ease', display: 'inline-block' }}
+                    className="footer-link"
+                  >
+                    Terms & Conditions
+                    <style jsx>{`
+                      .footer-link:hover {
+                        color: var(--accent);
+                        transform: translateX(5px);
+                      }
+                    `}</style>
+                  </a>
+                </li>
                 <li>
                     <a 
-                      href="#" 
-                      target="_blank"
-                      style={{ color: '#a0a0a0', transition: 'all 0.2s ease', display: 'inline-block' }}
-                      className="footer-link"
-                    >
-                      Terms & Conditions
-                      <style jsx>{`
-                        .footer-link:hover {
-                          color: var(--accent);
-                          transform: translateX(5px);
-                        }
-                      `}</style>
-                    </a>
-                  </li>
-                <li>
-                    <a 
-                      href="#" 
+                      href="mailto:zach@keystone.com" 
                       target="_blank"
                       style={{ color: '#a0a0a0', transition: 'all 0.2s ease', display: 'inline-block' }}
                       className="footer-link"
@@ -529,8 +527,8 @@ export default function Footer() {
             © {new Date().getFullYear()} Keystone. All rights reserved.
           </div>
           <div style={{ display: 'flex', gap: '2rem', alignItems: 'center' }}>
-            <a 
-              href="#" 
+            <Link 
+              href="/privacy-policy" 
               style={{ color: '#777777', fontSize: '0.875rem', transition: 'color 0.2s' }}
               className="footer-bottom-link"
             >
@@ -540,14 +538,19 @@ export default function Footer() {
                   color: var(--accent);
                 }
               `}</style>
-            </a>
-            <a 
-              href="#" 
+            </Link>
+            <Link 
+              href="/terms" 
               style={{ color: '#777777', fontSize: '0.875rem', transition: 'color 0.2s' }}
               className="footer-bottom-link"
             >
               Terms
-            </a>
+              <style jsx>{`
+                .footer-bottom-link:hover {
+                  color: var(--accent);
+                }
+              `}</style>
+            </Link>
           </div>
         </div>
       </div>

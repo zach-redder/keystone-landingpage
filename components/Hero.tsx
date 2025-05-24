@@ -57,7 +57,7 @@ export default function Hero() {
               Align your <span style={{ color: 'var(--accent)' }}>actions</span> with your <span style={{ color: 'var(--accent)' }}>values</span>
             </h1>
             <p className="hero-description" style={{ fontSize: '1.25rem', color: '#e0e0e0', maxWidth: '500px', lineHeight: 1.6 }}>
-              Keystone helps you define your core identity, track your progress, and get AI-powered feedback on your journey.
+              Keystone helps you define your unique identity, disregard distractions & opinions, and get powerful AI feedback on your journey.
             </p>
             <div className="hero-cta">
               <a href="#waitlist" className="btn btn-primary" style={{ 

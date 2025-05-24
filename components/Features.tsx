@@ -62,14 +62,14 @@ export default function Features() {
                 borderRadius: '16px',
                 background: 'rgba(212, 222, 149, 0.1)'
               }}>
-                <span style={{ fontSize: '2.5rem' }}>🧠</span>
+                <span style={{ fontSize: '2.5rem' }}>🔑</span>
               </div>
               <h3 style={{ 
                 fontSize: '1.75rem', 
                 fontWeight: 600, 
                 marginBottom: '1.25rem',
                 color: 'var(--accent)'
-              }}>Identity Storage</h3>
+              }}>Storing Keys</h3>
               <p style={{ 
                 color: '#e0e0e0', 
                 fontSize: '1.125rem', 
@@ -123,7 +123,7 @@ export default function Features() {
                 borderRadius: '16px',
                 background: 'rgba(212, 222, 149, 0.1)'
               }}>
-                <span style={{ fontSize: '2.5rem' }}>⏰</span>
+                <span style={{ fontSize: '2.5rem' }}>🔔</span>
               </div>
               <h3 style={{ 
                 fontSize: '1.75rem', 
@@ -137,7 +137,7 @@ export default function Features() {
                 lineHeight: 1.7,
                 marginBottom: '1.5rem'
               }}>
-                Get daily nudges to remember who you want to become and act accordingly. Never lose sight of your true path.
+                Get daily nudges to remember who you are and want to become and act accordingly. Never lose sight of your true unique vision.
               </p>
               <div style={{ marginTop: 'auto', paddingTop: '1rem' }}>
                 <a href="#waitlist" style={{ 
@@ -184,7 +184,7 @@ export default function Features() {
                 borderRadius: '16px',
                 background: 'rgba(212, 222, 149, 0.1)'
               }}>
-                <span style={{ fontSize: '2.5rem' }}>🤖</span>
+                <span style={{ fontSize: '2.5rem' }}>✨</span>
               </div>
               <h3 style={{ 
                 fontSize: '1.75rem', 
@@ -198,7 +198,7 @@ export default function Features() {
                 lineHeight: 1.7,
                 marginBottom: '1.5rem'
               }}>
-                Log your actions and receive AI-powered feedback on your alignment with your values and goals.
+                Log your unaligned actions and receive powerful AI feedback on your current alignment with your values and goals.
               </p>
               <div style={{ marginTop: 'auto', paddingTop: '1rem' }}>
                 <a href="#waitlist" style={{ 
