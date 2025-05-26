@@ -3,6 +3,8 @@ import React, { useEffect } from 'react';
 import Hero from '../components/Hero';
 import Features from '../components/Features';
 import HowItWorks from '../components/HowItWorks';
+import ProblemAgitation from '../components/ProblemAgitation';
+import AboutFounder from '../components/AboutFounder';
 //import Testimonial from '../components/Testimonial';
 import Waitlist from '../components/Waitlist';
 import FAQ from '../components/FAQ';
@@ -37,8 +39,10 @@ export default function HomePage() {
       paddingTop: '80px'
     }}>
       <Hero />
-      <Features />
+      <ProblemAgitation />
       <HowItWorks />
+      <Features />
+      <AboutFounder />
       {/*<Testimonial />*/}
       <Waitlist />
       <FAQ />

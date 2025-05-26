@@ -84,8 +84,8 @@ export default function Header() {
           gap: '2.5rem' 
         }}>
           <a 
-            href="#features" 
-            onClick={(e) => scrollToSection(e, 'features')}
+            href="#how-it-works" 
+            onClick={(e) => scrollToSection(e, 'how-it-works')}
             style={{ 
               color: 'white', 
               transition: 'color 0.2s',
@@ -94,7 +94,7 @@ export default function Header() {
             }} 
             className="nav-link"
           >
-            Features
+            How It Works
             <style jsx>{`
               .nav-link::after {
                 content: '';
@@ -112,8 +112,8 @@ export default function Header() {
             `}</style>
           </a>
           <a 
-            href="#how-it-works" 
-            onClick={(e) => scrollToSection(e, 'how-it-works')}
+            href="#features" 
+            onClick={(e) => scrollToSection(e, 'features')}
             style={{ 
               color: 'white', 
               transition: 'color 0.2s',
@@ -122,7 +122,7 @@ export default function Header() {
             }} 
             className="nav-link"
           >
-            How It Works
+            Features
             <style jsx>{`
               .nav-link::after {
                 content: '';

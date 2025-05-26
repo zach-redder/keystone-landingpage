@@ -290,11 +290,11 @@ export default function Footer() {
               <ul style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                 <li>
                   <a 
-                    href="#features" 
+                    href="#how-it-works" 
                     style={{ color: '#a0a0a0', transition: 'all 0.2s ease', display: 'inline-block' }}
                     className="footer-link"
                   >
-                    Features
+                    How it Works
                     <style jsx>{`
                       .footer-link:hover {
                         color: var(--accent);
@@ -305,11 +305,11 @@ export default function Footer() {
                 </li>
                 <li>
                   <a 
-                    href="#how-it-works" 
+                    href="#features" 
                     style={{ color: '#a0a0a0', transition: 'all 0.2s ease', display: 'inline-block' }}
                     className="footer-link"
                   >
-                    How it Works
+                    Features
                     <style jsx>{`
                       .footer-link:hover {
                         color: var(--accent);
@@ -335,11 +335,11 @@ export default function Footer() {
                 </li> */}
                 <li>
                   <a 
-                    href="#faq" 
+                    href="#waitlist" 
                     style={{ color: '#a0a0a0', transition: 'all 0.2s ease', display: 'inline-block' }}
                     className="footer-link"
                   >
-                    FAQ
+                    Waitlist
                     <style jsx>{`
                       .footer-link:hover {
                         color: var(--accent);
@@ -350,11 +350,11 @@ export default function Footer() {
                 </li>
                 <li>
                   <a 
-                    href="#waitlist" 
+                    href="#faq" 
                     style={{ color: '#a0a0a0', transition: 'all 0.2s ease', display: 'inline-block' }}
                     className="footer-link"
                   >
-                    Waitlist
+                    FAQ
                     <style jsx>{`
                       .footer-link:hover {
                         color: var(--accent);

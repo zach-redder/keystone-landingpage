@@ -76,74 +76,20 @@ export default function Hero() {
           }}>
             <div className="hero-phone-container float" style={{ 
               position: 'relative',
-              animation: 'float 6s cubic-bezier(0.4, 0, 0.2, 1) infinite',
-              transform: 'perspective(1000px) rotateY(-5deg)',
+              animation: 'subtle-float 12s cubic-bezier(0.4, 0, 0.2, 1) infinite',
               transition: 'transform 0.3s ease'
             }}>
-              {/* Primary glow */}
-              <div style={{
-                position: 'absolute',
-                top: '-20px',
-                left: '-20px',
-                right: '-20px',
-                bottom: '-20px',
-                borderRadius: '60px',
-                background: 'radial-gradient(circle at center, rgba(212, 222, 149, 0.3), transparent 70%)',
-                filter: 'blur(20px)',
-                zIndex: -1,
-                animation: 'glow 4s ease-in-out infinite'
-              }} />
-              
-              {/* Secondary glow */}
-              <div style={{
-                position: 'absolute',
-                top: '-30px',
-                left: '-30px',
-                right: '-30px',
-                bottom: '-30px',
-                borderRadius: '70px',
-                background: 'radial-gradient(circle at center, rgba(212, 222, 149, 0.2), transparent 80%)',
-                filter: 'blur(30px)',
-                zIndex: -2,
-                animation: 'glow 4s ease-in-out infinite 1s'
-              }} />
-              
-              {/* Border container */}
-              <div style={{
-                position: 'absolute',
-                top: '-8px',
-                left: '-8px',
-                right: '-8px',
-                bottom: '-8px',
-                borderRadius: '48px',
-                background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.4), rgba(200, 200, 200, 0.1))',
-                padding: '1px',
-                zIndex: 0
-              }}>
-                {/* Inner border */}
-                <div style={{
-                  position: 'absolute',
-                  top: '0',
-                  left: '0',
-                  right: '0',
-                  bottom: '0',
-                  borderRadius: '48px',
-                  background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.5), rgba(180, 180, 180, 0.2))',
-                  opacity: 0.7,
-                  zIndex: 1
-                }} />
-              </div>
-
+              {/* No background glow */}
               <Image
                 src="/mockup.png"
                 alt="Keystone App Mockup"
-                width={320}
-                height={640}
+                width={400}
+                height={800}
                 style={{
                   borderRadius: '40px',
-                  boxShadow: '0 20px 40px rgba(0,0,0,0.4)',
                   position: 'relative',
-                  zIndex: 2
+                  zIndex: 2,
+                  background: 'transparent'
                 }}
               />
             </div>
@@ -152,38 +98,44 @@ export default function Hero() {
       </div>
 
       <style jsx global>{`
-        @keyframes float {
+        @keyframes subtle-float {
           0% {
-            transform: perspective(1000px) rotateY(-5deg) translateY(0);
+            transform: translateY(0);
           }
           25% {
-            transform: perspective(1000px) rotateY(-4deg) translateY(-10px);
+            transform: translateY(-4px);
           }
           50% {
-            transform: perspective(1000px) rotateY(-5deg) translateY(-15px);
+            transform: translateY(-8px);
           }
           75% {
-            transform: perspective(1000px) rotateY(-6deg) translateY(-10px);
+            transform: translateY(-4px);
           }
           100% {
-            transform: perspective(1000px) rotateY(-5deg) translateY(0);
+            transform: translateY(0);
           }
         }
 
-        @keyframes glow {
+        @keyframes gentle-glow {
           0%, 100% {
-            opacity: 0.3;
-            transform: scale(1);
+            opacity: 0.22;
+            filter: blur(32px);
           }
           50% {
-            opacity: 0.6;
-            transform: scale(1.08);
+            opacity: 0.36;
+            filter: blur(40px);
           }
         }
 
         .hero-phone-container:hover {
-          transform: perspective(1000px) rotateY(0deg) !important;
+          transform: scale(1.03) !important;
           animation-play-state: paused;
+        }
+
+        @media (max-width: 767px) {
+          .hero-phone {
+            margin-top: 3.5rem !important;
+          }
         }
       `}</style>
     </section>
