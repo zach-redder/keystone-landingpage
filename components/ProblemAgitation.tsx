@@ -40,17 +40,9 @@ export default function ProblemAgitation() {
         </div>
         <style jsx>{`
           @media (max-width: 600px) {
-            .card {
-              padding: 1.5rem 0.7rem !important;
-              border-radius: 1rem !important;
-            }
-            h2 {
-              font-size: 2rem !important;
-            }
-            .section-content {
-              padding-left: 0 !important;
-              padding-right: 0 !important;
-            }
+            .card { padding: 1.5rem 0.7rem !important; border-radius: 1rem !important; }
+            h2 { font-size: 2rem !important; }
+            .section-content { padding-left: 1rem !important; padding-right: 1rem !important; }
           }
         `}</style>
       </div>

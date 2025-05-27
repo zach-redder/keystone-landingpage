@@ -32,28 +32,13 @@ export default function AboutFounder() {
           </div>
           <style jsx>{`
             @media (max-width: 600px) {
-              .card {
-                padding: 1.5rem 0.7rem !important;
-                border-radius: 1rem !important;
-              }
-              h2 {
-                font-size: 2rem !important;
-              }
-              .section-content {
-                padding-left: 0 !important;
-                padding-right: 0 !important;
-              }
+              .card { padding: 1.5rem 0.7rem !important; border-radius: 1rem !important; }
+              h2 { font-size: 2rem !important; }
+              .section-content { padding-left: 1rem !important; padding-right: 1rem !important; }
             }
             @media (min-width: 700px) {
-              .about-founder-card .about-founder-flex {
-                flex-direction: row;
-                align-items: center;
-                justify-content: flex-start;
-                text-align: left;
-              }
-              .about-founder-divider {
-                display: block !important;
-              }
+              .about-founder-card .about-founder-flex { flex-direction: row; align-items: center; justify-content: flex-start; text-align: left; }
+              .about-founder-divider { display: block !important; }
             }
           `}</style>
         </div>

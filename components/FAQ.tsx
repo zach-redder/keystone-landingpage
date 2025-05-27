@@ -222,6 +222,12 @@ export default function FAQ() {
           </div>
         </div>
       </div>
+      <style jsx>{`
+        @media (max-width: 640px) {
+          .container { padding-left: 1rem !important; padding-right: 1rem !important; }
+          details { margin-left: 0 !important; margin-right: 0 !important; }
+        }
+      `}</style>
     </section>
   );
 } 

@@ -52,6 +52,12 @@ export default function Waitlist() {
           </div>
         </div>
       </div>
+      <style jsx>{`
+        @media (max-width: 640px) {
+          .container { padding-left: 1rem !important; padding-right: 1rem !important; }
+          .animate-on-scroll { padding-left: 0.5rem !important; padding-right: 0.5rem !important; }
+        }
+      `}</style>
     </section>
   );
 } 

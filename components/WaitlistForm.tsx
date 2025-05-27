@@ -65,6 +65,9 @@ export default function WaitlistForm() {
               flex-direction: row !important;
             }
           }
+          @media (max-width: 640px) {
+            form { padding-left: 0.5rem !important; padding-right: 0.5rem !important; }
+          }
         `}</style>
         
         <div style={{ 
