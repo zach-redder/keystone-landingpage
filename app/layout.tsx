@@ -3,6 +3,7 @@ import type { ReactNode } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { Metadata } from 'next';
+import { Analytics } from "@vercel/analytics/next"
 
 export const metadata: Metadata = {
   title: 'Keystone',
@@ -19,6 +20,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           {children}
         </main>
         <Footer />
+        <Analytics />
       </body>
     </html>
   );

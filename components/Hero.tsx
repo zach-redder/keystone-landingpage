@@ -54,10 +54,10 @@ export default function Hero() {
             order: 1
           }}>
             <h1 className="hero-title" style={{ fontSize: '3.5rem', fontWeight: 'bold', color: 'white', lineHeight: 1.1 }}>
-              Align your <span style={{ color: 'var(--accent)' }}>actions</span> with your <span style={{ color: 'var(--accent)' }}>values</span>
+              Become the <span style={{ color: 'var(--accent)' }}>Main Character</span>
             </h1>
-            <p className="hero-description" style={{ fontSize: '1.25rem', color: '#e0e0e0', maxWidth: '500px', lineHeight: 1.6 }}>
-              Keystone helps you define your unique identity, disregard distractions & opinions, and get powerful AI feedback on your journey.
+            <p className="hero-description" style={{ fontSize: '1.25rem', color: '#e0e0e0', maxWidth: '450px', lineHeight: 1.6 }}>
+              Keystone is the app for aligning your actions with your values.
             </p>
             <div className="hero-cta">
               <a href="#waitlist" className="btn btn-primary" style={{ 
@@ -79,12 +79,26 @@ export default function Hero() {
               animation: 'subtle-float 12s cubic-bezier(0.4, 0, 0.2, 1) infinite',
               transition: 'transform 0.3s ease'
             }}>
-              {/* No background glow */}
+              {/* Animated background glow */}
+              <div className="hero-phone-glow" style={{
+                position: 'absolute',
+                top: '50%',
+                left: '50%',
+                transform: 'translate(-50%, -50%)',
+                width: '420px',
+                height: '820px',
+                borderRadius: '48px',
+                background: 'radial-gradient(ellipse at center, rgba(212, 222, 149, 0.22) 0%, rgba(212, 222, 149, 0.10) 60%, transparent 100%)',
+                filter: 'blur(32px)',
+                zIndex: 1,
+                pointerEvents: 'none',
+                animation: 'gentle-glow 4.5s ease-in-out infinite',
+              }} />
               <Image
                 src="/mockup.png"
                 alt="Keystone App Mockup"
-                width={400}
-                height={800}
+                width={350}
+                height={700}
                 style={{
                   borderRadius: '40px',
                   position: 'relative',
@@ -135,6 +149,11 @@ export default function Hero() {
         @media (max-width: 767px) {
           .hero-phone {
             margin-top: 3.5rem !important;
+          }
+          .hero-phone-glow {
+            width: 270px !important;
+            height: 520px !important;
+            border-radius: 32px !important;
           }
         }
       `}</style>
