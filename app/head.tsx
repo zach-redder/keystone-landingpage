@@ -17,7 +17,8 @@ export default function Head() {
       {/* Twitter Meta Tags */}
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content="Keystone" />
-      <meta name="twitter:description" content="Bridge the gap between your actions and your values. Join the waitlist for Keystone." />
+      <meta name="twitter:image" content="https://thekeystoneapp.com/og-image.png" />
+      <meta name="twitter:description" content="Waitlist Keystone now." />
       {/*<meta name="twitter:image" content="/og-image.png" />*/}
     </>
   );
