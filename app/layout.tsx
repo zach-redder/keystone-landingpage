@@ -3,7 +3,24 @@ import type { ReactNode } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { Analytics } from "@vercel/analytics/next"
+import { Metadata } from 'next';
 
+export const metadata: Metadata = {
+  title: "Keystone",
+  description: "Waitlist Keystone now.",
+  openGraph: {
+    title: "Keystone",
+    description: "Waitlist Keystone now.",
+    url: "https://thekeystoneapp.com",
+    images: ["https://thekeystoneapp.com/og-image.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Keystone",
+    description: "Waitlist Keystone now.",
+    images: ["https://thekeystoneapp.com/og-image.png"],
+  },
+};
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
