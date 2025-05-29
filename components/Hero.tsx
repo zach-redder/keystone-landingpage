@@ -57,7 +57,7 @@ export default function Hero() {
               Become the <span style={{ color: 'var(--accent)' }}>Main Character</span>
             </h1>
             <p className="hero-description" style={{ fontSize: '1.25rem', color: '#e0e0e0', maxWidth: '450px', lineHeight: 1.6 }}>
-              Keystone is the app for aligning your actions with your values.
+              Start living with a purpose. You're not stuck, you're just not aligned with your values.
             </p>
             <div className="hero-cta">
               <a href="#waitlist" className="btn btn-primary" style={{ 
@@ -100,10 +100,12 @@ export default function Hero() {
                 width={350}
                 height={700}
                 style={{
+                  width: 'clamp(120px, 25vw, 300px)',
+                  height: 'auto',
                   borderRadius: '40px',
                   position: 'relative',
                   zIndex: 2,
-                  background: 'transparent'
+                  background: 'transparent',
                 }}
               />
             </div>
