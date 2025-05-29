@@ -1,4 +1,6 @@
-export const Metadata = {
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
   title: "Keystone",
   description: "Waitlist Keystone now.",
   openGraph: {
