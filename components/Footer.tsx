@@ -104,10 +104,9 @@ export default function Footer() {
         pointerEvents: 'none',
         zIndex: 0
       }}></div>
-      
-      <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 2rem', position: 'relative', zIndex: 10 }}>
+        <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 2rem', position: 'relative', zIndex: 10 }}>
         {/* Main Footer - Horizontal Layout */}
-        <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', marginBottom: '5rem', flexWrap: 'wrap', gap: '3rem' }}>
+        <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '5rem', flexWrap: 'wrap', gap: '3rem' }}>
           {/* Brand Column */}
           <div style={{ flex: '1', minWidth: '280px', maxWidth: '350px' }}>
             <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1.5rem' }}>
@@ -115,8 +114,8 @@ export default function Footer() {
                 <Image 
                   src="/logo-transparent.png" 
                   alt="Keystone Logo" 
-                  width={48} 
-                  height={48}
+                  width={50} 
+                  height={50}
                   style={{ objectFit: 'contain' }}
                 />
               </div>
@@ -128,7 +127,7 @@ export default function Footer() {
               }}>Keystone</span>
             </Link>
             <p style={{ color: '#a0a0a0', fontSize: '1.125rem', marginBottom: '2rem', lineHeight: 1.6 }}>
-              Bridge the gap between your actions and your values with our AI-powered self-alignment app.
+              Become the main character. Start living with a purpose, align your actions with your values.
             </p>
             
             <div style={{ display: 'flex', gap: '1.25rem' }}>

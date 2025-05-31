@@ -92,19 +92,21 @@ export default function Hero() {
           textAlign: 'center',
           marginTop: 'auto',
           marginBottom: 'auto'
-        }}>
-          {/* Left side - Text and CTA */}
+        }}>          {/* Left side - Text and CTA */}
           <div className="hero-content" style={{ 
             display: 'flex', 
             flexDirection: 'column', 
             maxWidth: '600px', 
             gap: '2rem',
-            order: 1
-          }}>            <h1 className="hero-title animate-on-scroll" style={{ 
-              fontSize: '3.5rem', 
+            order: 1,
+            padding: '0 1rem'
+          }}>
+            <h1 className="hero-title animate-on-scroll" style={{ 
+              fontSize: 'clamp(2rem, 6vw, 3.5rem)', 
               fontWeight: 'bold', 
               color: 'white', 
               lineHeight: 1.1,
+              marginBottom: '1rem',
               background: 'linear-gradient(135deg, #ffffff 0%, #e0e0e0 50%, #ffffff 100%)',
               backgroundClip: 'text',
               WebkitBackgroundClip: 'text',
@@ -119,11 +121,13 @@ export default function Hero() {
                 WebkitTextFillColor: 'transparent',
                 textShadow: '0 0 20px rgba(212, 222, 149, 0.3)'
               }}>Main Character</span>
-            </h1>            <p className="hero-description animate-on-scroll" style={{ 
-              fontSize: '1.25rem', 
+            </h1>
+            <p className="hero-description animate-on-scroll" style={{ 
+              fontSize: 'clamp(1.1rem, 3vw, 1.25rem)', 
               color: '#e0e0e0', 
               maxWidth: '450px', 
               lineHeight: 1.6,
+              marginBottom: '1.5rem',
               textShadow: '0 2px 4px rgba(0, 0, 0, 0.3)'
             }}>
               Start living with a purpose. You're not stuck, you're just not aligned with your values.
@@ -207,14 +211,13 @@ export default function Hero() {
                 zIndex: 4,
                 pointerEvents: 'none',
                 animation: 'close-glow 2s ease-in-out infinite',
-              }} />
-
-              <Image
+              }} />              <Image
                 src="/mockup.png"
                 alt="Keystone App Mockup"
                 width={350}
-                height={700}                style={{
-                  width: 'clamp(140px, 28vw, 320px)',
+                height={700}
+                style={{
+                  width: 'clamp(200px, 45vw, 320px)',
                   height: 'auto',
                   borderRadius: '40px',
                   position: 'relative',
@@ -357,43 +360,85 @@ export default function Hero() {
         .hero-phone-container:hover .hero-phone-glow-inner,
         .hero-phone-container:hover .hero-phone-glow-close {
           animation-play-state: paused;
-        }
-
-        /* Mobile optimizations */
-        @media (max-width: 767px) {
+        }        /* Enhanced Mobile Responsiveness */
+        @media (max-width: 768px) {
           .hero-title {
-            font-size: 2.5rem !important;
+            font-size: clamp(2.5rem, 7vw, 3rem) !important;
+            line-height: 1.1 !important;
+            margin-bottom: 1.5rem !important;
+            text-align: center !important;
           }
           
           .hero-description {
-            font-size: 1.1rem !important;
+            font-size: clamp(1.125rem, 4vw, 1.25rem) !important;
+            max-width: 100% !important;
+            margin-bottom: 2rem !important;
+            text-align: center !important;
+          }
+          
+          .hero-content {
+            padding: 0 1.5rem !important;
+            gap: 1.5rem !important;
+          }
+          
+          .hero-phone {
+            margin-top: 3rem !important;
+          }
+          
+          .hero-container {
+            gap: 2rem !important;
+            padding: 0 1rem !important;
+          }
+          
+          section {
+            padding: 3rem 0 5rem !important;
+          }
+        }        /* Mobile optimizations */
+        @media (max-width: 640px) {
+          .hero-title {
+            font-size: clamp(2.25rem, 8vw, 2.75rem) !important;
+            margin-bottom: 1.25rem !important;
+          }
+          
+          .hero-description {
+            font-size: clamp(1.05rem, 4vw, 1.15rem) !important;
+            line-height: 1.5 !important;
+            margin-bottom: 2rem !important;
+          }
+          
+          .hero-content {
+            padding: 0 1rem !important;
           }
           
           .hero-phone {
             margin-top: 2.5rem !important;
           }
           
+          section {
+            padding: 2.5rem 0 4rem !important;
+          }
+          
           .hero-phone-glow-outer {
-            width: 320px !important;
-            height: 600px !important;
+            width: 380px !important;
+            height: 720px !important;
             border-radius: 40px !important;
           }
           
           .hero-phone-glow-mid {
-            width: 280px !important;
-            height: 550px !important;
+            width: 340px !important;
+            height: 650px !important;
             border-radius: 36px !important;
           }
           
           .hero-phone-glow-inner {
-            width: 250px !important;
-            height: 500px !important;
+            width: 300px !important;
+            height: 580px !important;
             border-radius: 32px !important;
           }
 
           .hero-phone-glow-close {
-            width: 220px !important;
-            height: 460px !important;
+            width: 260px !important;
+            height: 520px !important;
             border-radius: 30px !important;
           }
 
@@ -404,21 +449,70 @@ export default function Hero() {
           .particle {
             display: none;
           }
-        }
-
-        @media (max-width: 480px) {
+        }        @media (max-width: 480px) {
           .hero-title {
-            font-size: 2rem !important;
+            font-size: clamp(2rem, 8vw, 2.5rem) !important;
+            margin-bottom: 1rem !important;
           }
           
           .hero-description {
+            font-size: clamp(1rem, 4vw, 1.1rem) !important;
+            max-width: 100% !important;
+            margin-bottom: 1.75rem !important;
+          }
+          
+          .hero-content {
+            padding: 0 0.75rem !important;
+          }
+          
+          .btn {
+            padding: 0.875rem 1.75rem !important;
             font-size: 1rem !important;
-            max-width: 350px !important;
+          }
+          
+          section {
+            padding: 2rem 0 3.5rem !important;
+          }
+          
+          .hero-phone {
+            margin-top: 2rem !important;
+          }
+          
+          .hero-phone-glow-outer {
+            width: 320px !important;
+            height: 600px !important;
+          }
+          
+          .hero-phone-glow-mid {
+            width: 280px !important;
+            height: 550px !important;
+          }
+          
+          .hero-phone-glow-inner {
+            width: 250px !important;
+            height: 500px !important;
+          }
+
+          .hero-phone-glow-close {
+            width: 220px !important;
+            height: 460px !important;
+          }
+        }        @media (max-width: 360px) {
+          .hero-title {
+            font-size: clamp(1.875rem, 8vw, 2.25rem) !important;
+          }
+          
+          .hero-description {
+            font-size: clamp(0.95rem, 4vw, 1.05rem) !important;
+          }
+          
+          .hero-content {
+            padding: 0 0.5rem !important;
           }
           
           .hero-phone-glow-outer {
             width: 280px !important;
-            height: 520px !important;
+            height: 540px !important;
           }
           
           .hero-phone-glow-mid {
@@ -427,35 +521,13 @@ export default function Hero() {
           }
           
           .hero-phone-glow-inner {
-            width: 220px !important;
-            height: 440px !important;
-          }
-
-          .hero-phone-glow-close {
-            width: 200px !important;
-            height: 400px !important;
-          }
-        }
-
-        @media (max-width: 360px) {
-          .hero-phone-glow-outer {
-            width: 240px !important;
-            height: 460px !important;
-          }
-          
-          .hero-phone-glow-mid {
             width: 210px !important;
             height: 420px !important;
           }
-          
-          .hero-phone-glow-inner {
-            width: 190px !important;
-            height: 380px !important;
-          }
 
           .hero-phone-glow-close {
-            width: 170px !important;
-            height: 340px !important;
+            width: 190px !important;
+            height: 380px !important;
           }
         }
       `}</style>

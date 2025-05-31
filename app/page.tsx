@@ -29,15 +29,13 @@ export default function HomePage() {
     };
   }, []);
   
-  return (
-    <div style={{ 
+  return (    <div style={{ 
       display: 'flex', 
       flexDirection: 'column', 
       minHeight: '100vh',
       width: '100%',
-      overflow: 'hidden',
       paddingTop: '80px'
-    }}>      <Hero />
+    }}><Hero />
       <ProblemAgitation />
       <HowItWorks />
       <Features />

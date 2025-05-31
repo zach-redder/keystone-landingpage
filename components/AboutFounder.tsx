@@ -160,11 +160,87 @@ export default function AboutFounder() {
             }
             .about-founder-card:hover img {
               box-shadow: 0 15px 35px rgba(212,222,149,0.2), 0 0 40px rgba(212,222,149,0.1) !important;
+            }            @media (max-width: 768px) {
+              .card { 
+                padding: 2rem 1.5rem !important; 
+                border-radius: 1.25rem !important; 
+                margin: 0 1rem !important;
+              }
+              h2 { 
+                font-size: 2.25rem !important; 
+                margin-bottom: 1.5rem !important;
+              }
+              .about-founder-flex { 
+                flex-direction: column !important; 
+                align-items: center !important; 
+                text-align: center !important; 
+                gap: 1.5rem !important;
+              }
+              .about-founder-divider { 
+                display: none !important; 
+              }
+              .section-content { 
+                padding-left: 1rem !important; 
+                padding-right: 1rem !important; 
+              }
             }
-            @media (max-width: 600px) {
-              .card { padding: 1.5rem 0.7rem !important; border-radius: 1rem !important; }
-              h2 { font-size: 2rem !important; }
-              .section-content { padding-left: 1rem !important; padding-right: 1rem !important; }
+            
+            @media (max-width: 640px) {
+              .card { 
+                padding: 1.75rem 1.25rem !important; 
+                border-radius: 1rem !important; 
+                margin: 0 0.75rem !important;
+              }
+              h2 { 
+                font-size: 2rem !important; 
+              }
+              .section-content { 
+                padding-left: 0.75rem !important; 
+                padding-right: 0.75rem !important; 
+              }
+              img {
+                width: 150px !important;
+                height: 150px !important;
+              }
+              h3 {
+                font-size: 1.125rem !important;
+                margin-bottom: 0.5rem !important;
+              }
+              p {
+                font-size: 1.05rem !important;
+                line-height: 1.6 !important;
+                margin-bottom: 1rem !important;
+              }
+              span {
+                font-size: 1.25rem !important;
+              }
+            }
+            
+            @media (max-width: 480px) {
+              .card { 
+                padding: 1.5rem 1rem !important; 
+                margin: 0 0.5rem !important;
+              }
+              h2 { 
+                font-size: 1.875rem !important; 
+              }
+              .section-content { 
+                padding-left: 0.5rem !important; 
+                padding-right: 0.5rem !important; 
+              }
+              img {
+                width: 130px !important;
+                height: 130px !important;
+              }
+              h3 {
+                font-size: 1.075rem !important;
+              }
+              p {
+                font-size: 1rem !important;
+              }
+              span {
+                font-size: 1.125rem !important;
+              }
             }
             @media (min-width: 700px) {
               .about-founder-card .about-founder-flex { flex-direction: row; align-items: center; justify-content: flex-start; text-align: left; }

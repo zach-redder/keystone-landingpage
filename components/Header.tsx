@@ -56,11 +56,16 @@ export default function Header() {
       transition: 'all 0.3s ease',
       boxShadow: scrolled ? '0 4px 20px rgba(0, 0, 0, 0.1)' : 'none'
     }}>
-      <div className="container" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>        <Link href="/" style={{ 
+      <div className="container" style={{ 
+        display: 'flex', 
+        alignItems: 'center', 
+        justifyContent: 'space-between',
+        padding: '0 clamp(1rem, 3vw, 2rem)'
+      }}>        <Link href="/" style={{ 
           display: 'flex', 
           alignItems: 'center', 
-          gap: '0.75rem',
-          fontSize: '1.5rem', 
+          gap: 'clamp(0.5rem, 1vw, 0.75rem)',
+          fontSize: 'clamp(1.25rem, 3vw, 1.5rem)', 
           fontWeight: 800, 
           color: 'var(--accent)', 
           letterSpacing: '-0.025em',
@@ -73,23 +78,31 @@ export default function Header() {
         onMouseLeave={(e) => {
           e.currentTarget.style.transform = '';
           e.currentTarget.style.textShadow = '';
-        }}>
-          <div style={{ position: 'relative', width: '48px', height: '48px', transition: 'all 0.3s ease' }}>
+        }}>          <div style={{ 
+            position: 'relative', 
+            width: 'clamp(36px, 6vw, 48px)', 
+            height: 'clamp(36px, 6vw, 48px)', 
+            transition: 'all 0.3s ease' 
+          }}>
             <Image 
               src="/logo-transparent.png" 
               alt="Keystone Logo" 
               width={48} 
               height={48}
-              style={{ objectFit: 'contain', filter: 'drop-shadow(0 0 8px rgba(212, 222, 149, 0.2))' }}
+              style={{ 
+                objectFit: 'contain', 
+                filter: 'drop-shadow(0 0 8px rgba(212, 222, 149, 0.2))',
+                width: '100%',
+                height: '100%'
+              }}
             />
           </div>
           <span>Keystone</span>
         </Link>
-        
-        <nav style={{ 
+          <nav style={{ 
           display: isMobile ? 'none' : 'flex', 
           alignItems: 'center', 
-          gap: '2.5rem' 
+          gap: 'clamp(1.5rem, 3vw, 2.5rem)' 
         }}>
           <a 
             href="#how-it-works" 
@@ -188,17 +201,24 @@ export default function Header() {
               }
             `}</style>
           </a>
-        </nav>
-          <a 
+        </nav>          <a 
           href="#waitlist" 
           onClick={(e) => scrollToSection(e, 'waitlist')}
           className="btn btn-primary" 
           style={{
-            padding: scrolled ? '0.6rem 1.5rem' : '0.75rem 1.5rem',
+            padding: scrolled 
+              ? 'clamp(0.5rem, 1vw, 0.6rem) clamp(1rem, 2vw, 1.5rem)' 
+              : 'clamp(0.6rem, 1vw, 0.75rem) clamp(1rem, 2vw, 1.5rem)',
             transition: 'all 0.3s ease',
             boxShadow: '0 4px 12px rgba(212, 222, 149, 0.1)',
             position: 'relative',
-            overflow: 'hidden'
+            overflow: 'hidden',
+            fontSize: 'clamp(0.875rem, 1.5vw, 1rem)',
+            fontWeight: '600',
+            minHeight: '44px',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center'
           }}
           onMouseEnter={(e) => {
             e.currentTarget.style.transform = 'translateY(-2px)';

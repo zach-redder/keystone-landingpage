@@ -46,52 +46,87 @@ export default function WaitlistForm() {
       console.error(e);
     }
   }
-
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+    <div style={{ display: 'flex', flexDirection: 'column', gap: 'clamp(1rem, 2vw, 1.5rem)' }}>
       <form 
         onSubmit={handleSubmit(onSubmit)} 
         noValidate 
         style={{ 
           display: 'flex', 
           flexDirection: 'column',
-          gap: '1rem',
+          gap: 'clamp(0.75rem, 2vw, 1rem)',
           width: '100%'
         }}
-      >
-        <style jsx>{`
-          @media (min-width: 768px) {
+      >        <style jsx>{`
+          @media (min-width: 1024px) {
             form {
               flex-direction: row !important;
+              gap: 1.5rem !important;
+              align-items: flex-start !important;
+            }
+            button {
+              width: auto !important;
+              min-width: 220px !important;
+              font-size: 1.125rem !important;
+              padding: 1rem 2rem !important;
+            }
+            input {
+              font-size: 1.125rem !important;
+              padding: 1rem 1.5rem !important;
             }
           }
+          
+          @media (min-width: 768px) and (max-width: 1023px) {
+            form {
+              flex-direction: row !important;
+              gap: 1rem !important;
+            }
+            button {
+              width: auto !important;
+              min-width: 180px !important;
+            }
+          }
+          
+          @media (max-width: 767px) {
+            form { 
+              flex-direction: column !important;
+              gap: clamp(0.75rem, 2vw, 1rem) !important;
+            }
+            button {
+              width: 100% !important;
+            }
+          }
+          
           @media (max-width: 640px) {
-            form { padding-left: 0.5rem !important; padding-right: 0.5rem !important; }
+            form { 
+              padding-left: 0 !important; 
+              padding-right: 0 !important; 
+            }
           }
         `}</style>
         
         <div style={{ 
           flex: '1', 
           position: 'relative' 
-        }}>
-          <input
+        }}>          <input
             type="email"
             placeholder="Your email address"
             autoComplete="email"
             style={{ 
               width: '100%', 
-              padding: '1rem 1.5rem', 
-              borderRadius: '16px', 
-              backgroundColor: 'rgba(47, 47, 47, 0.8)', 
+              padding: 'clamp(0.875rem, 2vw, 1.125rem) clamp(1rem, 2vw, 1.5rem)', 
+              borderRadius: 'clamp(12px, 2vw, 16px)', 
+              backgroundColor: 'rgba(47, 47, 47, 0.8)',
               color: 'white', 
-              fontSize: '1.125rem', 
+              fontSize: 'clamp(1rem, 2vw, 1.125rem)', 
               border: errors.email ? '2px solid #f56565' : '2px solid rgba(212, 222, 149, 0.2)', 
               transition: 'all 0.3s ease',
               boxShadow: errors.email 
                 ? '0 0 0 3px rgba(245, 101, 101, 0.1), inset 0 2px 4px rgba(0, 0, 0, 0.1)' 
                 : '0 8px 20px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(212, 222, 149, 0.1), inset 0 2px 4px rgba(0, 0, 0, 0.1)',
               outline: 'none',
-              backdropFilter: 'blur(10px)'
+              backdropFilter: 'blur(10px)',
+              minHeight: '48px'
             }}
             onFocus={(e) => {
               if (!errors.email) {
@@ -103,31 +138,32 @@ export default function WaitlistForm() {
             disabled={isSubmitting}
             aria-invalid={!!errors.email}
             aria-describedby="email-error"
-          />
-          {errors.email && (
+          />          {errors.email && (
             <p 
               id="email-error" 
               style={{ 
-                marginTop: '0.75rem', 
+                marginTop: 'clamp(0.5rem, 1vw, 0.75rem)', 
                 color: '#f56565', 
-                fontSize: '0.875rem', 
+                fontSize: 'clamp(0.8rem, 1.5vw, 0.875rem)', 
                 position: 'absolute',
-                textShadow: '0 1px 2px rgba(0, 0, 0, 0.3)'
+                textShadow: '0 1px 2px rgba(0, 0, 0, 0.3)',
+                top: '100%',
+                left: '0',
+                width: '100%'
               }}
             >
               {errors.email.message}
             </p>
           )}
-        </div>
-        <button
+        </div>        <button
           type="submit"
           style={{ 
             backgroundColor: 'var(--accent)', 
             color: 'var(--background)', 
             fontWeight: 'bold', 
-            padding: '1rem 2rem', 
-            borderRadius: '16px', 
-            fontSize: '1.125rem',
+            padding: 'clamp(0.875rem, 2vw, 1.125rem) clamp(1.5rem, 3vw, 2.5rem)', 
+            borderRadius: 'clamp(12px, 2vw, 16px)', 
+            fontSize: 'clamp(1rem, 2vw, 1.125rem)',
             border: 'none',
             cursor: isSubmitting ? 'wait' : 'pointer',
             whiteSpace: 'nowrap',
@@ -135,7 +171,9 @@ export default function WaitlistForm() {
             opacity: isSubmitting ? 0.7 : 1,
             transition: 'all 0.3s ease',
             position: 'relative',
-            overflow: 'hidden'
+            overflow: 'hidden',
+            minHeight: '48px',
+            width: '100%'
           }}
           onMouseEnter={(e) => {
             if (!isSubmitting) {
@@ -168,18 +206,18 @@ export default function WaitlistForm() {
           {isSubmitting ? 'Joining...' : 'Join Waitlist'}
         </button>
       </form>
-      
-      {status === 'success' && (
+        {status === 'success' && (
         <div style={{ 
-          padding: '1.25rem', 
-          borderRadius: '16px', 
+          padding: 'clamp(1rem, 2vw, 1.5rem)', 
+          borderRadius: 'clamp(14px, 2vw, 18px)', 
           background: 'linear-gradient(145deg, rgba(212, 222, 149, 0.15), rgba(212, 222, 149, 0.08))', 
           border: '1px solid rgba(212, 222, 149, 0.3)', 
           color: 'white', 
-          fontSize: '1rem',
+          fontSize: 'clamp(0.875rem, 2vw, 1.125rem)',
           boxShadow: '0 8px 20px rgba(212, 222, 149, 0.1)',
           backdropFilter: 'blur(10px)',
-          textShadow: '0 1px 2px rgba(0, 0, 0, 0.3)'
+          textShadow: '0 1px 2px rgba(0, 0, 0, 0.3)',
+          textAlign: 'center'
         }}>
           {message}
         </div>
@@ -187,15 +225,16 @@ export default function WaitlistForm() {
       
       {status === 'error' && (
         <div style={{ 
-          padding: '1.25rem', 
-          borderRadius: '16px', 
+          padding: 'clamp(1rem, 2vw, 1.5rem)', 
+          borderRadius: 'clamp(14px, 2vw, 18px)', 
           background: 'linear-gradient(145deg, rgba(245, 101, 101, 0.15), rgba(245, 101, 101, 0.08))', 
           border: '1px solid rgba(245, 101, 101, 0.3)', 
           color: '#fc8181', 
-          fontSize: '1rem',
+          fontSize: 'clamp(0.875rem, 2vw, 1.125rem)',
           boxShadow: '0 8px 20px rgba(245, 101, 101, 0.1)',
           backdropFilter: 'blur(10px)',
-          textShadow: '0 1px 2px rgba(0, 0, 0, 0.3)'
+          textShadow: '0 1px 2px rgba(0, 0, 0, 0.3)',
+          textAlign: 'center'
         }}>
           {message}
         </div>
@@ -204,8 +243,8 @@ export default function WaitlistForm() {
       <p style={{ 
         textAlign: 'center', 
         color: '#a0a0a0', 
-        fontSize: '0.875rem', 
-        paddingTop: '0.5rem',
+        fontSize: 'clamp(0.8rem, 1.5vw, 0.95rem)', 
+        paddingTop: 'clamp(0.5rem, 1vw, 0.75rem)',
         textShadow: '0 1px 2px rgba(0, 0, 0, 0.3)'
       }}>
         We respect your privacy and will never share your information.

@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function HowItWorks() {
   return (
-    <section id="how-it-works" className="section-wrapper animate-on-scroll" style={{ position: 'relative' }}>
+    <section id="how-it-works" className="section-wrapper animate-on-scroll" style={{ position: 'relative', paddingBottom: '4rem' }}>
       {/* Background effects */}
       <div className="accent-gradient-top" />
       <div className="accent-gradient-bottom" />
@@ -66,23 +66,8 @@ export default function HowItWorks() {
             }}>
               A simple and free no effort process to help you stay aligned with your values.
             </p>
-          </div>
-          
-          <div style={{ maxWidth: '900px', margin: '0 auto', position: 'relative' }}>
-            {/* Enhanced line connector with glow */}
-            <div style={{ 
-              position: 'absolute', 
-              left: '44px', 
-              top: '90px', 
-              bottom: '90px', 
-              width: '3px', 
-              background: 'linear-gradient(to bottom, rgba(212, 222, 149, 0.6), rgba(212, 222, 149, 0.2), rgba(212, 222, 149, 0.6))',
-              zIndex: 0,
-              boxShadow: '0 0 10px rgba(212, 222, 149, 0.3)',
-              maskImage: 'linear-gradient(to bottom, transparent 0%, black 5%, black 25%, transparent 32%, transparent 43%, black 62%, black 70%, transparent 80%)'
-            }}></div>
-            
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '8rem' }}>
+          </div>          <div style={{ maxWidth: '900px', margin: '0 auto', position: 'relative' }}>
+            <div style={{ display: 'flex', flexDirection: 'column' }}>
               {/* Step 1 */}
               <div className="animate-on-scroll delay-100 step-card" style={{ 
                 display: 'flex', 
@@ -160,8 +145,16 @@ export default function HowItWorks() {
                   }}>
                     &quot;What values define your ideal unique self?&quot;
                   </div>
-                </div>
-              </div>
+                </div>              </div>
+              
+              {/* Elegant divider between steps */}
+              <div className="step-divider" style={{
+                width: '60%',
+                height: '1px',
+                background: 'linear-gradient(to right, transparent, rgba(212, 222, 149, 0.3) 20%, rgba(212, 222, 149, 0.5) 50%, rgba(212, 222, 149, 0.3) 80%, transparent)',
+                margin: '4rem auto',
+                animation: 'subtleGlow 4s ease-in-out infinite'
+              }}></div>
               
               {/* Step 2 */}
               <div className="animate-on-scroll delay-200 step-card" style={{ 
@@ -240,8 +233,16 @@ export default function HowItWorks() {
                   }}>
                     &quot;How will you continue to embody your values today?&quot;
                   </div>
-                </div>
-              </div>
+                </div>              </div>
+              
+              {/* Elegant divider between steps */}
+              <div className="step-divider" style={{
+                width: '60%',
+                height: '1px',
+                background: 'linear-gradient(to right, transparent, rgba(212, 222, 149, 0.3) 20%, rgba(212, 222, 149, 0.5) 50%, rgba(212, 222, 149, 0.3) 80%, transparent)',
+                margin: '4rem auto',
+                animation: 'subtleGlow 4s ease-in-out infinite 2s'
+              }}></div>
               
               {/* Step 3 */}
               <div className="animate-on-scroll delay-300 step-card" style={{ 
@@ -326,8 +327,7 @@ export default function HowItWorks() {
         </div>
       </div>
       
-      <style jsx>{`
-        @keyframes drift-up {
+      <style jsx>{`        @keyframes drift-up {
           0% {
             transform: translateY(0) rotate(0deg);
             opacity: 0.3;
@@ -347,6 +347,13 @@ export default function HowItWorks() {
           }
           50% {
             box-shadow: 0 0 40px rgba(212, 222, 149, 0.25), inset 0 0 30px rgba(212, 222, 149, 0.08);
+          }
+        }        @keyframes subtleGlow {
+          0%, 100% {
+            opacity: 0.3;
+          }
+          50% {
+            opacity: 0.6;
           }
         }
 
@@ -368,27 +375,103 @@ export default function HowItWorks() {
         .animate-on-scroll.animate-in {
           opacity: 1;
           transform: translateY(0);
-        }
-
-        .delay-100 { transition-delay: 0.1s; }
+        }        .delay-100 { transition-delay: 0.1s; }
         .delay-200 { transition-delay: 0.2s; }
-        .delay-300 { transition-delay: 0.3s; }
-
-        @media (max-width: 640px) {
+        .delay-300 { transition-delay: 0.3s; }        /* Enhanced Mobile Responsiveness */
+        @media (max-width: 768px) {
           .container { 
             padding-left: 1rem !important; 
             padding-right: 1rem !important; 
           }
-          .animate-on-scroll { 
-            padding-left: 0.5rem !important; 
-            padding-right: 0.5rem !important; 
+          h2 {
+            font-size: 2.25rem !important;
           }
           .step-card {
-            padding: 1.5rem !important;
-            margin: 0 0.5rem !important;
+            flex-direction: column !important;
+            gap: 2rem !important;
+            padding: 2rem 1.5rem !important;
+            text-align: center !important;
+          }
+          .step-number {
+            width: 70px !important;
+            height: 70px !important;
+            font-size: 1.75rem !important;
+            margin: 0 auto !important;
+          }
+          .step-card h3 {
+            font-size: 1.875rem !important;
+            text-align: center !important;
+          }
+          .step-card p {
+            font-size: 1.125rem !important;
+            text-align: center !important;
+          }          .section-content {
+            padding: 80px 0 !important;
+          }
+          .step-divider {
+            display: none !important;
+          }
+        }
+
+        @media (max-width: 640px) {
+          .container { 
+            padding-left: 0.75rem !important; 
+            padding-right: 0.75rem !important; 
+          }
+          h2 {
+            font-size: 2rem !important;
+          }
+          .step-card {
+            padding: 1.75rem 1.25rem !important;
+            margin: 0 !important;
+            border-radius: 16px !important;
+            gap: 1.5rem !important;
+          }
+          .step-number {
+            width: 60px !important;
+            height: 60px !important;
+            font-size: 1.5rem !important;
+          }
+          .step-card h3 {
+            font-size: 1.625rem !important;
+            margin-bottom: 1rem !important;
+          }
+          .step-card p {
+            font-size: 1rem !important;
+            line-height: 1.6 !important;
           }
           .floating-particle {
             display: none;
+          }
+        }
+        
+        @media (max-width: 480px) {
+          h2 {
+            font-size: 1.875rem !important;
+          }
+          .step-card {
+            padding: 1.5rem 1rem !important;
+            gap: 1.25rem !important;
+          }
+          .step-number {
+            width: 55px !important;
+            height: 55px !important;
+            font-size: 1.375rem !important;
+          }
+          .step-card h3 {
+            font-size: 1.5rem !important;
+          }
+          .step-card p {
+            font-size: 0.95rem !important;
+          }
+          .container {
+            padding-left: 0.5rem !important;
+            padding-right: 0.5rem !important;
+          }
+        }        /* Large screen enhancements */
+        @media (min-width: 1200px) {
+          .step-divider {
+            width: 50% !important;
           }
         }
       `}</style>

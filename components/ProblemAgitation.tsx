@@ -138,27 +138,72 @@ export default function ProblemAgitation() {
             opacity: 0;
             transform: translateY(30px);
             transition: opacity 0.8s ease, transform 0.8s ease;
-          }
-
-          .animate-on-scroll.animate-in {
+          }          .animate-on-scroll.animate-in {
             opacity: 1;
             transform: translateY(0);
           }
 
-          @media (max-width: 600px) {
+          /* Enhanced Mobile Responsiveness */
+          @media (max-width: 768px) {
+            .container {
+              padding-left: 1rem !important;
+              padding-right: 1rem !important;
+            }
+            h2 { 
+              font-size: 2.25rem !important;
+              margin-bottom: 1rem !important;
+            }
             .card { 
-              padding: 1.5rem 0.7rem !important; 
-              border-radius: 1rem !important; 
+              padding: 2rem 1.5rem !important;
+              margin: 0 !important;
+            }
+            .section-content {
+              padding: 80px 0 !important;
+            }
+          }
+
+          @media (max-width: 640px) {
+            .container {
+              padding-left: 0.75rem !important;
+              padding-right: 0.75rem !important;
+            }
+            .card { 
+              padding: 1.75rem 1.25rem !important; 
+              border-radius: 20px !important;
             }
             h2 { 
               font-size: 2rem !important; 
             }
-            .section-content { 
-              padding-left: 1rem !important; 
-              padding-right: 1rem !important; 
+            .card h3 {
+              font-size: 1.5rem !important;
+              margin-bottom: 1rem !important;
+            }
+            .card p {
+              font-size: 1rem !important;
+              line-height: 1.6 !important;
             }
             .floating-particle {
               display: none;
+            }
+          }
+          
+          @media (max-width: 480px) {
+            .container {
+              padding-left: 0.5rem !important;
+              padding-right: 0.5rem !important;
+            }
+            .card { 
+              padding: 1.5rem 1rem !important; 
+              border-radius: 16px !important;
+            }
+            h2 { 
+              font-size: 1.875rem !important; 
+            }
+            .card h3 {
+              font-size: 1.375rem !important;
+            }
+            .card p {
+              font-size: 0.95rem !important;
             }
           }
         `}</style>
