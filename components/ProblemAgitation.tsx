@@ -141,9 +141,7 @@ export default function ProblemAgitation() {
           }          .animate-on-scroll.animate-in {
             opacity: 1;
             transform: translateY(0);
-          }
-
-          /* Enhanced Mobile Responsiveness */
+          }          /* Enhanced Mobile Responsiveness */
           @media (max-width: 768px) {
             .container {
               padding-left: 1rem !important;
@@ -155,14 +153,12 @@ export default function ProblemAgitation() {
             }
             .card { 
               padding: 2rem 1.5rem !important;
-              margin: 0 !important;
+              margin: 0 1rem !important;
             }
             .section-content {
-              padding: 80px 0 !important;
+              padding: 80px 1rem 120px 1rem !important;
             }
-          }
-
-          @media (max-width: 640px) {
+          }          @media (max-width: 640px) {
             .container {
               padding-left: 0.75rem !important;
               padding-right: 0.75rem !important;
@@ -170,6 +166,7 @@ export default function ProblemAgitation() {
             .card { 
               padding: 1.75rem 1.25rem !important; 
               border-radius: 20px !important;
+              margin: 0 0.75rem !important;
             }
             h2 { 
               font-size: 2rem !important; 
@@ -185,9 +182,11 @@ export default function ProblemAgitation() {
             .floating-particle {
               display: none;
             }
+            .section-content {
+              padding: 70px 0.75rem 100px 0.75rem !important;
+            }
           }
-          
-          @media (max-width: 480px) {
+            @media (max-width: 480px) {
             .container {
               padding-left: 0.5rem !important;
               padding-right: 0.5rem !important;
@@ -195,6 +194,7 @@ export default function ProblemAgitation() {
             .card { 
               padding: 1.5rem 1rem !important; 
               border-radius: 16px !important;
+              margin: 0 0.5rem !important;
             }
             h2 { 
               font-size: 1.875rem !important; 
@@ -204,6 +204,9 @@ export default function ProblemAgitation() {
             }
             .card p {
               font-size: 0.95rem !important;
+            }
+            .section-content {
+              padding: 60px 0.5rem 80px 0.5rem !important;
             }
           }
         `}</style>

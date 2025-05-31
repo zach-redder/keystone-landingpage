@@ -391,6 +391,7 @@ export default function HowItWorks() {
             gap: 2rem !important;
             padding: 2rem 1.5rem !important;
             text-align: center !important;
+            margin: 0 1rem 3rem 1rem !important;
           }
           .step-number {
             width: 70px !important;
@@ -406,14 +407,12 @@ export default function HowItWorks() {
             font-size: 1.125rem !important;
             text-align: center !important;
           }          .section-content {
-            padding: 80px 0 !important;
+            padding: 80px 1rem 120px 1rem !important;
           }
           .step-divider {
             display: none !important;
           }
-        }
-
-        @media (max-width: 640px) {
+        }        @media (max-width: 640px) {
           .container { 
             padding-left: 0.75rem !important; 
             padding-right: 0.75rem !important; 
@@ -423,7 +422,7 @@ export default function HowItWorks() {
           }
           .step-card {
             padding: 1.75rem 1.25rem !important;
-            margin: 0 !important;
+            margin: 0 0.75rem 2.5rem 0.75rem !important;
             border-radius: 16px !important;
             gap: 1.5rem !important;
           }
@@ -443,15 +442,18 @@ export default function HowItWorks() {
           .floating-particle {
             display: none;
           }
+          .section-content {
+            padding: 70px 0.75rem 100px 0.75rem !important;
+          }
         }
-        
-        @media (max-width: 480px) {
+          @media (max-width: 480px) {
           h2 {
             font-size: 1.875rem !important;
           }
           .step-card {
             padding: 1.5rem 1rem !important;
             gap: 1.25rem !important;
+            margin: 0 0.5rem 2rem 0.5rem !important;
           }
           .step-number {
             width: 55px !important;
@@ -468,7 +470,10 @@ export default function HowItWorks() {
             padding-left: 0.5rem !important;
             padding-right: 0.5rem !important;
           }
-        }        /* Large screen enhancements */
+          .section-content {
+            padding: 60px 0.5rem 80px 0.5rem !important;
+          }
+        }/* Large screen enhancements */
         @media (min-width: 1200px) {
           .step-divider {
             width: 50% !important;

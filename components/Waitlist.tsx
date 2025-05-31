@@ -122,6 +122,10 @@ export default function Waitlist() {
             padding: clamp(1.5rem, 3vw, 2rem) !important;
             border-radius: 20px !important;
             transform: translateY(10px) !important;
+            margin: 0 1rem !important;
+          }
+          .section-content {
+            padding: 80px 1rem 120px 1rem !important;
           }
         }
         
@@ -131,7 +135,10 @@ export default function Waitlist() {
             padding-right: 0.75rem !important; 
           }
           .animate-on-scroll { 
-            margin: 0 0.5rem !important;
+            margin: 0 0.75rem !important;
+          }
+          .section-content {
+            padding: 70px 0.75rem 100px 0.75rem !important;
           }
         }
         
@@ -143,11 +150,14 @@ export default function Waitlist() {
           .animate-on-scroll { 
             padding: 1.5rem 1rem !important;
             border-radius: 16px !important;
-            margin: 0 !important;
+            margin: 0 0.5rem !important;
             transform: translateY(0) !important;
           }
           .animate-on-scroll:hover {
             transform: translateY(-4px) !important;
+          }
+          .section-content {
+            padding: 60px 0.5rem 80px 0.5rem !important;
           }
         }
       `}</style>

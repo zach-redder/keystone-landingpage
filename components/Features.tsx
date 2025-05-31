@@ -335,8 +335,7 @@ export default function Features() {
           0%, 100% { opacity: 0.3; transform: scale(1); }
           50% { opacity: 0.8; transform: scale(1.1); }
         }
-        
-        /* Enhanced Mobile Responsiveness */
+          /* Enhanced Mobile Responsiveness */
         @media (max-width: 768px) {
           .container { 
             padding-left: 1rem !important; 
@@ -345,18 +344,17 @@ export default function Features() {
           .feature-card { 
             max-width: 100% !important;
             padding: 2rem 1.5rem !important;
-            margin: 0 !important;
+            margin: 0 1rem !important;
           }
           h2 {
             font-size: 2.25rem !important;
             margin-bottom: 1rem !important;
           }
           .section-content {
-            padding: 80px 0 !important;
+            padding: 80px 1rem 120px 1rem !important;
           }
         }
-        
-        @media (max-width: 640px) {
+          @media (max-width: 640px) {
           .container { 
             padding-left: 0.75rem !important; 
             padding-right: 0.75rem !important; 
@@ -365,6 +363,7 @@ export default function Features() {
             padding: 1.75rem 1.25rem !important;
             border-radius: 20px !important;
             gap: 2rem !important;
+            margin: 0 0.75rem !important;
           }
           h2 {
             font-size: 2rem !important;
@@ -381,12 +380,15 @@ export default function Features() {
             font-size: 1rem !important;
             line-height: 1.6 !important;
           }
+          .section-content {
+            padding: 70px 0.75rem 100px 0.75rem !important;
+          }
         }
-        
-        @media (max-width: 480px) {
+          @media (max-width: 480px) {
           .feature-card {
             padding: 1.5rem 1rem !important;
             border-radius: 16px !important;
+            margin: 0 0.5rem !important;
           }
           h2 {
             font-size: 1.875rem !important;
@@ -396,6 +398,9 @@ export default function Features() {
           }
           .feature-card p {
             font-size: 0.95rem !important;
+          }
+          .section-content {
+            padding: 60px 0.5rem 80px 0.5rem !important;
           }
         }
       `}</style>        

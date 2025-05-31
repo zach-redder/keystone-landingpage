@@ -389,9 +389,8 @@ export default function Hero() {
             gap: 2rem !important;
             padding: 0 1rem !important;
           }
-          
-          section {
-            padding: 3rem 0 5rem !important;
+            section {
+            padding: 5rem 0 5rem !important;
           }
         }        /* Mobile optimizations */
         @media (max-width: 640px) {
@@ -413,9 +412,8 @@ export default function Hero() {
           .hero-phone {
             margin-top: 2.5rem !important;
           }
-          
-          section {
-            padding: 2.5rem 0 4rem !important;
+            section {
+            padding: 4rem 0 4rem !important;
           }
           
           .hero-phone-glow-outer {
