@@ -67,7 +67,10 @@ export default function Footer() {
             cursor: 'pointer',
             boxShadow: '0 8px 25px rgba(0, 0, 0, 0.25)',
             zIndex: 5,
-            transition: 'all 0.3s ease'
+            transition: 'all 0.3s ease',
+            flexShrink: 0,
+            minWidth: '40px',
+            minHeight: '40px'
           }}
           aria-label="Back to top"
           className="back-to-top-main-btn"
@@ -82,6 +85,24 @@ export default function Footer() {
               animation: none;
               transform: scale(1.1) !important;
               box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            }
+            
+            @media (max-width: 768px) {
+              .back-to-top-main-btn {
+                width: 44px !important;
+                height: 44px !important;
+                min-width: 44px !important;
+                min-height: 44px !important;
+              }
+            }
+            
+            @media (max-width: 480px) {
+              .back-to-top-main-btn {
+                width: 48px !important;
+                height: 48px !important;
+                min-width: 48px !important;
+                min-height: 48px !important;
+              }
             }
             
             @keyframes pulse {

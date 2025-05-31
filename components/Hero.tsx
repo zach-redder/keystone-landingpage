@@ -387,7 +387,7 @@ export default function Hero() {
           
           .hero-container {
             gap: 2rem !important;
-            padding: 0 1rem !important;
+            padding: 4rem 1rem !important;
           }
             section {
             padding: 5rem 0 5rem !important;
