@@ -322,6 +322,93 @@ export default function HowItWorks() {
                   </div>
                 </div>
               </div>
+              {/* Elegant divider between steps */}
+              <div className="step-divider" style={{
+                width: '60%',
+                height: '1px',
+                background: 'linear-gradient(to right, transparent, rgba(212, 222, 149, 0.3) 20%, rgba(212, 222, 149, 0.5) 50%, rgba(212, 222, 149, 0.3) 80%, transparent)',
+                margin: '4rem auto',
+                animation: 'subtleGlow 4s ease-in-out infinite 2s'
+              }}></div>
+              
+              {/* Step 3 */}
+              <div className="animate-on-scroll delay-300 step-card" style={{ 
+                display: 'flex', 
+                gap: '3.5rem', 
+                position: 'relative',
+                transform: 'translateY(30px)',
+                padding: '2rem',
+                borderRadius: '20px',
+                background: 'rgba(47, 47, 47, 0.3)',
+                backdropFilter: 'blur(10px)',
+                border: '1px solid rgba(212, 222, 149, 0.1)',
+                transition: 'transform 0.3s ease, box-shadow 0.3s ease'
+              }}>
+                {/* Subtle glow behind step */}
+                <div style={{
+                  position: 'absolute',
+                  top: '50%',
+                  left: '50%',
+                  transform: 'translate(-50%, -50%)',
+                  width: '110%',
+                  height: '110%',
+                  background: 'radial-gradient(ellipse at center, rgba(212, 222, 149, 0.02) 0%, transparent 70%)',
+                  borderRadius: '20px',
+                  zIndex: -1,
+                  pointerEvents: 'none'
+                }}></div>
+                
+                <div className="float step-number" style={{ 
+                  width: '90px', 
+                  height: '90px', 
+                  flexShrink: 0,
+                  borderRadius: '50%', 
+                  display: 'flex', 
+                  alignItems: 'center', 
+                  justifyContent: 'center',
+                  background: 'linear-gradient(145deg, rgba(212, 222, 149, 0.15), rgba(212, 222, 149, 0.25))',
+                  border: '2px solid rgba(212, 222, 149, 0.3)',
+                  boxShadow: '0 0 30px rgba(212, 222, 149, 0.15), inset 0 0 20px rgba(212, 222, 149, 0.05)',
+                  zIndex: 1,
+                  animation: 'pulse-glow 4s ease-in-out infinite 2s'
+                }}>
+                  <span style={{ color: 'var(--accent)', fontSize: '2rem', fontWeight: 'bold', textShadow: '0 0 10px rgba(212, 222, 149, 0.5)' }}>4</span>
+                </div>
+                <div style={{ flex: 1, paddingTop: '0.75rem' }}>
+                  <h3 style={{ 
+                    fontSize: '2.25rem', 
+                    fontWeight: 600, 
+                    marginBottom: '1.5rem', 
+                    color: 'white',
+                    lineHeight: 1.2,
+                    textShadow: '0 2px 4px rgba(0, 0, 0, 0.3)'
+                  }}>View your progress</h3>
+                  <p style={{ 
+                    color: '#e0e0e0', 
+                    fontSize: '1.25rem', 
+                    lineHeight: 1.7,
+                    maxWidth: '650px',
+                    marginBottom: '1.5rem',
+                    textShadow: '0 1px 2px rgba(0, 0, 0, 0.3)'
+                  }}>
+                    Through the Keystone dashboard, you can track your progress over time.
+                    See how well your actions have been aligning with your values and goals. So you know how to act accordingly.
+                  </p>
+                  <div className="quote-bubble" style={{ 
+                    display: 'inline-block',
+                    padding: '1rem 1.5rem',
+                    borderRadius: '12px',
+                    background: 'rgba(212, 222, 149, 0.08)',
+                    border: '1px solid rgba(212, 222, 149, 0.15)',
+                    color: 'rgba(212, 222, 149, 0.9)',
+                    fontSize: '1rem',
+                    boxShadow: '0 4px 12px rgba(212, 222, 149, 0.1)',
+                    transition: 'transform 0.2s ease'
+                  }}>
+                    &quot;How can you continue down the right path?&quot;
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>

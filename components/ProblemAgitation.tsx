@@ -38,7 +38,7 @@ export default function ProblemAgitation() {
           WebkitTextFillColor: 'transparent',
           textShadow: '0 0 20px rgba(212, 222, 149, 0.2)'
         }}>
-          Why is it so hard to live by your values?
+          You feel like you're living someone else's life.
         </h2>
         <div className="accent-divider animate-on-scroll" style={{ 
           width: '60px', 
@@ -92,13 +92,16 @@ export default function ProblemAgitation() {
           
           <div style={{ position: 'relative', zIndex: 1 }}>
             <p style={{ fontSize: '1.35rem', color: '#e0e0e0', marginBottom: '2.2rem', lineHeight: 1.7, fontWeight: 500, textShadow: '0 1px 2px rgba(0, 0, 0, 0.3)' }}>
-              You know what matters most to you, yet, day after day, it feels like your actions don't always reflect your true priorities.
+              You know what matters to you, but somehow your day is all about trying to meet expectations that aren't your own.
             </p>
             <p style={{ fontSize: '1.18rem', color: '#b0b0b0', marginBottom: '2.2rem', lineHeight: 1.7, textShadow: '0 1px 2px rgba(0, 0, 0, 0.3)' }}>
-              Distractions, outside opinions, and the pressure to fit in can pull you off course. It's easy to lose sight of your core values in the noise of daily life.
+              Distractions, outside opinions, and the pressure to fit in can pull you in every direction. It's so easy to lose sight of who you are in the noise of daily life.
+            </p>
+            <p style={{ fontSize: '1.18rem', color: '#b0b0b0', marginBottom: '2.2rem', lineHeight: 1.7, textShadow: '0 1px 2px rgba(0, 0, 0, 0.3)' }}>
+              You say yes when you mean no. You shrink your voice to avoid conflict. You chase what others expect, not what you believe in.
             </p>
             <p style={{ fontSize: '1.13rem', color: '#b0b0b0', fontStyle: 'italic', marginBottom: 0, textShadow: '0 1px 2px rgba(0, 0, 0, 0.3)' }}>
-              The result? Frustration, self-doubt, and a sense that you're not living as your best self.
+              The result? Frustration, self-doubt, and a sense that you have no purpose in this life.
             </p>
             <div style={{ height: '1.5rem' }} />
             <p style={{ 
@@ -109,7 +112,7 @@ export default function ProblemAgitation() {
               marginBottom: 0,
               textShadow: '0 0 10px rgba(212, 222, 149, 0.3)'
             }}>
-              Keystone is here to help you break the cycle and finally bridge the gap between your intentions and your actions.
+              Keystone is here to help you snap out of it, break the cycle and realign with who you are.
             </p>
           </div>
         </div>
