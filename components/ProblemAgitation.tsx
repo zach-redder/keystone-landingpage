@@ -38,7 +38,7 @@ export default function ProblemAgitation() {
           WebkitTextFillColor: 'transparent',
           textShadow: '0 0 20px rgba(212, 222, 149, 0.2)'
         }}>
-          You feel like you're living someone else's life.
+          Somewhere along the way, you lost yourself.
         </h2>
         <div className="accent-divider animate-on-scroll" style={{ 
           width: '60px', 
@@ -101,7 +101,7 @@ export default function ProblemAgitation() {
               You say yes when you mean no. You shrink your voice to avoid conflict. You chase what others expect, not what you believe in.
             </p>
             <p style={{ fontSize: '1.13rem', color: '#b0b0b0', fontStyle: 'italic', marginBottom: 0, textShadow: '0 1px 2px rgba(0, 0, 0, 0.3)' }}>
-              The result? Frustration, self-doubt, and a sense that you have no purpose in this life.
+              The result? Frustration, self-doubt, and a sense that you have no purpose.
             </p>
             <div style={{ height: '1.5rem' }} />
             <p style={{ 

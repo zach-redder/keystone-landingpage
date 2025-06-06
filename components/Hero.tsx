@@ -102,25 +102,27 @@ export default function Hero() {
             padding: '0 1rem'
           }}>
             <h1 className="hero-title animate-on-scroll" style={{ 
-              fontSize: 'clamp(2rem, 6vw, 3.5rem)', 
+              fontSize: 'clamp(1.5rem, 2.5vw, 3.5rem)', 
               fontWeight: 'bold', 
               color: 'white', 
-              lineHeight: 1.1,
-              marginBottom: '1rem',
+              lineHeight: 1.2,
+              marginBottom: '1.5rem',
               background: 'linear-gradient(135deg, #ffffff 0%, #e0e0e0 50%, #ffffff 100%)',
               backgroundClip: 'text',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
               animation: 'shimmer 3s ease-in-out infinite'
             }}>
-              Become the <span style={{ 
+              Stop letting others' 
+               <span style={{ 
                 color: 'var(--accent)',
                 background: 'linear-gradient(135deg, var(--accent) 0%, #f0f5a8 50%, var(--accent) 100%)',
                 backgroundClip: 'text',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
                 textShadow: '0 0 20px rgba(212, 222, 149, 0.3)'
-              }}>Main Character</span>
+              }}> opinions </span> 
+                 define your life.
             </h1>
             <p className="hero-description animate-on-scroll" style={{ 
               fontSize: 'clamp(1.1rem, 3vw, 1.25rem)', 
@@ -130,7 +132,7 @@ export default function Hero() {
               marginBottom: '1.5rem',
               textShadow: '0 2px 4px rgba(0, 0, 0, 0.3)'
             }}>
-              Start living with a purpose. You're not stuck, you're just not aligned with your values.
+             We empower you to start living according to your own perspective. Free from external judgement.
             </p>
             <div className="hero-cta">
               <a href="#waitlist" className="btn btn-primary" style={{ 
@@ -150,15 +152,17 @@ export default function Hero() {
             <div className="hero-phone-container float" style={{ 
               position: 'relative',
               animation: 'subtle-float 12s cubic-bezier(0.4, 0, 0.2, 1) infinite',
-              transition: 'transform 0.3s ease'
+              transition: 'transform 0.3s ease',
+              width: 'clamp(200px, 40vw, 320px)',
+              height: 'auto'
             }}>              {/* Enhanced multi-layer glow effect */}
               <div className="hero-phone-glow-outer" style={{
                 position: 'absolute',
                 top: '50%',
                 left: '50%',
                 transform: 'translate(-50%, -50%)',
-                width: '600px',
-                height: '1000px',
+                width: 'clamp(300px, 50vw, 600px)',
+                height: 'auto',
                 borderRadius: '60px',
                 background: 'radial-gradient(ellipse at center, rgba(212, 222, 149, 0.12) 0%, rgba(212, 222, 149, 0.06) 40%, transparent 70%)',
                 filter: 'blur(80px)',
@@ -172,8 +176,8 @@ export default function Hero() {
                 top: '50%',
                 left: '50%',
                 transform: 'translate(-50%, -50%)',
-                width: '480px',
-                height: '880px',
+                width: 'clamp(300px, 50vw, 600px)',
+                height: 'auto',
                 borderRadius: '48px',
                 background: 'radial-gradient(ellipse at center, rgba(212, 222, 149, 0.25) 0%, rgba(212, 222, 149, 0.15) 50%, transparent 80%)',
                 filter: 'blur(40px)',
@@ -187,8 +191,8 @@ export default function Hero() {
                 top: '50%',
                 left: '50%',
                 transform: 'translate(-50%, -50%)',
-                width: '400px',
-                height: '800px',
+                width: 'clamp(300px, 50vw, 600px)',
+                height: 'auto',
                 borderRadius: '40px',
                 background: 'radial-gradient(ellipse at center, rgba(212, 222, 149, 0.2) 0%, rgba(212, 222, 149, 0.1) 60%, transparent 90%)',
                 filter: 'blur(20px)',
@@ -203,8 +207,8 @@ export default function Hero() {
                 top: '50%',
                 left: '50%',
                 transform: 'translate(-50%, -50%)',
-                width: '360px',
-                height: '720px',
+                width: 'clamp(300px, 50vw, 600px)',
+                height: 'auto',
                 borderRadius: '38px',
                 background: 'radial-gradient(ellipse at center, rgba(212, 222, 149, 0.15) 0%, rgba(212, 222, 149, 0.08) 70%, transparent 100%)',
                 filter: 'blur(8px)',
