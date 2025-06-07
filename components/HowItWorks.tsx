@@ -128,7 +128,7 @@ export default function HowItWorks() {
                     marginBottom: '1.5rem',
                     textShadow: '0 1px 2px rgba(0, 0, 0, 0.3)'
                   }}>
-                    Identify and define your core values, life goals, identity traits and more! 
+                    Define and iterate on your core values, life goals, identity traits and more! 
                     Keystone provides you a way to ground yourself in what you hold true, disregarding
                     other people's opinions to help you achieve your dream life.
                   </p>
@@ -143,7 +143,7 @@ export default function HowItWorks() {
                     boxShadow: '0 4px 12px rgba(212, 222, 149, 0.1)',
                     transition: 'transform 0.2s ease'
                   }}>
-                    &quot;What values define your ideal unique self?&quot;
+                    &quot;Store your values to keep yourself grounded in the future.&quot;
                   </div>
                 </div>              </div>
               
@@ -231,9 +231,10 @@ export default function HowItWorks() {
                     boxShadow: '0 4px 12px rgba(212, 222, 149, 0.1)',
                     transition: 'transform 0.2s ease'
                   }}>
-                    &quot;How will you continue to embody your values today?&quot;
+                    &quot;Stay consistent with reminding yourself of who you are.&quot;
                   </div>
-                </div>              </div>
+                </div>
+              </div>
               
               {/* Elegant divider between steps */}
               <div className="step-divider" style={{
@@ -318,7 +319,7 @@ export default function HowItWorks() {
                     boxShadow: '0 4px 12px rgba(212, 222, 149, 0.1)',
                     transition: 'transform 0.2s ease'
                   }}>
-                    &quot;How well did your action align with your values and goals?&quot;
+                    &quot;Leanr how to align your actions with your values and goals.&quot;
                   </div>
                 </div>
               </div>
@@ -382,7 +383,7 @@ export default function HowItWorks() {
                     color: 'white',
                     lineHeight: 1.2,
                     textShadow: '0 2px 4px rgba(0, 0, 0, 0.3)'
-                  }}>View your progress</h3>
+                  }}>Affirm your vision</h3>
                   <p style={{ 
                     color: '#e0e0e0', 
                     fontSize: '1.25rem', 
@@ -391,8 +392,8 @@ export default function HowItWorks() {
                     marginBottom: '1.5rem',
                     textShadow: '0 1px 2px rgba(0, 0, 0, 0.3)'
                   }}>
-                    Through the Keystone dashboard, you can track your progress over time.
-                    See how well your actions have been aligning with your values and goals. So you know how to act accordingly.
+                    Affirming your vision is a daily practice that helps you stay connected to your values and goals.
+                    It's a way to remind yourself of what you're working towards every day and to keep yourself accountable.
                   </p>
                   <div className="quote-bubble" style={{ 
                     display: 'inline-block',
@@ -405,7 +406,7 @@ export default function HowItWorks() {
                     boxShadow: '0 4px 12px rgba(212, 222, 149, 0.1)',
                     transition: 'transform 0.2s ease'
                   }}>
-                    &quot;How can you continue down the right path?&quot;
+                    &quot;Never lose why you started and where you're going.&quot;
                   </div>
                 </div>
               </div>
