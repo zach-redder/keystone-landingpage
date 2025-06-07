@@ -137,9 +137,10 @@ export default function AboutFounder() {
                 marginBottom: '1.2rem',
                 textShadow: '0 1px 2px rgba(0, 0, 0, 0.3)'
               }}>
-                "I'm building Keystone because I struggled for years to consistently live by my own values. I know what it's like to feel
-                pulled in a hundred directions, to lose sight of you goals, and to want more alignment between who you are and how you show up.
-                I'm here to help you become who you're supposed to be, one action at a time."
+                "I'm building Keystone because I struggled for years to consistently live by my own values.
+                Caring about what people would think of my every action and in turn doubting my ability to
+                achieve my goals. I know what it's like to feel pulled in a hundred directions, to lose sight of you.
+                My goal is to help you eliminate your self-doubt and keep pushing with the mindset that you can achieve anything.
               </p>
               <span style={{ 
                 color: 'var(--accent)', 
