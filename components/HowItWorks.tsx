@@ -296,7 +296,7 @@ export default function HowItWorks() {
                     color: 'white',
                     lineHeight: 1.2,
                     textShadow: '0 2px 4px rgba(0, 0, 0, 0.3)'
-                  }}>Get feedback</h3>
+                  }}>Log actions</h3>
                   <p style={{ 
                     color: '#e0e0e0', 
                     fontSize: '1.25rem', 
@@ -305,8 +305,8 @@ export default function HowItWorks() {
                     marginBottom: '1.5rem',
                     textShadow: '0 1px 2px rgba(0, 0, 0, 0.3)'
                   }}>
-                    Log your unaligned actions and receive powerful AI feedback on your alignment with your values and goals.
-                    Track your progress and see how far you've come over time.
+                    Daily nudges aren't enough? Log your unaligned actions and receive powerful AI feedback on your alignment with your values and goals.
+                    Tell AI future actions you would take and track your progress to see how much you've improved.
                   </p>
                   <div className="quote-bubble" style={{ 
                     display: 'inline-block',
@@ -319,7 +319,7 @@ export default function HowItWorks() {
                     boxShadow: '0 4px 12px rgba(212, 222, 149, 0.1)',
                     transition: 'transform 0.2s ease'
                   }}>
-                    &quot;Leanr how to align your actions with your values and goals.&quot;
+                    &quot;Learn how to align your actions with your values and goals.&quot;
                   </div>
                 </div>
               </div>
@@ -392,8 +392,8 @@ export default function HowItWorks() {
                     marginBottom: '1.5rem',
                     textShadow: '0 1px 2px rgba(0, 0, 0, 0.3)'
                   }}>
-                    Affirming your vision is a daily practice that helps you stay connected to your values and goals.
-                    It's a way to remind yourself of what you're working towards every day and to keep yourself accountable.
+                    Still not enough? Whenever you want, effortlessly affirm your vision to help you stay connected to yourself.
+                    It's a way to remind yourself of what you're working towards and to keep away any doubt that may arise.
                   </p>
                   <div className="quote-bubble" style={{ 
                     display: 'inline-block',
