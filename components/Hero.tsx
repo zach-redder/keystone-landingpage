@@ -120,7 +120,7 @@ export default function Hero() {
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
                 textShadow: '0 0 20px rgba(212, 222, 149, 0.3)'
-              }}>Eliminate </span> Self-Consciousness.
+              }}>True </span>Self Projection.
             </h1>
             <p className="hero-description animate-on-scroll" style={{ 
               fontSize: 'clamp(1.1rem, 3vw, 1.25rem)', 
@@ -130,7 +130,7 @@ export default function Hero() {
               marginBottom: '1.5rem',
               textShadow: '0 2px 4px rgba(0, 0, 0, 0.3)'
             }}>
-             We help you stop caring about what others think. To overcome constant doubting of yourself and instead be authentically you.
+             We help you stop caring about what others think. To overcome being self-conscious and doubting yourself and instead be authentically you.
             </p>
             <div className="hero-cta">
               <a href="#waitlist" className="btn btn-primary" style={{ 
