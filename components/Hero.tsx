@@ -248,7 +248,7 @@ export default function Hero() {
                     className="btn btn-primary waitlist-btn"
                     style={{ 
                       position: 'absolute',
-                      right: '16px',
+                      right: '12px',
                       top: '50%',
                       transform: 'translateY(-50%)',
                       padding: '0.75rem 1.5rem', 
