@@ -1,7 +1,58 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Image from 'next/image';
 
 export default function Hero() {
+  const [email, setEmail] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const [emailError, setEmailError] = useState('');
+
+  const validateEmail = (email: string) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    // Reset previous states
+    setEmailError('');
+    setSubmitStatus('idle');
+    
+    // Validate email
+    if (!email.trim()) {
+      setEmailError('Please enter your email');
+      return;
+    }
+    
+    if (!validateEmail(email)) {
+      setEmailError('Please enter a valid email address');
+      return;
+    }
+    
+    setIsSubmitting(true);
+    
+    try {
+      const response = await fetch('/api/waitlist', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email }),
+      });
+      
+      if (response.ok) {
+        setSubmitStatus('success');
+        setEmail('');
+      } else {
+        setSubmitStatus('error');
+      }
+    } catch (error) {
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
   return (
     <section style={{ 
       padding: '4rem 0 6rem',
@@ -130,16 +181,15 @@ export default function Hero() {
               textShadow: '0 2px 4px rgba(0, 0, 0, 0.3)'
             }}>
              Overcome internalized doubt and judgement by aligning your outward identity with your inner self.
-            </p>
-            <div className="hero-cta" style={{ width: '100%', maxWidth: '450px' }}>
-              <div className="waitlist-form" style={{
+            </p>            <div className="hero-cta" style={{ width: '100%', maxWidth: '450px' }}>
+              <form onSubmit={handleSubmit} className="waitlist-form" style={{
                 display: 'flex',
                 gap: '0.5rem',
                 padding: '0.5rem',
                 background: 'rgba(47, 47, 47, 0.8)',
                 backdropFilter: 'blur(10px)',
                 borderRadius: '16px',
-                border: '1px solid rgba(212, 222, 149, 0.2)',
+                border: `1px solid ${emailError ? 'rgba(239, 68, 68, 0.5)' : 'rgba(212, 222, 149, 0.2)'}`,
                 boxShadow: '0 8px 32px rgba(0, 0, 0, 0.3), 0 0 20px rgba(212, 222, 149, 0.1)',
                 transition: 'all 0.3s ease',
                 position: 'relative',
@@ -152,7 +202,9 @@ export default function Hero() {
                   left: 0,
                   right: 0,
                   bottom: 0,
-                  background: 'linear-gradient(45deg, rgba(212, 222, 149, 0.1), rgba(212, 222, 149, 0.05), rgba(212, 222, 149, 0.1))',
+                  background: emailError 
+                    ? 'linear-gradient(45deg, rgba(239, 68, 68, 0.1), rgba(239, 68, 68, 0.05), rgba(239, 68, 68, 0.1))'
+                    : 'linear-gradient(45deg, rgba(212, 222, 149, 0.1), rgba(212, 222, 149, 0.05), rgba(212, 222, 149, 0.1))',
                   borderRadius: '16px',
                   animation: 'border-glow 3s ease-in-out infinite',
                   zIndex: -1
@@ -161,12 +213,18 @@ export default function Hero() {
                 <input
                   type="email"
                   placeholder="Enter your email"
+                  value={email}
+                  onChange={(e) => {
+                    setEmail(e.target.value);
+                    if (emailError) setEmailError('');
+                    if (submitStatus !== 'idle') setSubmitStatus('idle');
+                  }}
                   className="waitlist-email"
                   style={{
                     flex: 1,
                     padding: '1rem 1.25rem',
                     background: 'rgba(35, 35, 35, 0.9)',
-                    border: '1px solid rgba(212, 222, 149, 0.15)',
+                    border: `1px solid ${emailError ? 'rgba(239, 68, 68, 0.3)' : 'rgba(212, 222, 149, 0.15)'}`,
                     borderRadius: '12px',
                     color: 'white',
                     fontSize: '1rem',
@@ -177,24 +235,78 @@ export default function Hero() {
                 />
                 <button 
                   type="submit"
+                  disabled={isSubmitting}
                   className="btn btn-primary waitlist-btn"
                   style={{ 
                     padding: '1rem 1.75rem', 
                     fontSize: '1rem',
                     fontWeight: '600',
-                    background: 'linear-gradient(135deg, var(--accent) 0%, #f0f5a8 100%)',
+                    background: isSubmitting 
+                      ? 'rgba(100, 100, 100, 0.5)'
+                      : submitStatus === 'success'
+                      ? 'linear-gradient(135deg, #22c55e 0%, #16a34a 100%)'
+                      : 'linear-gradient(135deg, var(--accent) 0%, #f0f5a8 100%)',
                     border: 'none',
                     borderRadius: '12px',
-                    color: '#1a1a1a',
-                    cursor: 'pointer',
+                    color: isSubmitting ? '#999' : '#1a1a1a',
+                    cursor: isSubmitting ? 'not-allowed' : 'pointer',
                     transition: 'all 0.3s ease',
                     boxShadow: '0 4px 15px rgba(212, 222, 149, 0.3)',
-                    whiteSpace: 'nowrap'
+                    whiteSpace: 'nowrap',
+                    opacity: isSubmitting ? 0.7 : 1
                   }}
                 >
-                  Join Waitlist
+                  {isSubmitting ? 'Joining...' : submitStatus === 'success' ? '✓ Joined!' : 'Join Waitlist'}
                 </button>
-              </div>
+              </form>
+              
+              {emailError && (
+                <p style={{
+                  fontSize: '0.875rem',
+                  color: '#ef4444',
+                  textAlign: 'left',
+                  marginTop: '0.5rem',
+                  textShadow: '0 1px 2px rgba(0, 0, 0, 0.3)'
+                }}>
+                  {emailError}
+                </p>
+              )}
+              
+              {submitStatus === 'success' && (
+                <p style={{
+                  fontSize: '0.875rem',
+                  color: '#22c55e',
+                  textAlign: 'center',
+                  marginTop: '0.75rem',
+                  textShadow: '0 1px 2px rgba(0, 0, 0, 0.3)'
+                }}>
+                  🎉 You're on the list! We'll notify you when we launch.
+                </p>
+              )}
+              
+              {submitStatus === 'error' && (
+                <p style={{
+                  fontSize: '0.875rem',
+                  color: '#ef4444',
+                  textAlign: 'center',
+                  marginTop: '0.75rem',
+                  textShadow: '0 1px 2px rgba(0, 0, 0, 0.3)'
+                }}>
+                  Something went wrong. Please try again.
+                </p>
+              )}
+              
+              {submitStatus === 'idle' && !emailError && (
+                <p style={{
+                  fontSize: '0.875rem',
+                  color: 'rgba(224, 224, 224, 0.7)',
+                  textAlign: 'center',
+                  marginTop: '0.75rem',
+                  textShadow: '0 1px 2px rgba(0, 0, 0, 0.3)'
+                }}>
+                  Be the first to know when we launch
+                </p>
+              )}
             </div>
           </div>
           
