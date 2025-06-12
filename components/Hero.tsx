@@ -248,7 +248,7 @@ export default function Hero() {
                     className="btn btn-primary waitlist-btn"
                     style={{ 
                       position: 'absolute',
-                      right: '8px',
+                      right: '16px',
                       top: '50%',
                       transform: 'translateY(-50%)',
                       padding: '0.75rem 1.5rem', 
@@ -329,7 +329,7 @@ export default function Hero() {
                   marginTop: '0.75rem',
                   textShadow: '0 1px 2px rgba(0, 0, 0, 0.3)'
                 }}>
-                  Be the first to know when we launch
+                  Be the first to know when we launch.
                 </p>
               )}
             </div>
