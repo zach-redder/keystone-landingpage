@@ -121,8 +121,7 @@ export default function Hero() {
                 WebkitTextFillColor: 'transparent',
                 textShadow: '0 0 20px rgba(212, 222, 149, 0.3)'
               }}>True </span>Self Projection.
-            </h1>
-            <p className="hero-description animate-on-scroll" style={{ 
+            </h1>            <p className="hero-description animate-on-scroll" style={{ 
               fontSize: 'clamp(1.1rem, 3vw, 1.25rem)', 
               color: '#e0e0e0', 
               maxWidth: '450px', 
@@ -132,13 +131,70 @@ export default function Hero() {
             }}>
              Overcome internalized doubt and judgement by aligning your outward identity with your inner self.
             </p>
-            <div className="hero-cta">
-              <a href="#waitlist" className="btn btn-primary" style={{ 
-                padding: '1rem 2rem', 
-                fontSize: '1.1rem',
-                transition: 'transform 0.3s ease, box-shadow 0.3s ease',
-                display: 'inline-block'
-              }}>Join the waitlist</a>
+            <div className="hero-cta" style={{ width: '100%', maxWidth: '450px' }}>
+              <div className="waitlist-form" style={{
+                display: 'flex',
+                gap: '0.5rem',
+                padding: '0.5rem',
+                background: 'rgba(47, 47, 47, 0.8)',
+                backdropFilter: 'blur(10px)',
+                borderRadius: '16px',
+                border: '1px solid rgba(212, 222, 149, 0.2)',
+                boxShadow: '0 8px 32px rgba(0, 0, 0, 0.3), 0 0 20px rgba(212, 222, 149, 0.1)',
+                transition: 'all 0.3s ease',
+                position: 'relative',
+                overflow: 'hidden'
+              }}>
+                {/* Subtle animated border glow */}
+                <div style={{
+                  position: 'absolute',
+                  top: 0,
+                  left: 0,
+                  right: 0,
+                  bottom: 0,
+                  background: 'linear-gradient(45deg, rgba(212, 222, 149, 0.1), rgba(212, 222, 149, 0.05), rgba(212, 222, 149, 0.1))',
+                  borderRadius: '16px',
+                  animation: 'border-glow 3s ease-in-out infinite',
+                  zIndex: -1
+                }}></div>
+                
+                <input
+                  type="email"
+                  placeholder="Enter your email"
+                  className="waitlist-email"
+                  style={{
+                    flex: 1,
+                    padding: '1rem 1.25rem',
+                    background: 'rgba(35, 35, 35, 0.9)',
+                    border: '1px solid rgba(212, 222, 149, 0.15)',
+                    borderRadius: '12px',
+                    color: 'white',
+                    fontSize: '1rem',
+                    outline: 'none',
+                    transition: 'all 0.3s ease',
+                    fontFamily: 'inherit'
+                  }}
+                />
+                <button 
+                  type="submit"
+                  className="btn btn-primary waitlist-btn"
+                  style={{ 
+                    padding: '1rem 1.75rem', 
+                    fontSize: '1rem',
+                    fontWeight: '600',
+                    background: 'linear-gradient(135deg, var(--accent) 0%, #f0f5a8 100%)',
+                    border: 'none',
+                    borderRadius: '12px',
+                    color: '#1a1a1a',
+                    cursor: 'pointer',
+                    transition: 'all 0.3s ease',
+                    boxShadow: '0 4px 15px rgba(212, 222, 149, 0.3)',
+                    whiteSpace: 'nowrap'
+                  }}
+                >
+                  Join Waitlist
+                </button>
+              </div>
             </div>
           </div>
           
@@ -317,9 +373,7 @@ export default function Hero() {
             opacity: 0.9;
             filter: blur(25px);
           }
-        }
-
-        @keyframes close-glow {
+        }        @keyframes close-glow {
           0%, 100% {
             opacity: 0.6;
             filter: blur(8px);
@@ -327,6 +381,15 @@ export default function Hero() {
           50% {
             opacity: 0.8;
             filter: blur(12px);
+          }
+        }
+
+        @keyframes border-glow {
+          0%, 100% {
+            opacity: 0.5;
+          }
+          50% {
+            opacity: 0.8;
           }
         }
 
@@ -355,14 +418,38 @@ export default function Hero() {
         .hero-phone-container:hover {
           transform: scale(1.03) !important;
           animation-play-state: paused;
-        }
-
-        .hero-phone-container:hover .hero-phone-glow-outer,
+        }        .hero-phone-container:hover .hero-phone-glow-outer,
         .hero-phone-container:hover .hero-phone-glow-mid,
         .hero-phone-container:hover .hero-phone-glow-inner,
         .hero-phone-container:hover .hero-phone-glow-close {
           animation-play-state: paused;
-        }        /* Enhanced Mobile Responsiveness */
+        }
+
+        .waitlist-form:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4), 0 0 30px rgba(212, 222, 149, 0.15);
+        }
+
+        .waitlist-email:focus {
+          border-color: rgba(212, 222, 149, 0.4) !important;
+          box-shadow: 0 0 0 3px rgba(212, 222, 149, 0.1) !important;
+        }
+
+        .waitlist-email::placeholder {
+          color: rgba(224, 224, 224, 0.5);
+        }
+
+        .waitlist-btn:hover {
+          transform: translateY(-1px);
+          box-shadow: 0 6px 20px rgba(212, 222, 149, 0.4);
+          background: linear-gradient(135deg, #f0f5a8 0%, var(--accent) 100%);
+        }
+
+        .waitlist-btn:active {
+          transform: translateY(0);
+        }
+
+        /* Enhanced Mobile Responsiveness */
         @media (max-width: 768px) {
           .hero-title {
             font-size: clamp(2.5rem, 7vw, 3rem) !important;
@@ -377,10 +464,20 @@ export default function Hero() {
             margin-bottom: 2rem !important;
             text-align: center !important;
           }
-          
-          .hero-content {
+            .hero-content {
             padding: 0 1.5rem !important;
             gap: 1.5rem !important;
+          }
+
+          .waitlist-form {
+            flex-direction: column !important;
+            gap: 0.75rem !important;
+            padding: 1rem !important;
+          }
+
+          .waitlist-btn {
+            padding: 1rem !important;
+            font-size: 1.05rem !important;
           }
           
           .hero-phone {
@@ -406,9 +503,23 @@ export default function Hero() {
             line-height: 1.5 !important;
             margin-bottom: 2rem !important;
           }
-          
-          .hero-content {
+            .hero-content {
             padding: 0 1rem !important;
+          }
+
+          .waitlist-form {
+            padding: 0.75rem !important;
+            border-radius: 14px !important;
+          }
+
+          .waitlist-email {
+            padding: 0.875rem 1rem !important;
+            font-size: 0.95rem !important;
+          }
+
+          .waitlist-btn {
+            padding: 0.875rem !important;
+            font-size: 1rem !important;
           }
           
           .hero-phone {
@@ -460,11 +571,25 @@ export default function Hero() {
             max-width: 100% !important;
             margin-bottom: 1.75rem !important;
           }
-          
-          .hero-content {
+            .hero-content {
             padding: 0 0.75rem !important;
           }
           
+          .waitlist-form {
+            padding: 0.5rem !important;
+            gap: 0.5rem !important;
+          }
+
+          .waitlist-email {
+            padding: 0.75rem 0.875rem !important;
+            font-size: 0.9rem !important;
+          }
+
+          .waitlist-btn {
+            padding: 0.75rem 1.25rem !important;
+            font-size: 0.95rem !important;
+          }
+
           .btn {
             padding: 0.875rem 1.75rem !important;
             font-size: 1rem !important;
@@ -505,9 +630,12 @@ export default function Hero() {
           .hero-description {
             font-size: clamp(0.95rem, 4vw, 1.05rem) !important;
           }
-          
-          .hero-content {
+            .hero-content {
             padding: 0 0.5rem !important;
+          }
+
+          .waitlist-btn {
+            font-size: 0.9rem !important;
           }
           
           .hero-phone-glow-outer {

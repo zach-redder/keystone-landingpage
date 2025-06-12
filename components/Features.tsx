@@ -271,7 +271,8 @@ export default function Features() {
                   transition: 'transform 0.3s ease'
                 }}>
                   <span style={{ fontSize: '2.5rem', filter: 'drop-shadow(0 0 8px rgba(212, 222, 149, 0.3))' }}>💡</span>
-                </div>                <h3 style={{ 
+                </div>                
+                <h3 style={{ 
                   fontSize: '1.75rem', 
                   fontWeight: 600, 
                   marginBottom: '1.25rem',
