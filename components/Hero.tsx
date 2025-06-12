@@ -140,23 +140,23 @@ export default function Hero() {
         zIndex: 1,
         height: '100%',
         marginTop: '-5vh'
-      }}>
-        <div className="hero-container" style={{ 
+      }}>        <div className="hero-container" style={{ 
           display: 'flex', 
           flexDirection: 'column',
           width: '100%',
           alignItems: 'center',
           textAlign: 'center',
           marginTop: 'auto',
-          marginBottom: 'auto'
+          marginBottom: 'auto',
+          gap: '5rem'
         }}>          {/* Left side - Text and CTA */}
           <div className="hero-content" style={{ 
             display: 'flex', 
             flexDirection: 'column', 
-            maxWidth: '500px', 
+            maxWidth: '550px', 
             gap: '2rem',
             order: 1,
-            padding: '0 1rem'
+            padding: '0 2rem'
           }}>
             <h1 className="hero-title animate-on-scroll" style={{ 
               fontSize: 'clamp(1.5rem, 2.5vw, 3.5rem)', 
@@ -189,16 +189,13 @@ export default function Hero() {
              Overcome internalized doubt and judgement by aligning your outward identity with your inner self.
             </p>            <div className="hero-cta" style={{ width: '100%', maxWidth: '450px' }}>
               <form onSubmit={handleSubmit} className="waitlist-form" style={{
-                display: 'flex',
-                gap: '0.5rem',
-                padding: '0.5rem',
+                position: 'relative',
                 background: 'rgba(47, 47, 47, 0.8)',
                 backdropFilter: 'blur(10px)',
-                borderRadius: '16px',
+                borderRadius: '24px',
                 border: `1px solid ${emailError ? 'rgba(239, 68, 68, 0.5)' : 'rgba(212, 222, 149, 0.2)'}`,
                 boxShadow: '0 8px 32px rgba(0, 0, 0, 0.3), 0 0 20px rgba(212, 222, 149, 0.1)',
                 transition: 'all 0.3s ease',
-                position: 'relative',
                 overflow: 'hidden'
               }}>
                 {/* Subtle animated border glow */}
@@ -211,57 +208,70 @@ export default function Hero() {
                   background: emailError 
                     ? 'linear-gradient(45deg, rgba(239, 68, 68, 0.1), rgba(239, 68, 68, 0.05), rgba(239, 68, 68, 0.1))'
                     : 'linear-gradient(45deg, rgba(212, 222, 149, 0.1), rgba(212, 222, 149, 0.05), rgba(212, 222, 149, 0.1))',
-                  borderRadius: '16px',
+                  borderRadius: '24px',
                   animation: 'border-glow 3s ease-in-out infinite',
                   zIndex: -1
                 }}></div>
                 
-                <input
-                  type="email"
-                  placeholder="Enter your email"
-                  value={email}                  onChange={(e) => {
-                    setEmail(e.target.value);
-                    if (emailError) setEmailError('');
-                    if (status !== 'idle') setStatus('idle');
-                  }}
-                  className="waitlist-email"
-                  style={{
-                    flex: 1,
-                    padding: '1rem 1.25rem',
-                    background: 'rgba(35, 35, 35, 0.9)',
-                    border: `1px solid ${emailError ? 'rgba(239, 68, 68, 0.3)' : 'rgba(212, 222, 149, 0.15)'}`,
-                    borderRadius: '12px',
-                    color: 'white',
-                    fontSize: '1rem',
-                    outline: 'none',
-                    transition: 'all 0.3s ease',
-                    fontFamily: 'inherit'
-                  }}
-                />
-                <button 
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="btn btn-primary waitlist-btn"
-                  style={{ 
-                    padding: '1rem 1.75rem', 
-                    fontSize: '1rem',
-                    fontWeight: '600',                    background: isSubmitting 
-                      ? 'rgba(100, 100, 100, 0.5)'
-                      : status === 'success'
-                      ? 'linear-gradient(135deg, #22c55e 0%, #16a34a 100%)'
-                      : 'linear-gradient(135deg, var(--accent) 0%, #f0f5a8 100%)',
-                    border: 'none',
-                    borderRadius: '12px',
-                    color: isSubmitting ? '#999' : '#1a1a1a',
-                    cursor: isSubmitting ? 'not-allowed' : 'pointer',
-                    transition: 'all 0.3s ease',
-                    boxShadow: '0 4px 15px rgba(212, 222, 149, 0.3)',
-                    whiteSpace: 'nowrap',
-                    opacity: isSubmitting ? 0.7 : 1
-                  }}
-                >
-                  {isSubmitting ? 'Joining...' : status === 'success' ? '✓ Joined!' : 'Join Waitlist'}
-                </button>
+                <div style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  padding: '8px',
+                  gap: '8px'
+                }}>
+                  <input
+                    type="email"
+                    placeholder="Enter your email"
+                    value={email}                    onChange={(e) => {
+                      setEmail(e.target.value);
+                      if (emailError) setEmailError('');
+                      if (status !== 'idle') setStatus('idle');
+                    }}
+                    className="waitlist-email"
+                    style={{
+                      flex: 1,
+                      padding: '1rem 1.25rem',
+                      paddingRight: '120px', // Make space for the button
+                      background: 'rgba(35, 35, 35, 0.9)',
+                      border: 'none',
+                      borderRadius: '18px',
+                      color: 'white',
+                      fontSize: '1rem',
+                      outline: 'none',
+                      transition: 'all 0.3s ease',
+                      fontFamily: 'inherit'
+                    }}
+                  />
+                  <button 
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="btn btn-primary waitlist-btn"
+                    style={{ 
+                      position: 'absolute',
+                      right: '8px',
+                      top: '50%',
+                      transform: 'translateY(-50%)',
+                      padding: '0.75rem 1.5rem', 
+                      fontSize: '0.9rem',
+                      fontWeight: '600',                      background: isSubmitting 
+                        ? 'rgba(100, 100, 100, 0.5)'
+                        : status === 'success'
+                        ? 'linear-gradient(135deg, var(--accent) 0%, #f0f5a8 100%)'
+                        : 'linear-gradient(135deg, var(--accent) 0%, #f0f5a8 100%)',
+                      border: 'none',
+                      borderRadius: '16px',
+                      color: isSubmitting ? '#999' : '#1a1a1a',
+                      cursor: isSubmitting ? 'not-allowed' : 'pointer',
+                      transition: 'all 0.3s ease',
+                      boxShadow: '0 4px 15px rgba(212, 222, 149, 0.3)',
+                      whiteSpace: 'nowrap',
+                      opacity: isSubmitting ? 0.7 : 1,
+                      zIndex: 2
+                    }}
+                  >
+                    {isSubmitting ? 'Joining...' : status === 'success' ? '✓ Joined!' : 'Join Waitlist'}
+                  </button>
+                </div>
               </form>
                 {emailError && (
                 <p style={{
@@ -324,11 +334,10 @@ export default function Hero() {
               )}
             </div>
           </div>
-          
-          {/* Right side - Phone mockup */}
+            {/* Right side - Phone mockup */}
           <div className="hero-phone" style={{ 
             order: 2,
-            marginTop: '2rem'
+            marginTop: '4rem'
           }}>
             <div className="hero-phone-container float" style={{ 
               position: 'relative',
@@ -609,10 +618,8 @@ export default function Hero() {
           
           .hero-phone {
             margin-top: 3rem !important;
-          }
-          
-          .hero-container {
-            gap: 2rem !important;
+          }          .hero-container {
+            gap: 3rem !important;
             padding: 4rem 1rem !important;
           }
             section {
