@@ -116,7 +116,7 @@ export default function HowItWorks() {
                     fontSize: '2.25rem', 
                     fontWeight: 600, 
                     marginBottom: '1.5rem', 
-                    color: 'white'
+                    color: 'white',
                     lineHeight: 1.2,
                     textShadow: '0 2px 4px rgba(0, 0, 0, 0.3)'
                   }}>Define Your Identity</h3>
