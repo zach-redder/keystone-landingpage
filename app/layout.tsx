@@ -8,6 +8,11 @@ import { Metadata } from 'next';
 export const metadata: Metadata = {
   title: "Keystone",
   description: "Waitlist Keystone now.",
+  icons: {
+    icon: '/icon.png',
+    shortcut: '/icon.png',
+    apple: '/icon.png',
+  },
   openGraph: {
     title: "Keystone",
     description: "Waitlist Keystone now.",
