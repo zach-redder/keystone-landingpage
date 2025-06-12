@@ -95,10 +95,10 @@ export default function ProblemAgitation() {
               You know what matters to you, but your day is all about trying to meet expectations that aren't your own.
             </p>
             <p style={{ fontSize: '1.18rem', color: '#b0b0b0', marginBottom: '2.2rem', lineHeight: 1.7, textShadow: '0 1px 2px rgba(0, 0, 0, 0.3)' }}>
-              Distractions, outside opinions, and the pressure to fit in can pull you in every direction. You have goals but the noise of daily life stops your progress.
+              Distractions, outside opinions, and the pressure to fit in can pull you in every direction. You have goals but the noise of life stops your progress.
             </p>
             <p style={{ fontSize: '1.18rem', color: '#b0b0b0', marginBottom: '2.2rem', lineHeight: 1.7, textShadow: '0 1px 2px rgba(0, 0, 0, 0.3)' }}>
-              You say yes when you mean no. You shrink your voice to avoid conflict. You chase what others expect, not what you believe in.
+              You internalize what people say about you, shrinking your voice to avoid conflict, chasing what others expect, not what you believe in.
             </p>
             <p style={{ fontSize: '1.13rem', color: '#b0b0b0', fontStyle: 'italic', marginBottom: 0, textShadow: '0 1px 2px rgba(0, 0, 0, 0.3)' }}>
               The result? Doubt, internalized judgement, a sense that you aren't aligned.
