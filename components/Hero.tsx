@@ -130,7 +130,7 @@ export default function Hero() {
               marginBottom: '1.5rem',
               textShadow: '0 2px 4px rgba(0, 0, 0, 0.3)'
             }}>
-             We help you stop caring about what others think. To overcome doubt and being self-conscious, to share your true self.
+             Overcome internalized doubt and judgement by aligning your outward identity with your inner self. Believe in yourself when no one else sees the vision.
             </p>
             <div className="hero-cta">
               <a href="#waitlist" className="btn btn-primary" style={{ 
