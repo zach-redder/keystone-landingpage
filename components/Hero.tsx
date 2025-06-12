@@ -4,7 +4,8 @@ import Image from 'next/image';
 export default function Hero() {
   const [email, setEmail] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const [message, setMessage] = useState('');
   const [emailError, setEmailError] = useState('');
 
   const validateEmail = (email: string) => {
@@ -17,7 +18,8 @@ export default function Hero() {
     
     // Reset previous states
     setEmailError('');
-    setSubmitStatus('idle');
+    setStatus('idle');
+    setMessage('');
     
     // Validate email
     if (!email.trim()) {
@@ -42,13 +44,17 @@ export default function Hero() {
       });
       
       if (response.ok) {
-        setSubmitStatus('success');
+        setStatus('success');
+        setMessage("You're on the waitlist! Check your email for confirmation.");
         setEmail('');
       } else {
-        setSubmitStatus('error');
+        const err = await response.json();
+        setStatus('error');
+        setMessage(err.message || 'Something went wrong. Please try again.');
       }
     } catch (error) {
-      setSubmitStatus('error');
+      setStatus('error');
+      setMessage('Something went wrong. Please try again.');
     } finally {
       setIsSubmitting(false);
     }
@@ -213,11 +219,10 @@ export default function Hero() {
                 <input
                   type="email"
                   placeholder="Enter your email"
-                  value={email}
-                  onChange={(e) => {
+                  value={email}                  onChange={(e) => {
                     setEmail(e.target.value);
                     if (emailError) setEmailError('');
-                    if (submitStatus !== 'idle') setSubmitStatus('idle');
+                    if (status !== 'idle') setStatus('idle');
                   }}
                   className="waitlist-email"
                   style={{
@@ -240,10 +245,9 @@ export default function Hero() {
                   style={{ 
                     padding: '1rem 1.75rem', 
                     fontSize: '1rem',
-                    fontWeight: '600',
-                    background: isSubmitting 
+                    fontWeight: '600',                    background: isSubmitting 
                       ? 'rgba(100, 100, 100, 0.5)'
-                      : submitStatus === 'success'
+                      : status === 'success'
                       ? 'linear-gradient(135deg, #22c55e 0%, #16a34a 100%)'
                       : 'linear-gradient(135deg, var(--accent) 0%, #f0f5a8 100%)',
                     border: 'none',
@@ -256,11 +260,10 @@ export default function Hero() {
                     opacity: isSubmitting ? 0.7 : 1
                   }}
                 >
-                  {isSubmitting ? 'Joining...' : submitStatus === 'success' ? '✓ Joined!' : 'Join Waitlist'}
+                  {isSubmitting ? 'Joining...' : status === 'success' ? '✓ Joined!' : 'Join Waitlist'}
                 </button>
               </form>
-              
-              {emailError && (
+                {emailError && (
                 <p style={{
                   fontSize: '0.875rem',
                   color: '#ef4444',
@@ -272,31 +275,43 @@ export default function Hero() {
                 </p>
               )}
               
-              {submitStatus === 'success' && (
-                <p style={{
+              {status === 'success' && (
+                <div style={{ 
+                  padding: '1rem 1.5rem', 
+                  borderRadius: '14px', 
+                  background: 'linear-gradient(145deg, rgba(212, 222, 149, 0.15), rgba(212, 222, 149, 0.08))', 
+                  border: '1px solid rgba(212, 222, 149, 0.3)', 
+                  color: 'white', 
                   fontSize: '0.875rem',
-                  color: '#22c55e',
+                  boxShadow: '0 8px 20px rgba(212, 222, 149, 0.1)',
+                  backdropFilter: 'blur(10px)',
+                  textShadow: '0 1px 2px rgba(0, 0, 0, 0.3)',
                   textAlign: 'center',
-                  marginTop: '0.75rem',
-                  textShadow: '0 1px 2px rgba(0, 0, 0, 0.3)'
+                  marginTop: '0.75rem'
                 }}>
-                  🎉 You're on the list! We'll notify you when we launch.
-                </p>
+                  {message}
+                </div>
               )}
               
-              {submitStatus === 'error' && (
-                <p style={{
+              {status === 'error' && (
+                <div style={{ 
+                  padding: '1rem 1.5rem', 
+                  borderRadius: '14px', 
+                  background: 'linear-gradient(145deg, rgba(245, 101, 101, 0.15), rgba(245, 101, 101, 0.08))', 
+                  border: '1px solid rgba(245, 101, 101, 0.3)', 
+                  color: '#fc8181', 
                   fontSize: '0.875rem',
-                  color: '#ef4444',
+                  boxShadow: '0 8px 20px rgba(245, 101, 101, 0.1)',
+                  backdropFilter: 'blur(10px)',
+                  textShadow: '0 1px 2px rgba(0, 0, 0, 0.3)',
                   textAlign: 'center',
-                  marginTop: '0.75rem',
-                  textShadow: '0 1px 2px rgba(0, 0, 0, 0.3)'
+                  marginTop: '0.75rem'
                 }}>
-                  Something went wrong. Please try again.
-                </p>
+                  {message}
+                </div>
               )}
               
-              {submitStatus === 'idle' && !emailError && (
+              {status === 'idle' && !emailError && (
                 <p style={{
                   fontSize: '0.875rem',
                   color: 'rgba(224, 224, 224, 0.7)',
