@@ -286,7 +286,7 @@ export default function Features() {
                   marginBottom: '1.5rem',
                   textShadow: '0 1px 2px rgba(0, 0, 0, 0.3)'
                 }}>
-                  Keystone's customized AI will be there to support you at all times with no judgement. Get personalized insights, feedback, and affirmation from AI that understands your inner self.
+                  Keystone's customized AI will be there to support at all times. Get personalized insights from AI that understands and reflects back your inner self.
                 </p>
                 <div style={{ marginTop: 'auto', paddingTop: '1rem' }}>
                   <a href="#waitlist" className="feature-link" style={{ 

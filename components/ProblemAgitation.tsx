@@ -92,7 +92,7 @@ export default function ProblemAgitation() {
           
           <div style={{ position: 'relative', zIndex: 1 }}>
             <p style={{ fontSize: '1.35rem', color: '#e0e0e0', marginBottom: '2.2rem', lineHeight: 1.7, fontWeight: 500, textShadow: '0 1px 2px rgba(0, 0, 0, 0.3)' }}>
-              You know what matters to you, but your day clouded by trying to meet expectations that aren't your own. Underlying internal tension builds...
+              You know what matters to you, but your day is full of trying to meet expectations that aren't your own. Underlying internal tension builds...
             </p>
             <p style={{ fontSize: '1.18rem', color: '#b0b0b0', marginBottom: '2.2rem', lineHeight: 1.7, textShadow: '0 1px 2px rgba(0, 0, 0, 0.3)' }}>
               Distractions, outside opinions, and the pressure to fit in can pull you in every direction. You have goals but the noise of life slows your progress.

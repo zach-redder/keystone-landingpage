@@ -251,7 +251,7 @@ export default function Hero() {
                       right: '12px',
                       top: '50%',
                       transform: 'translateY(-50%)',
-                      padding: '0.65rem 1.4rem', 
+                      padding: '0.65rem 1.3rem', 
                       fontSize: '0.9rem',
                       fontWeight: '600',                      background: isSubmitting 
                         ? 'rgba(100, 100, 100, 0.5)'
