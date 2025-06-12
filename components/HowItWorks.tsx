@@ -64,7 +64,7 @@ export default function HowItWorks() {
               maxWidth: '800px',
               textShadow: '0 1px 2px rgba(0, 0, 0, 0.3)'
             }}>
-              A simple and free no effort process to help you stay aligned with your values.
+              A free and simple process to help you align your outward identity with your inner self.
             </p>
           </div>          <div style={{ maxWidth: '900px', margin: '0 auto', position: 'relative' }}>
             <div style={{ display: 'flex', flexDirection: 'column' }}>
@@ -116,10 +116,10 @@ export default function HowItWorks() {
                     fontSize: '2.25rem', 
                     fontWeight: 600, 
                     marginBottom: '1.5rem', 
-                    color: 'white',
+                    color: 'white'
                     lineHeight: 1.2,
                     textShadow: '0 2px 4px rgba(0, 0, 0, 0.3)'
-                  }}>Define your identity</h3>
+                  }}>Define Your Identity</h3>
                   <p style={{ 
                     color: '#e0e0e0', 
                     fontSize: '1.25rem', 
@@ -128,9 +128,9 @@ export default function HowItWorks() {
                     marginBottom: '1.5rem',
                     textShadow: '0 1px 2px rgba(0, 0, 0, 0.3)'
                   }}>
-                    Define and iterate on your core values, life goals, identity traits and more! 
-                    Keystone provides you a way to ground yourself in what you hold true, disregarding
-                    other people's opinions to help you achieve your dream life.
+                    Define and iterate upon your keys - core values, life goals, and future self vision.
+                    Keystone makes it easy to ground yourself in what you envision for yourself, disregarding
+                    other people's judgment.
                   </p>
                   <div className="quote-bubble" style={{ 
                     display: 'inline-block',
@@ -207,7 +207,7 @@ export default function HowItWorks() {
                     color: 'white',
                     lineHeight: 1.2,
                     textShadow: '0 2px 4px rgba(0, 0, 0, 0.3)'
-                  }}>Receive reminders</h3>
+                  }}>Daily Reminders</h3>
                   <p style={{ 
                     color: '#e0e0e0', 
                     fontSize: '1.25rem', 
@@ -216,9 +216,9 @@ export default function HowItWorks() {
                     marginBottom: '1.5rem',
                     textShadow: '0 1px 2px rgba(0, 0, 0, 0.3)'
                   }}>
-                    Get daily nudges that remind you of who you want to become and how to act accordingly.
-                    These personalized reminders keep you connected to your authentic self throughout the day,
-                    based completely on the values and goals you entered before.
+                    Get daily reminders that remind you of who you want to become and how to act accordingly.
+                    These reminders powered by AI use your stored keys making them completely personalized. This constant
+                    alignment is essential to help you stay on track.
                   </p>
                   <div className="quote-bubble" style={{ 
                     display: 'inline-block',
@@ -231,7 +231,7 @@ export default function HowItWorks() {
                     boxShadow: '0 4px 12px rgba(212, 222, 149, 0.1)',
                     transition: 'transform 0.2s ease'
                   }}>
-                    &quot;Stay consistent with reminding yourself of who you are.&quot;
+                    &quot;You need to remind yourself daily of who you are.&quot;
                   </div>
                 </div>
               </div>
@@ -296,7 +296,7 @@ export default function HowItWorks() {
                     color: 'white',
                     lineHeight: 1.2,
                     textShadow: '0 2px 4px rgba(0, 0, 0, 0.3)'
-                  }}>Log actions</h3>
+                  }}>Log Actions</h3>
                   <p style={{ 
                     color: '#e0e0e0', 
                     fontSize: '1.25rem', 
@@ -305,8 +305,8 @@ export default function HowItWorks() {
                     marginBottom: '1.5rem',
                     textShadow: '0 1px 2px rgba(0, 0, 0, 0.3)'
                   }}>
-                    Daily nudges aren't enough? Log your unaligned actions and receive powerful AI feedback on your alignment with your values and goals.
-                    Tell AI future actions you would take and track your progress to see how much you've improved.
+                    Daily nudges aren't enough? Log your unaligned actions and receive powerful AI feedback on your continuous alignment.
+                    Recieve customized AI instructions you can take to better align your outward identity with your inner self.
                   </p>
                   <div className="quote-bubble" style={{ 
                     display: 'inline-block',
@@ -319,7 +319,7 @@ export default function HowItWorks() {
                     boxShadow: '0 4px 12px rgba(212, 222, 149, 0.1)',
                     transition: 'transform 0.2s ease'
                   }}>
-                    &quot;Learn how to align your actions with your values and goals.&quot;
+                    &quot;Learn from your mistakes to align properly.&quot;
                   </div>
                 </div>
               </div>
@@ -332,7 +332,7 @@ export default function HowItWorks() {
                 animation: 'subtleGlow 4s ease-in-out infinite 2s'
               }}></div>
               
-              {/* Step 3 */}
+              {/* Step 4 */}
               <div className="animate-on-scroll delay-300 step-card" style={{ 
                 display: 'flex', 
                 gap: '3.5rem', 
@@ -383,7 +383,7 @@ export default function HowItWorks() {
                     color: 'white',
                     lineHeight: 1.2,
                     textShadow: '0 2px 4px rgba(0, 0, 0, 0.3)'
-                  }}>Affirm your vision</h3>
+                  }}>Affirm Your Vision</h3>
                   <p style={{ 
                     color: '#e0e0e0', 
                     fontSize: '1.25rem', 
@@ -392,8 +392,8 @@ export default function HowItWorks() {
                     marginBottom: '1.5rem',
                     textShadow: '0 1px 2px rgba(0, 0, 0, 0.3)'
                   }}>
-                    Still not enough? Whenever you want, effortlessly affirm your vision to help you stay connected to yourself.
-                    It's a way to remind yourself of what you're working towards and to keep away any doubt that may arise.
+                    Whenever you feel tension, effortlessly affirm your vision to help you stay connected to inner self.
+                    Remind yourself of what you're working towards and keep away all doubt and judgement that will inevitably arise.
                   </p>
                   <div className="quote-bubble" style={{ 
                     display: 'inline-block',
@@ -406,7 +406,7 @@ export default function HowItWorks() {
                     boxShadow: '0 4px 12px rgba(212, 222, 149, 0.1)',
                     transition: 'transform 0.2s ease'
                   }}>
-                    &quot;Never lose why you started and where you're going.&quot;
+                    &quot;Never let internal tension overtake you.&quot;
                   </div>
                 </div>
               </div>

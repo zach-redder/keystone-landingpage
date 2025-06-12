@@ -130,7 +130,7 @@ export default function Hero() {
               marginBottom: '1.5rem',
               textShadow: '0 2px 4px rgba(0, 0, 0, 0.3)'
             }}>
-             Overcome internalized doubt and judgement by aligning your outward identity with your inner calling.
+             Overcome internalized doubt and judgement by aligning your outward identity with your inner self.
             </p>
             <div className="hero-cta">
               <a href="#waitlist" className="btn btn-primary" style={{ 

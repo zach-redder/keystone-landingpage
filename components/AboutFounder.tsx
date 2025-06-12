@@ -137,10 +137,10 @@ export default function AboutFounder() {
                 marginBottom: '1.2rem',
                 textShadow: '0 1px 2px rgba(0, 0, 0, 0.3)'
               }}>
-                "I'm building Keystone because I struggled for years to consistently live by my own values.
-                Caring about what people would think of my every action and in turn doubting my ability to
-                achieve my goals. I know what it's like to feel pulled in a hundred directions, to lose sight of you.
-                My goal is to help you eliminate your self-doubt and keep pushing with the mindset that you can achieve anything.
+                "I'm building Keystone because I struggled for years to consistently live by my inner self.
+                Doubting my ability to achieve my vision because I never aligned my outward identity with my inner self. 
+                I know what it's like to feel pulled in a hundred directions, to lose sight of your vision.
+                My goal is to use my skills to create a free app that helps you overcome internal doubt and judgement through true self projection.
               </p>
               <span style={{ 
                 color: 'var(--accent)', 

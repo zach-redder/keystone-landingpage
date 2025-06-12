@@ -139,9 +139,9 @@ export default function FAQ() {
                 textShadow: '0 1px 2px rgba(0, 0, 0, 0.3)'
               }}>
                 <p>
-                  Keystone is a free self-alignment app that helps you bridge the gap between your actions and your values using daily reminders
-                  and AI feedback. It&apos;s designed to keep you connected to your authentic self, to stop caring what other's think of you,
-                  and to live your life on your own terms.
+                  Keystone is a free alignment app that helps you overcome internalized doubt and judgement using daily reminders
+                  and powerful AI feedback. It&apos;s designed to keep you connected to your inner self, to ignore external pressures,
+                  and to live your life chasing your own dreams.
                 </p>
               </div>
             </details>            {/* FAQ Item 2 - Enhanced */}            <details className="animate-on-scroll delay-200" style={{ 
@@ -205,7 +205,7 @@ export default function FAQ() {
               }}>
                 <p>
                   We&apos;re working hard to launch as soon as possible so stay tuned! Join the waitlist to get notified as soon as we go live.
-                  Early waitlist members will get development updates and priority access to the beta.
+                  Early waitlist members will get development updates, priority access to the beta, .
                 </p>
               </div>
             </details>
@@ -269,8 +269,8 @@ export default function FAQ() {
                 zIndex: 1,
                 textShadow: '0 1px 2px rgba(0, 0, 0, 0.3)'
               }}>
-                <p>Your data will be kept private and only used to improve your experience. We&apos;ll never sell your information to third parties.
-                  Your identity information is encrypted and secure.</p>
+                <p>Your data will be kept private and only used to improve your experience. We&apos;ll never share your information to third parties.
+                  Your identity information will be encrypted and secured safely.</p>
               </div>
             </details>
             
@@ -379,7 +379,7 @@ export default function FAQ() {
                 minHeight: '48px',
                 lineHeight: '1.3'
               }}>
-                <span>Will there be a free version?</span>
+                <span>Will the app be free?</span>
                 <span style={{ 
                   transition: 'transform 0.3s ease', 
                   display: 'inline-block', 
@@ -399,9 +399,9 @@ export default function FAQ() {
                 textShadow: '0 1px 2px rgba(0, 0, 0, 0.3)'
               }}>
                 <p>
-                  Yes, we plan to offer both free and premium tiers to ensure everyone can benefit from Keystone. The free version will include
-                  core alignment features and everything you need to use the app properly, while premium will offer advanced AI insights and additional
-                  tools and benefits for committed users.</p>
+                  Yes, the free tier of the app offers enough features where you can benefit fully from Keystone. The premium tier of the app will unlock the full app experience, 
+                  advanced AI options, and additional tools/benefits for committed users.
+                </p>
               </div>
             </details>
           </div>

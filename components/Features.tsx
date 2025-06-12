@@ -65,7 +65,7 @@ export default function Features() {
               maxWidth: '800px',
               textShadow: '0 1px 2px rgba(0, 0, 0, 0.3)'
             }}>
-              Everything you need to align your actions with your values and track your progress.
+              We have everything you need to align your outward identity with your inner self.
             </p>
           </div>
           
@@ -75,7 +75,8 @@ export default function Features() {
             gap: '2.5rem',
             justifyContent: 'center'
           }}>
-            {/* Feature Card 1 - Enhanced */}            <div className="animate-on-scroll delay-100 feature-card" style={{ 
+            {/* Feature Card 1 - Enhanced */}            
+            <div className="animate-on-scroll delay-100 feature-card" style={{ 
               flex: '1 1 300px',
               maxWidth: '400px',
               background: 'linear-gradient(145deg, rgba(60, 60, 60, 0.4), rgba(30, 30, 30, 0.4))',
@@ -132,7 +133,7 @@ export default function Features() {
                   marginBottom: '1.5rem',
                   textShadow: '0 1px 2px rgba(0, 0, 0, 0.3)'
                 }}>
-                  Save your core values, identity traits, future self vision, and more in one secure place. Access them whenever you need guidance.
+                  Save your core values, life goals, future self vision, and more in one secure place. Access them whenever you need to iterate or recieve guidance.
                 </p>
                 <div style={{ marginTop: 'auto', paddingTop: '1rem' }}>
                   <a href="#waitlist" className="feature-link" style={{ 
@@ -208,7 +209,7 @@ export default function Features() {
                   marginBottom: '1.5rem',
                   textShadow: '0 1px 2px rgba(0, 0, 0, 0.3)'
                 }}>
-                  Get daily nudges to remember who you are and want to become and act accordingly. Never lose sight of your true unique vision.
+                  These daily reminders take your personalized keys and constantly keep you aligned without being annoying.
                 </p>
                 <div style={{ marginTop: 'auto', paddingTop: '1rem' }}>
                   <a href="#waitlist" className="feature-link" style={{ 
@@ -276,7 +277,7 @@ export default function Features() {
                   marginBottom: '1.25rem',
                   color: 'var(--accent)',
                   textShadow: '0 0 10px rgba(212, 222, 149, 0.3)'
-                }}>AI Insights</h3>
+                }}>AI Guidance</h3>
                 <p style={{ 
                   color: '#e0e0e0', 
                   fontSize: '1.125rem', 
@@ -284,7 +285,7 @@ export default function Features() {
                   marginBottom: '1.5rem',
                   textShadow: '0 1px 2px rgba(0, 0, 0, 0.3)'
                 }}>
-                  Get personalized insights and feedback from AI that understands your values and helps you make better decisions aligned with who you want to be.
+                  Keystone's customized AI will be there to support you at all times with no judgement. Get personalized insights, feedback, and affirmation from AI that understands your inner self.
                 </p>
                 <div style={{ marginTop: 'auto', paddingTop: '1rem' }}>
                   <a href="#waitlist" className="feature-link" style={{ 
