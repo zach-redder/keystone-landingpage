@@ -148,7 +148,7 @@ export default function Footer() {
               }}>Keystone</span>
             </Link>
             <p style={{ color: '#a0a0a0', fontSize: '1.125rem', marginBottom: '2rem', lineHeight: 1.6 }}>
-              Become the main character. Start living with a purpose, align your actions with your values.
+              Overcome internalized doubt and judgement by aligning your outward identity with your inner self.
             </p>
             
             <div style={{ display: 'flex', gap: '1.25rem' }}>
