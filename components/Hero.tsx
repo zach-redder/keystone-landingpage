@@ -8,6 +8,21 @@ export default function Hero() {
   const [message, setMessage] = useState('');
   const [emailError, setEmailError] = useState('');
 
+  // Move dynamic styles to constants
+  const formBorderStyle = emailError 
+    ? 'rgba(239, 68, 68, 0.5)' 
+    : 'rgba(212, 222, 149, 0.2)';
+
+  const buttonBackground = isSubmitting 
+    ? 'rgba(100, 100, 100, 0.5)'
+    : status === 'success'
+    ? 'linear-gradient(135deg, var(--accent) 0%, #f0f5a8 100%)'
+    : 'linear-gradient(135deg, var(--accent) 0%, #f0f5a8 100%)';
+
+  const buttonColor = isSubmitting ? '#999' : '#1a1a1a';
+  const buttonCursor = isSubmitting ? 'not-allowed' : 'pointer';
+  const buttonOpacity = isSubmitting ? 0.7 : 1;
+
   const validateEmail = (email: string) => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
@@ -193,13 +208,14 @@ export default function Hero() {
                 position: 'relative',
                 background: 'rgba(47, 47, 47, 0.8)',
                 backdropFilter: 'blur(10px)',
-                borderRadius: '24px',
-                border: `1px solid ${emailError ? 'rgba(239, 68, 68, 0.5)' : 'rgba(212, 222, 149, 0.2)'}`,
+                borderRadius: '16px',
+                border: `1px solid ${formBorderStyle}`,
                 boxShadow: '0 8px 32px rgba(0, 0, 0, 0.3), 0 0 20px rgba(212, 222, 149, 0.1)',
                 transition: 'all 0.3s ease',
                 overflow: 'hidden',
                 width: '100%',
-                maxWidth: '450px'
+                maxWidth: '450px',
+                padding: '0.5rem'
               }}>
                 {/* Subtle animated border glow */}
                 <div style={{
@@ -208,10 +224,8 @@ export default function Hero() {
                   left: 0,
                   right: 0,
                   bottom: 0,
-                  background: emailError 
-                    ? 'linear-gradient(45deg, rgba(239, 68, 68, 0.1), rgba(239, 68, 68, 0.05), rgba(239, 68, 68, 0.1))'
-                    : 'linear-gradient(45deg, rgba(212, 222, 149, 0.1), rgba(212, 222, 149, 0.05), rgba(212, 222, 149, 0.1))',
-                  borderRadius: '24px',
+                  background: 'linear-gradient(45deg, rgba(212, 222, 149, 0.1), rgba(212, 222, 149, 0.05), rgba(212, 222, 149, 0.1))',
+                  borderRadius: '16px',
                   animation: 'border-glow 3s ease-in-out infinite',
                   zIndex: -1
                 }}></div>
@@ -219,13 +233,16 @@ export default function Hero() {
                 <div style={{
                   display: 'flex',
                   alignItems: 'center',
-                  padding: '8px',
-                  gap: '8px'
+                  padding: '3px',
+                  gap: '3px',
+                  position: 'relative',
+                  width: '100%'
                 }}>
                   <input
                     type="email"
                     placeholder="Enter your email"
-                    value={email}                    onChange={(e) => {
+                    value={email}
+                    onChange={(e) => {
                       setEmail(e.target.value);
                       if (emailError) setEmailError('');
                       if (status !== 'idle') setStatus('idle');
@@ -233,17 +250,18 @@ export default function Hero() {
                     className="waitlist-email"
                     style={{
                       flex: 1,
-                      padding: '1rem 1.25rem',
+                      padding: '0.75rem 1rem',
                       paddingRight: '120px',
                       background: 'rgba(35, 35, 35, 0.9)',
                       border: 'none',
-                      borderRadius: '18px',
+                      borderRadius: '12px',
                       color: 'white',
                       fontSize: '1rem',
                       outline: 'none',
                       transition: 'all 0.3s ease',
                       fontFamily: 'inherit',
-                      width: '100%'
+                      width: '100%',
+                      position: 'relative'
                     }}
                   />
                   <button 
@@ -252,25 +270,23 @@ export default function Hero() {
                     className="btn btn-primary waitlist-btn"
                     style={{ 
                       position: 'absolute',
-                      right: '12px',
+                      right: '6px',
                       top: '50%',
                       transform: 'translateY(-50%)',
                       padding: '0.65rem 1.3rem', 
                       fontSize: '0.9rem',
-                      fontWeight: '600',                      background: isSubmitting 
-                        ? 'rgba(100, 100, 100, 0.5)'
-                        : status === 'success'
-                        ? 'linear-gradient(135deg, var(--accent) 0%, #f0f5a8 100%)'
-                        : 'linear-gradient(135deg, var(--accent) 0%, #f0f5a8 100%)',
+                      fontWeight: '600',
+                      background: buttonBackground,
                       border: 'none',
                       borderRadius: '16px',
-                      color: isSubmitting ? '#999' : '#1a1a1a',
-                      cursor: isSubmitting ? 'not-allowed' : 'pointer',
+                      color: buttonColor,
+                      cursor: buttonCursor,
                       transition: 'all 0.3s ease',
                       boxShadow: '0 4px 15px rgba(212, 222, 149, 0.3)',
                       whiteSpace: 'nowrap',
-                      opacity: isSubmitting ? 0.7 : 1,
-                      zIndex: 2
+                      opacity: buttonOpacity,
+                      zIndex: 2,
+                      margin: '0'
                     }}
                   >
                     {isSubmitting ? 'Joining...' : status === 'success' ? '✓ Joined!' : 'Join Waitlist'}
@@ -338,7 +354,7 @@ export default function Hero() {
               )}
             </div>
           </div>
-            {/* Right side - Phone mockup */}
+          {/* Right side - Phone mockup */}
           <div className="hero-phone" style={{ 
             order: 2,
             marginTop: '4rem'
@@ -387,7 +403,7 @@ export default function Hero() {
                 transform: 'translate(-50%, -50%)',
                 width: 'clamp(300px, 50vw, 600px)',
                 height: 'auto',
-                borderRadius: '40px',
+                borderRadius: '40px', 
                 background: 'radial-gradient(ellipse at center, rgba(212, 222, 149, 0.2) 0%, rgba(212, 222, 149, 0.1) 60%, transparent 90%)',
                 filter: 'blur(20px)',
                 zIndex: 3,
@@ -397,7 +413,7 @@ export default function Hero() {
 
               {/* Extra close glow for more intensity */}
               <div className="hero-phone-glow-close" style={{
-                position: 'absolute',
+                position: 'absolute', 
                 top: '50%',
                 left: '50%',
                 transform: 'translate(-50%, -50%)',
@@ -646,22 +662,22 @@ export default function Hero() {
           }
 
           .waitlist-form {
-            padding: 0.5rem !important;
-            border-radius: 16px !important;
-          }
-
-          .waitlist-email {
-            padding: 0.875rem 1rem !important;
-            padding-right: 100px !important;
-            font-size: 0.95rem !important;
+            padding: 0.4rem !important;
             border-radius: 14px !important;
           }
 
+          .waitlist-email {
+            padding: 0.7rem 1rem !important;
+            padding-right: 110px !important;
+            font-size: 0.95rem !important;
+            border-radius: 10px !important;
+          }
+
           .waitlist-btn {
-            padding: 0.75rem 1rem !important;
-            font-size: 0.9rem !important;
-            right: 8px !important;
-            border-radius: 12px !important;
+            right: 4px !important;
+            padding: 0.6rem 1.1rem !important;
+            font-size: 0.85rem !important;
+            border-radius: 8px !important;
           }
           
           .hero-phone {
@@ -718,22 +734,22 @@ export default function Hero() {
           }
           
           .waitlist-form {
-            padding: 0.4rem !important;
-            border-radius: 14px !important;
-          }
-
-          .waitlist-email {
-            padding: 0.75rem 0.875rem !important;
-            padding-right: 90px !important;
-            font-size: 0.9rem !important;
+            padding: 0.3rem !important;
             border-radius: 12px !important;
           }
 
-          .waitlist-btn {
+          .waitlist-email {
             padding: 0.65rem 0.875rem !important;
-            font-size: 0.85rem !important;
-            right: 6px !important;
-            border-radius: 10px !important;
+            padding-right: 105px !important;
+            font-size: 0.9rem !important;
+            border-radius: 8px !important;
+          }
+
+          .waitlist-btn {
+            right: 3px !important;
+            padding: 0.55rem 1rem !important;
+            font-size: 0.8rem !important;
+            border-radius: 7px !important;
           }
 
           .btn {
