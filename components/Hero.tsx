@@ -170,6 +170,7 @@ export default function Hero() {
               WebkitTextFillColor: 'transparent',
               animation: 'shimmer 3s ease-in-out infinite'
             }}>
+              Overcoming
                <span style={{ 
                 color: 'var(--accent)',
                 background: 'linear-gradient(135deg, var(--accent) 0%, #f0f5a8 50%, var(--accent) 100%)',
@@ -177,7 +178,7 @@ export default function Hero() {
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
                 textShadow: '0 0 20px rgba(212, 222, 149, 0.3)'
-              }}>True </span>Self Projection.
+              }}> internal tension </span>is hard.
             </h1>            <p className="hero-description animate-on-scroll" style={{ 
               fontSize: 'clamp(1.1rem, 3vw, 1.25rem)', 
               color: '#e0e0e0', 
@@ -186,7 +187,7 @@ export default function Hero() {
               marginBottom: '1.5rem',
               textShadow: '0 2px 4px rgba(0, 0, 0, 0.3)'
             }}>
-             Overcome internalized doubt and judgement by aligning your outward identity with your inner self.
+             We make it easy by helping you align your outward identity with your inner self.
             </p>            <div className="hero-cta" style={{ width: '100%', maxWidth: '450px' }}>
               <form onSubmit={handleSubmit} className="waitlist-form" style={{
                 position: 'relative',
@@ -196,7 +197,9 @@ export default function Hero() {
                 border: `1px solid ${emailError ? 'rgba(239, 68, 68, 0.5)' : 'rgba(212, 222, 149, 0.2)'}`,
                 boxShadow: '0 8px 32px rgba(0, 0, 0, 0.3), 0 0 20px rgba(212, 222, 149, 0.1)',
                 transition: 'all 0.3s ease',
-                overflow: 'hidden'
+                overflow: 'hidden',
+                width: '100%',
+                maxWidth: '450px'
               }}>
                 {/* Subtle animated border glow */}
                 <div style={{
@@ -231,7 +234,7 @@ export default function Hero() {
                     style={{
                       flex: 1,
                       padding: '1rem 1.25rem',
-                      paddingRight: '120px', // Make space for the button
+                      paddingRight: '120px',
                       background: 'rgba(35, 35, 35, 0.9)',
                       border: 'none',
                       borderRadius: '18px',
@@ -239,7 +242,8 @@ export default function Hero() {
                       fontSize: '1rem',
                       outline: 'none',
                       transition: 'all 0.3s ease',
-                      fontFamily: 'inherit'
+                      fontFamily: 'inherit',
+                      width: '100%'
                     }}
                   />
                   <button 
@@ -642,18 +646,22 @@ export default function Hero() {
           }
 
           .waitlist-form {
-            padding: 0.75rem !important;
-            border-radius: 14px !important;
+            padding: 0.5rem !important;
+            border-radius: 16px !important;
           }
 
           .waitlist-email {
             padding: 0.875rem 1rem !important;
+            padding-right: 100px !important;
             font-size: 0.95rem !important;
+            border-radius: 14px !important;
           }
 
           .waitlist-btn {
-            padding: 0.875rem !important;
-            font-size: 1rem !important;
+            padding: 0.75rem 1rem !important;
+            font-size: 0.9rem !important;
+            right: 8px !important;
+            border-radius: 12px !important;
           }
           
           .hero-phone {
@@ -710,18 +718,22 @@ export default function Hero() {
           }
           
           .waitlist-form {
-            padding: 0.5rem !important;
-            gap: 0.5rem !important;
+            padding: 0.4rem !important;
+            border-radius: 14px !important;
           }
 
           .waitlist-email {
             padding: 0.75rem 0.875rem !important;
+            padding-right: 90px !important;
             font-size: 0.9rem !important;
+            border-radius: 12px !important;
           }
 
           .waitlist-btn {
-            padding: 0.75rem 1.25rem !important;
-            font-size: 0.95rem !important;
+            padding: 0.65rem 0.875rem !important;
+            font-size: 0.85rem !important;
+            right: 6px !important;
+            border-radius: 10px !important;
           }
 
           .btn {
