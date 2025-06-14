@@ -6,7 +6,7 @@ import { Analytics } from "@vercel/analytics/next"
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: "Waitlist Keystone now",
+  title: "Keystone",
   description: "Waitlist Keystone now",
   icons: {
     icon: '/icon.png',
