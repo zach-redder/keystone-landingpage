@@ -92,13 +92,13 @@ export default function ProblemAgitation() {
           
           <div style={{ position: 'relative', zIndex: 1 }}>
             <p style={{ fontSize: '1.35rem', color: '#e0e0e0', marginBottom: '2.2rem', lineHeight: 1.7, fontWeight: 500, textShadow: '0 1px 2px rgba(0, 0, 0, 0.3)' }}>
-              Why is that? Failure of achieving your dreams is a result of internal tension.
+              It's so easy to quit. Why is that? Internal tension...
             </p>
             <p style={{ fontSize: '1.18rem', color: '#b0b0b0', marginBottom: '2.2rem', lineHeight: 1.7, textShadow: '0 1px 2px rgba(0, 0, 0, 0.3)' }}>
-              You have constant doubt and internalize what people's opinions are of you. The everyday noise of life halts your progress. 
+              You have constant doubt and internalize what people's opinions are of you. The everyday noise of life tempts you to give up. 
             </p>
             <p style={{ fontSize: '1.13rem', color: '#b0b0b0', fontStyle: 'italic', marginBottom: 0, textShadow: '0 1px 2px rgba(0, 0, 0, 0.3)' }}>
-              Not aligning your outward identity with your inner self causes this doubt, internalized judgement, and a feeling of internal tension.
+              Not aligning your actions with what your goals are causes this doubt, internalized judgement, and a feeling of internal tension.
             </p>
             <div style={{ height: '1.5rem' }} />
             <p style={{ 
