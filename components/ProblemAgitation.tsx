@@ -92,13 +92,13 @@ export default function ProblemAgitation() {
           
           <div style={{ position: 'relative', zIndex: 1 }}>
             <p style={{ fontSize: '1.35rem', color: '#e0e0e0', marginBottom: '2.2rem', lineHeight: 1.7, fontWeight: 500, textShadow: '0 1px 2px rgba(0, 0, 0, 0.3)' }}>
-              It's so easy to quit. Why? Internal tension...
+              It's so easy to quit. Why? Constant internal tension...
             </p>
             <p style={{ fontSize: '1.18rem', color: '#b0b0b0', marginBottom: '2.2rem', lineHeight: 1.7, textShadow: '0 1px 2px rgba(0, 0, 0, 0.3)' }}>
-              You have constant doubt and seek validation from other people. The everyday noise of life and other people's opinions tempts you to give up.
+              You have doubt and care what other people think of you. The everyday noise of life and other people's opinions tempts you to give up.
             </p>
             <p style={{ fontSize: '1.13rem', color: '#b0b0b0', fontStyle: 'italic', marginBottom: 0, textShadow: '0 1px 2px rgba(0, 0, 0, 0.3)' }}>
-              Not aligning your actions with what your goals are causes doubt, internalized judgement, and a feeling of internal tension.
+              Not remembering your why and aligning your actions with your goals causes doubt, internalized judgement, and a feeling of constant internal tension.
             </p>
             <div style={{ height: '1.5rem' }} />
             <p style={{ 
