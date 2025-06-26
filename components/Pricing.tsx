@@ -124,6 +124,7 @@ const PricingTier: React.FC<PricingTierProps> = ({ name, price, period, descript
 
       <button 
         onClick={scrollToWaitlist}
+        className={`pricing-button ${isPopular ? 'popular' : ''}`}
         style={{
           background: isPopular 
             ? 'linear-gradient(135deg, var(--accent) 0%, #f0f5a8 50%, var(--accent) 100%)'
@@ -136,10 +137,11 @@ const PricingTier: React.FC<PricingTierProps> = ({ name, price, period, descript
           border: '1px solid',
           borderColor: isPopular ? 'transparent' : 'rgba(212, 222, 149, 0.2)',
           cursor: 'pointer',
-          transition: 'all 0.3s ease',
-          marginTop: 'auto'
+          marginTop: 'auto',
+          position: 'relative',
+          overflow: 'hidden',
+          width: '100%'
         }}
-        className="pricing-button"
       >
         Get Started
       </button>
@@ -246,47 +248,66 @@ const Pricing: React.FC = () => {
         </div>
       </div>
 
-      <style jsx>{`
-        .pricing-card {
+      <style jsx global>{`
+        .pricing-button {
           transform: translateY(0);
-        }
-
-        .pricing-card.popular {
-          animation: pulse 3s infinite;
-        }
-
-        @keyframes pulse {
-          0% {
-            box-shadow: 0 8px 32px rgba(0,0,0,0.18), 0 4px 16px rgba(212, 222, 149, 0.15), 0 0 0 2px rgba(212, 222, 149, 0.2), 0 0 40px rgba(212, 222, 149, 0.1);
-          }
-          50% {
-            box-shadow: 0 8px 32px rgba(0,0,0,0.18), 0 4px 16px rgba(212, 222, 149, 0.25), 0 0 0 3px rgba(212, 222, 149, 0.3), 0 0 60px rgba(212, 222, 149, 0.2);
-          }
-          100% {
-            box-shadow: 0 8px 32px rgba(0,0,0,0.18), 0 4px 16px rgba(212, 222, 149, 0.15), 0 0 0 2px rgba(212, 222, 149, 0.2), 0 0 40px rgba(212, 222, 149, 0.1);
-          }
-        }
-
-        .pricing-card:hover {
-          transform: translateY(-8px);
-        }
-
-        .pricing-card.popular:hover {
-          transform: translateY(-8px) scale(1.05);
+          transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .pricing-button:hover {
           transform: translateY(-2px);
           box-shadow: 0 8px 20px rgba(212, 222, 149, 0.2);
-          background: linear-gradient(135deg, #e0ea99 0%, #f0f5a8 50%, #e0ea99 100%);
-        }
-
-        .pricing-card:not(.popular) .pricing-button:hover {
-          background: rgba(212, 222, 149, 0.15);
         }
 
         .pricing-button:active {
-          transform: translateY(1px);
+          transform: translateY(1px) scale(0.98);
+        }
+
+        .pricing-button.popular:hover {
+          background: linear-gradient(135deg, #e0ea99 0%, #f0f5a8 50%, #e0ea99 100%) !important;
+          box-shadow: 0 8px 25px rgba(212, 222, 149, 0.3);
+        }
+
+        .pricing-button:not(.popular):hover {
+          background: rgba(212, 222, 149, 0.15) !important;
+          box-shadow: 0 8px 20px rgba(212, 222, 149, 0.1);
+          border-color: rgba(212, 222, 149, 0.3);
+        }
+
+        .pricing-button::after {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: -100%;
+          width: 50%;
+          height: 100%;
+          background: linear-gradient(
+            120deg,
+            transparent,
+            rgba(255, 255, 255, 0.3),
+            transparent
+          );
+          transform: skewX(-20deg);
+          transition: 0.5s;
+        }
+
+        .pricing-button:hover::after {
+          animation: shine 1.5s ease-in-out infinite;
+        }
+
+        @keyframes shine {
+          0% {
+            left: -100%;
+            opacity: 0.8;
+          }
+          50% {
+            left: 100%;
+            opacity: 0.3;
+          }
+          100% {
+            left: 100%;
+            opacity: 0;
+          }
         }
 
         @media (max-width: 1024px) {
@@ -342,6 +363,36 @@ const Pricing: React.FC = () => {
           .pricing-card {
             max-width: 100% !important;
           }
+        }
+      `}</style>
+
+      <style jsx>{`
+        .pricing-card {
+          transform: translateY(0);
+        }
+
+        .pricing-card.popular {
+          animation: pulse 3s infinite;
+        }
+
+        @keyframes pulse {
+          0% {
+            box-shadow: 0 8px 32px rgba(0,0,0,0.18), 0 4px 16px rgba(212, 222, 149, 0.15), 0 0 0 2px rgba(212, 222, 149, 0.2), 0 0 40px rgba(212, 222, 149, 0.1);
+          }
+          50% {
+            box-shadow: 0 8px 32px rgba(0,0,0,0.18), 0 4px 16px rgba(212, 222, 149, 0.25), 0 0 0 3px rgba(212, 222, 149, 0.3), 0 0 60px rgba(212, 222, 149, 0.2);
+          }
+          100% {
+            box-shadow: 0 8px 32px rgba(0,0,0,0.18), 0 4px 16px rgba(212, 222, 149, 0.15), 0 0 0 2px rgba(212, 222, 149, 0.2), 0 0 40px rgba(212, 222, 149, 0.1);
+          }
+        }
+
+        .pricing-card:hover {
+          transform: translateY(-8px);
+        }
+
+        .pricing-card.popular:hover {
+          transform: translateY(-8px) scale(1.05);
         }
       `}</style>
     </section>
