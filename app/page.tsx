@@ -8,6 +8,8 @@ import AboutFounder from '../components/AboutFounder';
 //import Testimonial from '../components/Testimonial';
 import Waitlist from '../components/Waitlist';
 import FAQ from '../components/FAQ';
+import Community from '../components/Community';
+import Pricing from '../components/Pricing';
 
 export default function HomePage() {
   // Add an intersection observer to detect when elements are in view
@@ -35,13 +37,16 @@ export default function HomePage() {
       minHeight: '100vh',
       width: '100%',
       paddingTop: '80px'
-    }}><Hero />
+    }}>
+      <Hero />
       <ProblemAgitation />
       <HowItWorks />
       <Features />
-      <AboutFounder />
       {/*<Testimonial />*/}
+      <AboutFounder />
       <Waitlist />
+      <Community />
+      <Pricing />
       <FAQ />
     </div>
   );

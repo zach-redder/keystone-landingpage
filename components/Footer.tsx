@@ -370,6 +370,36 @@ export default function Footer() {
                 </li>
                 <li>
                   <a 
+                    href="#community" 
+                    style={{ color: '#a0a0a0', transition: 'all 0.2s ease', display: 'inline-block' }}
+                    className="footer-link"
+                  >
+                    Community
+                    <style jsx>{`
+                      .footer-link:hover {
+                        color: var(--accent);
+                        transform: translateX(5px);
+                      }
+                    `}</style>
+                  </a>
+                </li>
+                <li>
+                  <a 
+                    href="#pricing" 
+                    style={{ color: '#a0a0a0', transition: 'all 0.2s ease', display: 'inline-block' }}
+                    className="footer-link"
+                  >
+                    Pricing
+                    <style jsx>{`
+                      .footer-link:hover {
+                        color: var(--accent);
+                        transform: translateX(5px);
+                      }
+                    `}</style>
+                  </a>
+                </li>
+                <li>
+                  <a 
                     href="#faq" 
                     style={{ color: '#a0a0a0', transition: 'all 0.2s ease', display: 'inline-block' }}
                     className="footer-link"

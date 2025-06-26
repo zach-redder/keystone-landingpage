@@ -160,6 +160,62 @@ export default function Header() {
               }
             `}</style>
           </a>
+          <a 
+            href="#community" 
+            onClick={(e) => scrollToSection(e, 'community')}
+            style={{ 
+              color: 'white', 
+              transition: 'color 0.2s',
+              position: 'relative',
+              padding: '0.5rem 0'
+            }} 
+            className="nav-link"
+          >
+            Community
+            <style jsx>{`
+              .nav-link::after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 0;
+                height: 2px;
+                background-color: var(--accent);
+                transition: width 0.3s ease;
+              }
+              .nav-link:hover::after {
+                width: 100%;
+              }
+            `}</style>
+          </a>
+          <a 
+            href="#pricing" 
+            onClick={(e) => scrollToSection(e, 'pricing')}
+            style={{ 
+              color: 'white', 
+              transition: 'color 0.2s',
+              position: 'relative',
+              padding: '0.5rem 0'
+            }} 
+            className="nav-link"
+          >
+            Pricing
+            <style jsx>{`
+              .nav-link::after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 0;
+                height: 2px;
+                background-color: var(--accent);
+                transition: width 0.3s ease;
+              }
+              .nav-link:hover::after {
+                width: 100%;
+              }
+            `}</style>
+          </a>
           {/* <a 
             href="#testimonial" 
             onClick={(e) => scrollToSection(e, 'testimonial')}
@@ -201,7 +257,8 @@ export default function Header() {
               }
             `}</style>
           </a>
-        </nav>          <a 
+        </nav>          
+        <a 
           href="#waitlist" 
           onClick={(e) => scrollToSection(e, 'waitlist')}
           className="btn btn-primary" 
