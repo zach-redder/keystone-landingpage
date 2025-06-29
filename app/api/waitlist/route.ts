@@ -35,6 +35,7 @@ export async function POST(req: NextRequest) {
           <p style="font-size: 16px; margin-bottom: 20px;">Hey!</p>
           <p style="font-size: 16px; margin-bottom: 20px;">It's Zach here, the creator of Keystone. Thanks for joining the waitlist!</p>
           <p style="font-size: 16px; margin-bottom: 20px;">I'm excited to share our journey with you. We'll keep you updated on our launch and share some cool behind-the-scenes content along the way.</p>
+          <p style="font-size: 16px; margin-bottom: 20px;">You can also join our <a href="https://discord.gg/BuHWnuc8" style="color: #007bff; text-decoration: none;">Discord</a> community to connect with other waitlist members and recieve rewards for spreading the message!</p>
           <p style="font-size: 16px; margin-bottom: 20px;">I'd love to hear what brought you to Keystone! Feel free to reply to this email and share.</p>
           <p style="font-size: 16px; margin-top: 30px;">Best,<br/>Zach</p>
         </div>
