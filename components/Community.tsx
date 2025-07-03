@@ -60,7 +60,7 @@ const Community: React.FC = () => {
             Our Discord community is a vibrant group of individuals striving to achieve their best selves through doubt and the pressure of outside opinions with true self projection.
           </p>
           <a 
-            href="https://discord.gg/BuHWnuc8" 
+            href="https://discord.me/thealignedcore" 
             className="discord-button font-semibold rounded-full" 
             target="_blank"
             style={{
