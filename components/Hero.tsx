@@ -193,7 +193,7 @@ export default function Hero() {
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
                 textShadow: '0 0 20px rgba(212, 222, 149, 0.3)'
-              }}> internal tension </span>is hard.
+              }}> doubt </span>is hard.
             </h1>            <p className="hero-description animate-on-scroll" style={{ 
               fontSize: 'clamp(1.1rem, 3vw, 1.25rem)', 
               color: '#e0e0e0', 
@@ -202,7 +202,7 @@ export default function Hero() {
               marginBottom: '1.5rem',
               textShadow: '0 2px 4px rgba(0, 0, 0, 0.3)'
             }}>
-             We make it easy by helping you align your outward identity with your inner self.
+             We make it easy by aligning your outward actions with your future vision and values.
             </p>            <div className="hero-cta" style={{ width: '100%', maxWidth: '450px' }}>
               <form onSubmit={handleSubmit} className="waitlist-form" style={{
                 position: 'relative',
