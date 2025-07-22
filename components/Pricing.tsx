@@ -221,7 +221,7 @@ const Pricing: React.FC = () => {
           />
           <PricingTier
             name="Monthly Pro"
-            price="$10"
+            price="$9.99"
             period="/month"
             description="Best for big dreams"
             features={[
@@ -235,7 +235,7 @@ const Pricing: React.FC = () => {
           />
           <PricingTier
             name="Yearly Pro"
-            price="$60"
+            price="$59.99"
             period="/year"
             description="Best for achieving your goals"
             features={[
