@@ -132,7 +132,7 @@ export default function Header() {
               }
             `}</style>
           </a>
-          <a 
+          {/* <a 
             href="#features" 
             onClick={(e) => scrollToSection(e, 'features')}
             style={{ 
@@ -159,7 +159,7 @@ export default function Header() {
                 width: 100%;
               }
             `}</style>
-          </a>
+          </a> */}
           <a 
             href="#community" 
             onClick={(e) => scrollToSection(e, 'community')}

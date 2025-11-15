@@ -202,7 +202,7 @@ export default function Hero() {
               marginBottom: '1.5rem',
               textShadow: '0 2px 4px rgba(0, 0, 0, 0.3)'
             }}>
-             We make it easy by aligning your outward actions with your future vision and values.
+             We make it easy for everyone. Keystone is the app for overcoming doubt and achieving your dreams.
             </p>            <div className="hero-cta" style={{ width: '100%', maxWidth: '450px' }}>
               <form onSubmit={handleSubmit} className="waitlist-form" style={{
                 position: 'relative',

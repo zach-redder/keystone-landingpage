@@ -57,7 +57,7 @@ const Community: React.FC = () => {
             lineHeight: '1.5',
             marginBottom: 'clamp(2rem, 5vw, 3.5rem)'
           }}>
-            Our Discord community is a vibrant group of individuals striving to achieve their best selves through doubt and the pressure of outside opinions with true self projection.
+            Our Discord community is a vibrant group of individuals striving to actualize their vision by overcoming doubt and the pressure of outside opinions by using true self projection.
           </p>
           <a 
             href="https://discord.me/thealignedcore" 
