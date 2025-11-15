@@ -12,7 +12,7 @@ export default function AboutFounder() {
         <div className="card about-founder-card animate-on-scroll" style={{ padding: '2.5rem 2rem', background: 'rgba(47,47,47,0.88)', borderRadius: '1.5rem', boxShadow: '0 8px 32px rgba(0,0,0,0.18)', border: '1px solid rgba(212,222,149,0.08)', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '2rem', maxWidth: '900px', margin: '0 auto', textAlign: 'left', position: 'relative', transition: 'box-shadow 0.2s' }}>
           <div className="about-founder-flex" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '100%', gap: '2rem', position: 'relative' }}>
             <Image 
-              src="/profile_pic.png"
+              src="/profile-pic.png"
               alt="Zach Redder, Founder of Keystone" 
               width={180} 
               height={180} 
@@ -23,7 +23,7 @@ export default function AboutFounder() {
             <div style={{ flex: 1, minWidth: 0, textAlign: 'left', display: 'flex', flexDirection: 'column', alignItems: 'flex-start', justifyContent: 'center' }}>
               <h3 style={{ color: 'var(--accent)', fontWeight: 600, fontSize: '1.25rem', marginBottom: '0.5rem' }}>Zach Redder</h3>
               <p style={{ color: '#e0e0e0', fontSize: '1.15rem', lineHeight: 1.7, maxWidth: '600px', marginBottom: '1.2rem' }}>
-                "I built Keystone because I struggled for years to consistently live by my own values. I know what it's like to feel pulled in a hundred directions, to lose sight of what matters, and to want more alignment between who you are and how you show up. My mission is to help you (and myself) close that gap, one action at a time."
+                "I built Keystone because I struggled for my entire life to consistently live according to my own story. I know what it's like to feel pulled in a hundred directions, to lose sight of what matters most, and to want more alignment between who you are now and who you wish to become. My mission is to help you (and myself) close that gap, to have a picture of the good life and take action to make it a reality."
               </p>
               <span style={{ color: 'var(--accent)', fontFamily: 'cursive, \"Pacifico\", \"Dancing Script\", sans-serif', fontSize: '1.4rem', opacity: 0.7, marginTop: '0.5rem', marginLeft: '0.1rem', display: 'inline-block' }}>
                 Zach
