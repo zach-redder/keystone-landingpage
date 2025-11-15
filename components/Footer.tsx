@@ -67,7 +67,10 @@ export default function Footer() {
             cursor: 'pointer',
             boxShadow: '0 8px 25px rgba(0, 0, 0, 0.25)',
             zIndex: 5,
-            transition: 'all 0.3s ease'
+            transition: 'all 0.3s ease',
+            flexShrink: 0,
+            minWidth: '40px',
+            minHeight: '40px'
           }}
           aria-label="Back to top"
           className="back-to-top-main-btn"
@@ -82,6 +85,24 @@ export default function Footer() {
               animation: none;
               transform: scale(1.1) !important;
               box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            }
+            
+            @media (max-width: 768px) {
+              .back-to-top-main-btn {
+                width: 44px !important;
+                height: 44px !important;
+                min-width: 44px !important;
+                min-height: 44px !important;
+              }
+            }
+            
+            @media (max-width: 480px) {
+              .back-to-top-main-btn {
+                width: 48px !important;
+                height: 48px !important;
+                min-width: 48px !important;
+                min-height: 48px !important;
+              }
             }
             
             @keyframes pulse {
@@ -104,10 +125,9 @@ export default function Footer() {
         pointerEvents: 'none',
         zIndex: 0
       }}></div>
-      
-      <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 2rem', position: 'relative', zIndex: 10 }}>
+        <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 2rem', position: 'relative', zIndex: 10 }}>
         {/* Main Footer - Horizontal Layout */}
-        <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', marginBottom: '5rem', flexWrap: 'wrap', gap: '3rem' }}>
+        <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '5rem', flexWrap: 'wrap', gap: '3rem' }}>
           {/* Brand Column */}
           <div style={{ flex: '1', minWidth: '280px', maxWidth: '350px' }}>
             <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1.5rem' }}>
@@ -115,8 +135,8 @@ export default function Footer() {
                 <Image 
                   src="/logo-transparent.png" 
                   alt="Keystone Logo" 
-                  width={48} 
-                  height={48}
+                  width={50} 
+                  height={50}
                   style={{ objectFit: 'contain' }}
                 />
               </div>
@@ -128,7 +148,7 @@ export default function Footer() {
               }}>Keystone</span>
             </Link>
             <p style={{ color: '#a0a0a0', fontSize: '1.125rem', marginBottom: '2rem', lineHeight: 1.6 }}>
-              Bridge the gap between your actions and your values with our AI-powered self-alignment app.
+              Overcome internalized doubt and judgement by aligning your outward identity with your inner self.
             </p>
             
             <div style={{ display: 'flex', gap: '1.25rem' }}>
@@ -340,6 +360,36 @@ export default function Footer() {
                     className="footer-link"
                   >
                     Waitlist
+                    <style jsx>{`
+                      .footer-link:hover {
+                        color: var(--accent);
+                        transform: translateX(5px);
+                      }
+                    `}</style>
+                  </a>
+                </li>
+                <li>
+                  <a 
+                    href="#community" 
+                    style={{ color: '#a0a0a0', transition: 'all 0.2s ease', display: 'inline-block' }}
+                    className="footer-link"
+                  >
+                    Community
+                    <style jsx>{`
+                      .footer-link:hover {
+                        color: var(--accent);
+                        transform: translateX(5px);
+                      }
+                    `}</style>
+                  </a>
+                </li>
+                <li>
+                  <a 
+                    href="#pricing" 
+                    style={{ color: '#a0a0a0', transition: 'all 0.2s ease', display: 'inline-block' }}
+                    className="footer-link"
+                  >
+                    Pricing
                     <style jsx>{`
                       .footer-link:hover {
                         color: var(--accent);
