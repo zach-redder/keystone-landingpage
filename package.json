@@ -15,7 +15,7 @@
     "@vercel/analytics": "^1.5.0",
     "autoprefixer": "^10.4.16",
     "lucide-react": "^0.307.0",
-    "next": "^15.3.2",
+    "next": "15.3.8",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.49.2",
