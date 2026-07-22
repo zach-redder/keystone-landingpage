@@ -228,7 +228,7 @@ a {
     justify-content: space-between !important;
   }
   .hero-content {
-    margin-right: 4rem;
+    margin-right: -5rem;
     flex: 1;
     order: 1 !important;
     text-align: left !important;

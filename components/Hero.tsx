@@ -1,5 +1,6 @@
+'use client';
 import React, { useState } from 'react';
-import Image from 'next/image';
+import Spline from '@splinetool/react-spline';
 
 export default function Hero() {
   const [email, setEmail] = useState('');
@@ -110,7 +111,7 @@ export default function Hero() {
         `,
         backgroundSize: '50px 50px',
         pointerEvents: 'none',
-        zIndex: 0,
+        zIndex: 2,
         animation: 'grid-pulse 8s ease-in-out infinite'
       }}></div>
       
@@ -123,6 +124,7 @@ export default function Hero() {
         borderRadius: '50%',
         top: '20%',
         left: '15%',
+        zIndex: 2,
         animation: 'float-particle 15s linear infinite'
       }}></div>
       <div className="particle particle-2" style={{
@@ -133,6 +135,7 @@ export default function Hero() {
         borderRadius: '50%',
         top: '40%',
         right: '20%',
+        zIndex: 2,
         animation: 'float-particle 20s linear infinite reverse'
       }}></div>
       <div className="particle particle-3" style={{
@@ -143,6 +146,7 @@ export default function Hero() {
         borderRadius: '50%',
         top: '70%',
         left: '10%',
+        zIndex: 2,
         animation: 'float-particle 18s linear infinite'
       }}></div>
       
@@ -154,8 +158,10 @@ export default function Hero() {
         position: 'relative',
         zIndex: 1,
         height: '100%',
-        marginTop: '-5vh'
-      }}>        <div className="hero-container" style={{ 
+        marginTop: '-5vh',
+        marginLeft: '5rem',
+      }}>        
+      <div className="hero-container" style={{ 
           display: 'flex', 
           flexDirection: 'column',
           width: '100%',
@@ -163,7 +169,8 @@ export default function Hero() {
           textAlign: 'center',
           marginTop: 'auto',
           marginBottom: 'auto',
-          gap: '5rem'
+          gap: '1.5rem',
+          marginLeft: '3rem',
         }}>          {/* Left side - Text and CTA */}
           <div className="hero-content" style={{ 
             display: 'flex', 
@@ -178,14 +185,14 @@ export default function Hero() {
               fontWeight: 'bold', 
               color: 'white', 
               lineHeight: 1.2,
-              marginBottom: '1.5rem',
+              marginBottom: '0rem',
               background: 'linear-gradient(135deg, #ffffff 0%, #e0e0e0 50%, #ffffff 100%)',
               backgroundClip: 'text',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
               animation: 'shimmer 3s ease-in-out infinite'
             }}>
-              Overcoming
+              WHO ARE
                <span style={{ 
                 color: 'var(--accent)',
                 background: 'linear-gradient(135deg, var(--accent) 0%, #f0f5a8 50%, var(--accent) 100%)',
@@ -193,17 +200,29 @@ export default function Hero() {
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
                 textShadow: '0 0 20px rgba(212, 222, 149, 0.3)'
-              }}> doubt </span>is hard.
-            </h1>            <p className="hero-description animate-on-scroll" style={{ 
-              fontSize: 'clamp(1.1rem, 3vw, 1.25rem)', 
-              color: '#e0e0e0', 
-              maxWidth: '450px', 
+              }}> YOU</span>?
+            </h1>    
+            <p className="hero-description animate-on-scroll" style={{
+              fontSize: 'clamp(1.25rem, 3.5vw, 1.75rem)',
+              color: '#e0e0e0',
+              maxWidth: '450px',
               lineHeight: 1.6,
               marginBottom: '1.5rem',
               textShadow: '0 2px 4px rgba(0, 0, 0, 0.3)'
             }}>
-             We make it easy for everyone. Keystone is the app for overcoming doubt and achieving your dreams.
-            </p>            <div className="hero-cta" style={{ width: '100%', maxWidth: '450px' }}>
+             Or who have you settled for?
+            </p>
+            <p className="hero-description animate-on-scroll" style={{
+              fontSize: 'clamp(0.95rem, 2.2vw, 1.05rem)',
+              color: '#e0e0e0',
+              maxWidth: '450px',
+              lineHeight: 1.6,
+              marginBottom: '1.5rem',
+              textShadow: '0 2px 4px rgba(0, 0, 0, 0.3)'
+            }}>
+             Affirm who you are. Question who you're becoming. Find the mean between certainty and doubt.
+            </p>
+            <div className="hero-cta" style={{ width: '100%', maxWidth: '450px' }}>
               <form onSubmit={handleSubmit} className="waitlist-form" style={{
                 position: 'relative',
                 background: 'rgba(47, 47, 47, 0.8)',
@@ -354,115 +373,58 @@ export default function Hero() {
               )}
             </div>
           </div>
-          {/* Right side - Phone mockup */}
-          <div className="hero-phone" style={{ 
+          {/* Right side - Spline scene */}
+          <div className="hero-phone" style={{
             order: 2,
-            marginTop: '4rem'
           }}>
-            <div className="hero-phone-container float" style={{ 
+            {/* Fixed-size scene, scaled down visually per viewport so the camera framing never re-crops */}
+            <div
+              className="spline-wrapper"
+              onWheelCapture={(e) => e.stopPropagation()}
+              onPointerDownCapture={(e) => e.stopPropagation()}
+              onMouseDownCapture={(e) => e.stopPropagation()}
+              style={{
+              width: 'clamp(300px, min(50vw, calc(100vw - 420px)), 800px)',
+              aspectRatio: '1 / 1',
               position: 'relative',
-              animation: 'subtle-float 12s cubic-bezier(0.4, 0, 0.2, 1) infinite',
-              transition: 'transform 0.3s ease',
-              width: 'clamp(200px, 40vw, 320px)',
-              height: 'auto'
-            }}>              {/* Enhanced multi-layer glow effect */}
-              <div className="hero-phone-glow-outer" style={{
+              overflow: 'hidden',
+              borderRadius: '40px',
+              background: 'transparent'
+            }}>
+              {/* Scaled inner stage - the Spline canvas and the badge-cover patch move together */}
+              <div style={{
                 position: 'absolute',
                 top: '50%',
                 left: '50%',
-                transform: 'translate(-50%, -50%)',
-                width: 'clamp(300px, 50vw, 600px)',
-                height: 'auto',
-                borderRadius: '60px',
-                background: 'radial-gradient(ellipse at center, rgba(212, 222, 149, 0.12) 0%, rgba(212, 222, 149, 0.06) 40%, transparent 70%)',
-                filter: 'blur(80px)',
-                zIndex: 1,
-                pointerEvents: 'none',
-                animation: 'outer-glow 6s ease-in-out infinite',
-              }} />
-
-              <div className="hero-phone-glow-mid" style={{
-                position: 'absolute',
-                top: '50%',
-                left: '50%',
-                transform: 'translate(-50%, -50%)',
-                width: 'clamp(300px, 50vw, 600px)',
-                height: 'auto',
-                borderRadius: '48px',
-                background: 'radial-gradient(ellipse at center, rgba(212, 222, 149, 0.25) 0%, rgba(212, 222, 149, 0.15) 50%, transparent 80%)',
-                filter: 'blur(40px)',
-                zIndex: 2,
-                pointerEvents: 'none',
-                animation: 'mid-glow 4.5s ease-in-out infinite',
-              }} />
-              
-              <div className="hero-phone-glow-inner" style={{
-                position: 'absolute',
-                top: '50%',
-                left: '50%',
-                transform: 'translate(-50%, -50%)',
-                width: 'clamp(300px, 50vw, 600px)',
-                height: 'auto',
-                borderRadius: '40px', 
-                background: 'radial-gradient(ellipse at center, rgba(212, 222, 149, 0.2) 0%, rgba(212, 222, 149, 0.1) 60%, transparent 90%)',
-                filter: 'blur(20px)',
-                zIndex: 3,
-                pointerEvents: 'none',
-                animation: 'inner-glow 3s ease-in-out infinite',
-              }} />
-
-              {/* Extra close glow for more intensity */}
-              <div className="hero-phone-glow-close" style={{
-                position: 'absolute', 
-                top: '50%',
-                left: '50%',
-                transform: 'translate(-50%, -50%)',
-                width: 'clamp(300px, 50vw, 600px)',
-                height: 'auto',
-                borderRadius: '38px',
-                background: 'radial-gradient(ellipse at center, rgba(212, 222, 149, 0.15) 0%, rgba(212, 222, 149, 0.08) 70%, transparent 100%)',
-                filter: 'blur(8px)',
-                zIndex: 4,
-                pointerEvents: 'none',
-                animation: 'close-glow 2s ease-in-out infinite',
-              }} />              <Image
-                src="/mockup.png"
-                alt="Keystone App Mockup"
-                width={350}
-                height={700}
-                style={{
-                  width: 'clamp(200px, 45vw, 320px)',
-                  height: 'auto',
-                  borderRadius: '40px',
-                  position: 'relative',
-                  zIndex: 5,
-                  background: 'transparent',
-                  boxShadow: '0 25px 50px rgba(0, 0, 0, 0.4), 0 15px 35px rgba(212, 222, 149, 0.1)',
-                  filter: 'drop-shadow(0 10px 20px rgba(212, 222, 149, 0.15))'
-                }}
-              />
+                width: '800px',
+                height: '800px',
+                transformOrigin: 'center center',
+                transform: 'translate(-50%, -50%) scale(calc(clamp(300px, min(50vw, calc(100vw - 420px)), 800px) / 800px))'
+              }}>
+                <Spline
+                  scene="https://prod.spline.design/A39kgRJgUzRIY4Qv/scene.splinecode"
+                  style={{
+                    display: 'block',
+                    width: '100%',
+                    height: '100%',
+                    background: 'transparent'
+                  }}
+                />
+                {/* Covers the Spline free-tier "Built with Spline" badge, which is baked into the canvas render itself */}
+                <div style={{
+                  position: 'absolute',
+                  right: 0,
+                  bottom: 0,
+                  width: '300px',
+                  height: '130px',
+                  background: 'radial-gradient(ellipse 260px 100px at 100% 100%, #2a2a2a 0%, #2a2a2a 75%, rgba(42,42,42,0) 100%)',
+                  pointerEvents: 'none'
+                }} />
+              </div>
             </div>
           </div>
         </div>
       </div>      <style jsx global>{`
-        @keyframes subtle-float {
-          0% {
-            transform: translateY(0);
-          }
-          25% {
-            transform: translateY(-4px);
-          }
-          50% {
-            transform: translateY(-8px);
-          }
-          75% {
-            transform: translateY(-4px);
-          }
-          100% {
-            transform: translateY(0);
-          }
-        }
-
         @keyframes shimmer {
           0% {
             background-position: -200px 0;
@@ -498,48 +460,6 @@ export default function Hero() {
           }
         }
 
-        @keyframes outer-glow {
-          0%, 100% {
-            opacity: 0.8;
-            transform: translate(-50%, -50%) scale(1);
-          }
-          50% {
-            opacity: 1;
-            transform: translate(-50%, -50%) scale(1.05);
-          }
-        }
-
-        @keyframes mid-glow {
-          0%, 100% {
-            opacity: 0.85;
-            filter: blur(40px);
-          }
-          50% {
-            opacity: 1;
-            filter: blur(50px);
-          }
-        }
-
-        @keyframes inner-glow {
-          0%, 100% {
-            opacity: 0.7;
-            filter: blur(20px);
-          }
-          50% {
-            opacity: 0.9;
-            filter: blur(25px);
-          }
-        }        @keyframes close-glow {
-          0%, 100% {
-            opacity: 0.6;
-            filter: blur(8px);
-          }
-          50% {
-            opacity: 0.8;
-            filter: blur(12px);
-          }
-        }
-
         @keyframes border-glow {
           0%, 100% {
             opacity: 0.5;
@@ -569,16 +489,6 @@ export default function Hero() {
         .animate-on-scroll.animate-in {
           opacity: 1;
           transform: translateY(0);
-        }
-
-        .hero-phone-container:hover {
-          transform: scale(1.03) !important;
-          animation-play-state: paused;
-        }        .hero-phone-container:hover .hero-phone-glow-outer,
-        .hero-phone-container:hover .hero-phone-glow-mid,
-        .hero-phone-container:hover .hero-phone-glow-inner,
-        .hero-phone-container:hover .hero-phone-glow-close {
-          animation-play-state: paused;
         }
 
         .waitlist-form:hover {
@@ -687,30 +597,6 @@ export default function Hero() {
             padding: 4rem 0 4rem !important;
           }
           
-          .hero-phone-glow-outer {
-            width: 380px !important;
-            height: 720px !important;
-            border-radius: 40px !important;
-          }
-          
-          .hero-phone-glow-mid {
-            width: 340px !important;
-            height: 650px !important;
-            border-radius: 36px !important;
-          }
-          
-          .hero-phone-glow-inner {
-            width: 300px !important;
-            height: 580px !important;
-            border-radius: 32px !important;
-          }
-
-          .hero-phone-glow-close {
-            width: 260px !important;
-            height: 520px !important;
-            border-radius: 30px !important;
-          }
-
           .grid-overlay {
             background-size: 30px 30px !important;
           }
@@ -765,25 +651,6 @@ export default function Hero() {
             margin-top: 2rem !important;
           }
           
-          .hero-phone-glow-outer {
-            width: 320px !important;
-            height: 600px !important;
-          }
-          
-          .hero-phone-glow-mid {
-            width: 280px !important;
-            height: 550px !important;
-          }
-          
-          .hero-phone-glow-inner {
-            width: 250px !important;
-            height: 500px !important;
-          }
-
-          .hero-phone-glow-close {
-            width: 220px !important;
-            height: 460px !important;
-          }
         }        @media (max-width: 360px) {
           .hero-title {
             font-size: clamp(1.875rem, 8vw, 2.25rem) !important;
@@ -800,25 +667,6 @@ export default function Hero() {
             font-size: 0.9rem !important;
           }
           
-          .hero-phone-glow-outer {
-            width: 280px !important;
-            height: 540px !important;
-          }
-          
-          .hero-phone-glow-mid {
-            width: 240px !important;
-            height: 480px !important;
-          }
-          
-          .hero-phone-glow-inner {
-            width: 210px !important;
-            height: 420px !important;
-          }
-
-          .hero-phone-glow-close {
-            width: 190px !important;
-            height: 380px !important;
-          }
         }
       `}</style>
     </section>

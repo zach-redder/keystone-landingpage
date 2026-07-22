@@ -1,11 +1,13 @@
 'use client';
 import Link from 'next/link';
-import Image from 'next/image'; 
+import Image from 'next/image';
 import { useEffect, useState } from 'react';
+import { useSound } from '../hooks/useSound';
 
 export default function Header() {
   const [isMobile, setIsMobile] = useState(true);
   const [scrolled, setScrolled] = useState(false);
+  const playClick = useSound('/audio/click.mp3', 0.5);
   
   useEffect(() => {
     const checkSize = () => {
@@ -258,10 +260,13 @@ export default function Header() {
             `}</style>
           </a>
         </nav>          
-        <a 
-          href="#waitlist" 
-          onClick={(e) => scrollToSection(e, 'waitlist')}
-          className="btn btn-primary" 
+        <a
+          href="#waitlist"
+          onClick={(e) => {
+            scrollToSection(e, 'waitlist');
+            playClick();
+          }}
+          className="btn btn-primary"
           style={{
             padding: scrolled 
               ? 'clamp(0.5rem, 1vw, 0.6rem) clamp(1rem, 2vw, 1.5rem)' 
