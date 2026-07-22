@@ -139,12 +139,78 @@ export default function FAQ() {
                 textShadow: '0 1px 2px rgba(0, 0, 0, 0.3)'
               }}>
                 <p>
-                  Keystone is a free alignment app that helps you overcome internalized doubt and judgement using daily reminders
-                  and powerful AI feedback. It&apos;s designed to keep you connected to your inner self, to ignore external pressures,
-                  and to live your life chasing your own dreams.
+                  Keystone is an app built around one idea: the mean between certainty and doubt. Talk to an AI that helps you
+                  affirm who you are, or one that questions who you&apos;re becoming — both are built to keep you grounded in
+                  yourself without going stagnant.
                 </p>
               </div>
-            </details>            {/* FAQ Item 2 - Enhanced */}            <details className="animate-on-scroll delay-200" style={{ 
+            </details>            {/* FAQ Item - Two AI Modes */}            <details className="animate-on-scroll delay-200" style={{
+              background: 'linear-gradient(145deg, rgba(60, 60, 60, 0.4), rgba(30, 30, 30, 0.4))',
+              borderRadius: 'clamp(15px, 2vw, 20px)',
+              border: '1px solid rgba(212, 222, 149, 0.15)',
+              backdropFilter: 'blur(10px)',
+              transition: 'all 0.3s ease',
+              transform: 'translateY(20px)',
+              boxShadow: '0 8px 25px rgba(0, 0, 0, 0.15), 0 4px 10px rgba(212, 222, 149, 0.05)',
+              position: 'relative',
+              cursor: 'pointer'
+            }}>
+              {/* Enhanced glow effect */}
+              <div style={{
+                position: 'absolute',
+                top: '0',
+                left: '0',
+                right: '0',
+                bottom: '0',
+                background: 'radial-gradient(ellipse at center, rgba(212, 222, 149, 0.02) 0%, transparent 70%)',
+                borderRadius: 'clamp(15px, 2vw, 20px)',
+                zIndex: 0,
+                pointerEvents: 'none'
+              }}></div>
+
+              <summary style={{
+                display: 'flex',
+                justifyContent: 'space-between',
+                alignItems: 'center',
+                padding: 'clamp(1rem, 2vw, 1.35rem) clamp(1rem, 2vw, 1.5rem)',
+                cursor: 'pointer',
+                fontSize: 'clamp(1rem, 2vw, 1.2rem)',
+                fontWeight: '600',
+                color: 'var(--accent)',
+                userSelect: 'none',
+                position: 'relative',
+                zIndex: 1,
+                textShadow: '0 0 8px rgba(212, 222, 149, 0.2)',
+                minHeight: '48px',
+                lineHeight: '1.3'
+              }}>
+                <span>What's the difference between the two AI modes?</span>
+                <span style={{
+                  transition: 'transform 0.3s ease',
+                  display: 'inline-block',
+                  fontSize: 'clamp(1.2rem, 2vw, 1.4rem)',
+                  fontWeight: '300',
+                  filter: 'drop-shadow(0 0 4px rgba(212, 222, 149, 0.3))'
+                }}>+</span>
+              </summary>
+              <div style={{
+                padding: 'clamp(0.5rem, 1vw, 0.75rem) clamp(1rem, 2vw, 1.5rem) clamp(1rem, 2vw, 1.5rem)',
+                color: '#e0e0e0',
+                fontSize: 'clamp(0.95rem, 2vw, 1.125rem)',
+                lineHeight: '1.7',
+                borderTop: '1px solid rgba(212, 222, 149, 0.1)',
+                position: 'relative',
+                zIndex: 1,
+                textShadow: '0 1px 2px rgba(0, 0, 0, 0.3)'
+              }}>
+                <p>
+                  Affirm mode grounds you — it helps you hold steady when self-doubt or outside opinions start to pull at your
+                  sense of self. Socratic mode does the opposite: it questions your beliefs and assumptions so you don&apos;t
+                  calcify into a fixed, closed-off identity. It won&apos;t hand you answers — it&apos;s built to help you find
+                  them yourself.
+                </p>
+              </div>
+            </details>            {/* FAQ Item 2 - Enhanced */}            <details className="animate-on-scroll delay-200" style={{
               background: 'linear-gradient(145deg, rgba(60, 60, 60, 0.4), rgba(30, 30, 30, 0.4))',
               borderRadius: 'clamp(15px, 2vw, 20px)',
               border: '1px solid rgba(212, 222, 149, 0.15)',

@@ -7,7 +7,6 @@ const Community: React.FC = () => {
       position: 'relative',
       width: '100vw',
       marginLeft: 'calc(50% - 50vw)',
-      background: 'linear-gradient(to bottom, rgba(43, 43, 43, 1) 0%, rgba(42, 42, 42, 0.95) 50%, rgba(41, 41, 41, 0.9) 100%)',
       minHeight: '100vh',
       display: 'flex',
       alignItems: 'center',
@@ -57,7 +56,7 @@ const Community: React.FC = () => {
             lineHeight: '1.5',
             marginBottom: 'clamp(2rem, 5vw, 3.5rem)'
           }}>
-            Our Discord community is a vibrant group of individuals striving to actualize their vision by overcoming doubt and the pressure of outside opinions by using true self projection.
+            Our Discord community is a vibrant group of individuals finding the mean between certainty and doubt, together.
           </p>
           <a 
             href="https://discord.me/thealignedcore" 

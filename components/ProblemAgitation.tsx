@@ -92,24 +92,24 @@ export default function ProblemAgitation() {
           
           <div style={{ position: 'relative', zIndex: 1 }}>
             <p style={{ fontSize: '1.35rem', color: '#e0e0e0', marginBottom: '2.2rem', lineHeight: 1.7, fontWeight: 500, textShadow: '0 1px 2px rgba(0, 0, 0, 0.3)' }}>
-              It's so easy to quit. Why? Constant internal tension...
+              It's easy to get stuck at either extreme.
             </p>
             <p style={{ fontSize: '1.18rem', color: '#b0b0b0', marginBottom: '2.2rem', lineHeight: 1.7, textShadow: '0 1px 2px rgba(0, 0, 0, 0.3)' }}>
-              You have doubt and care what other people think of you. The everyday noise of life and other people's opinions tempts you to give up.
+              Too certain, and you calcify — closed off, performing a fixed idea of yourself.
             </p>
             <p style={{ fontSize: '1.13rem', color: '#b0b0b0', fontStyle: 'italic', marginBottom: 0, textShadow: '0 1px 2px rgba(0, 0, 0, 0.3)' }}>
-              Not remembering your why and aligning your actions with your goals causes doubt, internalized judgement, and a feeling of constant internal tension.
+              Too doubtful, and you dissolve — pulled apart by everyone else's opinion of who you should be.
             </p>
             <div style={{ height: '1.5rem' }} />
-            <p style={{ 
-              fontSize: '1.5rem', 
-              color: 'var(--accent)', 
-              fontWeight: 600, 
-              fontStyle: 'italic', 
+            <p style={{
+              fontSize: '1.5rem',
+              color: 'var(--accent)',
+              fontWeight: 600,
+              fontStyle: 'italic',
               marginBottom: 0,
               textShadow: '0 0 10px rgba(212, 222, 149, 0.3)'
             }}>
-              Keystone is here to fix that with true self projection.
+              Keystone helps you find the mean between them: affirm what you know, question what you don't.
             </p>
           </div>
         </div>

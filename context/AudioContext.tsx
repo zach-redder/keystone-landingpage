@@ -3,7 +3,7 @@ import { createContext, useContext, useEffect, useRef, useState, ReactNode } fro
 
 const STORAGE_KEY = 'keystone-audio-volume';
 const DEFAULT_VOLUME = 0.5;
-const FADE_DURATION_MS = 1500;
+const FADE_DURATION_MS = 250;
 
 interface AudioContextValue {
   muted: boolean;

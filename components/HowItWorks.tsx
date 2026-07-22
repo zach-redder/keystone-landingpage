@@ -64,7 +64,7 @@ export default function HowItWorks() {
               maxWidth: '800px',
               textShadow: '0 1px 2px rgba(0, 0, 0, 0.3)'
             }}>
-              A free and simple process to help you align your outward identity with your inner self.
+              Two ways to talk to Keystone's AI — one to affirm who you are, one to question who you're becoming.
             </p>
           </div>          <div style={{ maxWidth: '900px', margin: '0 auto', position: 'relative' }}>
             <div style={{ display: 'flex', flexDirection: 'column' }}>

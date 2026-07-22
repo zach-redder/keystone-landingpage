@@ -65,7 +65,7 @@ export default function Features() {
               maxWidth: '800px',
               textShadow: '0 1px 2px rgba(0, 0, 0, 0.3)'
             }}>
-              We have everything you need to align your outward identity with your inner self.
+              Everything you need to affirm who you are and question who you're becoming.
             </p>
           </div>
           
@@ -278,15 +278,15 @@ export default function Features() {
                   marginBottom: '1.25rem',
                   color: 'var(--accent)',
                   textShadow: '0 0 10px rgba(212, 222, 149, 0.3)'
-                }}>AI Guidance</h3>
-                <p style={{ 
-                  color: '#e0e0e0', 
-                  fontSize: '1.125rem', 
+                }}>Two AI Modes</h3>
+                <p style={{
+                  color: '#e0e0e0',
+                  fontSize: '1.125rem',
                   lineHeight: 1.7,
                   marginBottom: '1.5rem',
                   textShadow: '0 1px 2px rgba(0, 0, 0, 0.3)'
                 }}>
-                  Keystone's customized AI will be there to support at all times. Get personalized insights from AI that understands and reflects back your inner self.
+                  Affirm Mode: an AI that helps you hold your ground when doubt and outside opinions creep in. Socratic Mode: an AI that asks the hard questions — about your beliefs, your identity, your purpose — so you find the answers yourself.
                 </p>
                 <div style={{ marginTop: 'auto', paddingTop: '1rem' }}>
                   <a href="#waitlist" className="feature-link" style={{ 
