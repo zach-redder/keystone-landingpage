@@ -49,17 +49,49 @@ const Community: React.FC = () => {
           transition: 'transform 0.3s ease, box-shadow 0.3s ease',
           backdropFilter: 'blur(10px)'
         }}>
-          <p className="text-2xl mb-14" style={{
-            color: '#e0e0e0',
-            textShadow: '0 1px 2px rgba(0, 0, 0, 0.3)',
-            fontSize: 'clamp(1.125rem, 4vw, 1.5rem)',
-            lineHeight: '1.5',
-            marginBottom: 'clamp(2rem, 5vw, 3.5rem)'
-          }}>
-            Our Discord community is a vibrant group of individuals finding the mean between certainty and doubt, together.
-          </p>
+          <div style={{ textAlign: 'left', margin: '0 auto', maxWidth: '780px' }}>
+            <p style={{
+              color: '#e0e0e0',
+              textShadow: '0 1px 2px rgba(0, 0, 0, 0.3)',
+              fontSize: 'clamp(1.15rem, 3.2vw, 1.35rem)',
+              lineHeight: '1.7',
+              fontWeight: 500,
+              marginBottom: 'clamp(1.5rem, 4vw, 2rem)'
+            }}>
+              Keystone isn&apos;t just an app — it&apos;s a community.
+            </p>
+            <p style={{
+              color: '#b0b0b0',
+              textShadow: '0 1px 2px rgba(0, 0, 0, 0.3)',
+              fontSize: 'clamp(1rem, 2.8vw, 1.15rem)',
+              lineHeight: '1.7',
+              marginBottom: 'clamp(1.5rem, 4vw, 2rem)'
+            }}>
+              Our community is a space to express yourself without the fear of outside judgment that keeps most people quiet. Your creative work, your business, your goals, your setbacks and your wins, whatever you&apos;re wokring towards, without filtering it through what other people expect of you.
+            </p>
+            <p style={{
+              color: '#b0b0b0',
+              textShadow: '0 1px 2px rgba(0, 0, 0, 0.3)',
+              fontSize: 'clamp(1rem, 2.8vw, 1.15rem)',
+              lineHeight: '1.7',
+              marginBottom: 'clamp(1.5rem, 4vw, 2rem)'
+            }}>
+              I&apos;m in there myself, every day, as the founder — sharing what it actually looks like to build Keystone, talking through the philosophy behind all of it, and going through the same process the app is built around. It&apos;s the community around everything I&apos;m building all in one place.
+            </p>
+            <p style={{
+              fontSize: 'clamp(1.05rem, 3vw, 1.25rem)',
+              color: 'var(--accent)',
+              fontWeight: 600,
+              fontStyle: 'italic',
+              lineHeight: '1.6',
+              textShadow: '0 0 10px rgba(212, 222, 149, 0.3)',
+              marginBottom: 'clamp(2rem, 5vw, 3rem)'
+            }}>
+              If you want a place to be unapologetically yourself while you figure out who that is, this is it.
+            </p>
+          </div>
           <a 
-            href="https://discord.me/thealignedcore" 
+            href="https://discord.gg/qgkuRUWaD9" 
             className="discord-button font-semibold rounded-full" 
             target="_blank"
             style={{

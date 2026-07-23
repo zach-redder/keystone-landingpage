@@ -124,7 +124,11 @@ export default function AboutFounder() {
             <div style={{ flex: 1, minWidth: 0, textAlign: 'left', display: 'flex', flexDirection: 'column', alignItems: 'flex-start', justifyContent: 'center' }}>
               <h3 style={{ color: 'var(--accent)', fontWeight: 600, fontSize: '1.25rem', marginBottom: '0.5rem' }}>Zach Redder</h3>
               <p style={{ color: '#e0e0e0', fontSize: '1.15rem', lineHeight: 1.7, maxWidth: '600px', marginBottom: '1.2rem' }}>
-                "I built Keystone because I struggled for my entire life to consistently live according to my own story. I know what it's like to feel pulled in a hundred directions, to lose sight of what matters most, and to want more alignment between who you are now and who you wish to become. My mission is to help you (and myself) close that gap, to have a picture of the good life and take action to make it a reality."
+                "I built Keystone because I struggled for my entire life to consistently live according to my own story. I know what it's like to feel pulled in a
+                hundred directions, to lose sight of what matters most, and to want more alignment between who you are now and who you wish to become.
+                I also know what it's like to get too sure of myself and stop growing, Keystone is built on the same tension I've had to work through
+                myself: hold your ground, but never stop questioning it. My mission is to help you (and myself) close that gap, to have a picture of
+                the good life and take action to make it a reality."
               </p>
               <span style={{ 
                 color: 'var(--accent)', 

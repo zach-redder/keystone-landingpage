@@ -139,9 +139,8 @@ export default function FAQ() {
                 textShadow: '0 1px 2px rgba(0, 0, 0, 0.3)'
               }}>
                 <p>
-                  Keystone is an app built around one idea: the mean between certainty and doubt. Talk to an AI that helps you
-                  affirm who you are, or one that questions who you&apos;re becoming — both are built to keep you grounded in
-                  yourself without going stagnant.
+                  Keystone is an app built around one idea: the mean between certainty and doubt. Talk to an AI that helps you affirm
+                  who you are when outside opinions get loud, or one that questions who you're becoming when you start to feel stagnant.
                 </p>
               </div>
             </details>            {/* FAQ Item - Two AI Modes */}            <details className="animate-on-scroll delay-200" style={{
@@ -204,10 +203,9 @@ export default function FAQ() {
                 textShadow: '0 1px 2px rgba(0, 0, 0, 0.3)'
               }}>
                 <p>
-                  Affirm mode grounds you — it helps you hold steady when self-doubt or outside opinions start to pull at your
-                  sense of self. Socratic mode does the opposite: it questions your beliefs and assumptions so you don&apos;t
-                  calcify into a fixed, closed-off identity. It won&apos;t hand you answers — it&apos;s built to help you find
-                  them yourself.
+                  Affirm Mode is there to ground you — it reminds you of who you are, using your own stored keys, when doubt or other 
+                  people's opinions start to drown that out. Question Mode questions your beliefs 
+                  and identity instead of affirming them, asking hard questions so you find your own answers rather than being handed one.
                 </p>
               </div>
             </details>            {/* FAQ Item 2 - Enhanced */}            <details className="animate-on-scroll delay-200" style={{
@@ -271,7 +269,7 @@ export default function FAQ() {
               }}>
                 <p>
                   We&apos;re working hard to launch as soon as possible so stay tuned! Join the waitlist to get notified as soon as we go live.
-                  Early waitlist members will get development updates, priority access to the beta, .
+                  Early waitlist members will get development updates, priority access to the beta, and exclusive content.
                 </p>
               </div>
             </details>

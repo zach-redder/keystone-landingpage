@@ -39,6 +39,9 @@ yarn-error.log*
 # cursor
 .cursor
 
+# playwright
+*./playwright-mcp
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts

@@ -214,20 +214,18 @@ const Pricing: React.FC = () => {
               "Basic identity storage",
               "Daily reminders",
               "Progress tracking",
-              "Action logging & alignment",
               "Keystone member role"
             ]}
           />
           <PricingTier
             name="Monthly Pro"
-            price="$9.99"
+            price="$4.99"
             period="/month"
-            description="Best for big dreams"
+            description="Best for testing the waters"
             features={[
               "All Free features",
               "Advanced AI features",
               "Unlimited identity storage",
-              "Unlimited alignment",
               "Keystone pro role"
             ]}
             isPopular={true}

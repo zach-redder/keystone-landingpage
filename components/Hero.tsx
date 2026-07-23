@@ -76,12 +76,11 @@ export default function Hero() {
     }
   };
   return (
-    <section style={{ 
+    <section className="hero-section" style={{
       padding: '4rem 0 6rem',
       position: 'relative',
       width: '100vw',
       marginLeft: 'calc(50% - 50vw)',
-      minHeight: '100vh',
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center'
@@ -149,19 +148,17 @@ export default function Hero() {
         animation: 'float-particle 18s linear infinite'
       }}></div>
       
-      <div style={{ 
-        display: 'flex', 
-        flexDirection: 'column', 
+      <div className="hero-inner" style={{
+        display: 'flex',
+        flexDirection: 'column',
         gap: '3rem',
         alignItems: 'center',
         position: 'relative',
         zIndex: 1,
         height: '100%',
-        marginTop: '-5vh',
-        marginLeft: '5rem',
-      }}>        
-      <div className="hero-container" style={{ 
-          display: 'flex', 
+      }}>
+      <div className="hero-container" style={{
+          display: 'flex',
           flexDirection: 'column',
           width: '100%',
           alignItems: 'center',
@@ -169,7 +166,6 @@ export default function Hero() {
           marginTop: 'auto',
           marginBottom: 'auto',
           gap: '1.5rem',
-          marginLeft: '3rem',
         }}>          {/* Left side - Text and CTA */}
           <div className="hero-content" style={{ 
             display: 'flex', 
@@ -424,6 +420,11 @@ export default function Hero() {
           </div>
         </div>
       </div>      <style jsx global>{`
+        .hero-section {
+          min-height: 100vh;
+          min-height: 100dvh;
+        }
+
         @keyframes shimmer {
           0% {
             background-position: -200px 0;

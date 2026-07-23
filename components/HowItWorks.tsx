@@ -64,7 +64,7 @@ export default function HowItWorks() {
               maxWidth: '800px',
               textShadow: '0 1px 2px rgba(0, 0, 0, 0.3)'
             }}>
-              Two ways to talk to Keystone's AI — one to affirm who you are, one to question who you're becoming.
+              Two ways to use Keystone. One to affirm who you are. One to question who you're becoming.
             </p>
           </div>          <div style={{ maxWidth: '900px', margin: '0 auto', position: 'relative' }}>
             <div style={{ display: 'flex', flexDirection: 'column' }}>
@@ -119,7 +119,7 @@ export default function HowItWorks() {
                     color: 'white',
                     lineHeight: 1.2,
                     textShadow: '0 2px 4px rgba(0, 0, 0, 0.3)'
-                  }}>Define Your Identity</h3>
+                  }}>Define Your Keys</h3>
                   <p style={{ 
                     color: '#e0e0e0', 
                     fontSize: '1.25rem', 
@@ -128,9 +128,8 @@ export default function HowItWorks() {
                     marginBottom: '1.5rem',
                     textShadow: '0 1px 2px rgba(0, 0, 0, 0.3)'
                   }}>
-                    Define and iterate upon your keys - core values, life goals, and future self vision.
-                    Keystone makes it easy to ground yourself in what you envision for yourself, disregarding
-                    other people's judgment.
+                    Start with your keys — the core values, goals, and vision of who you're becoming.
+                    Your keys evolve as you do, update them yourself, or let a conversation with Keystone's AI update them for you.
                   </p>
                   <div className="quote-bubble" style={{ 
                     display: 'inline-block',
@@ -143,7 +142,7 @@ export default function HowItWorks() {
                     boxShadow: '0 4px 12px rgba(212, 222, 149, 0.1)',
                     transition: 'transform 0.2s ease'
                   }}>
-                    &quot;Store your values to keep yourself grounded in the future.&quot;
+                    &quot;You can't align with a version of yourself you haven't defined yet.&quot;
                   </div>
                 </div>              </div>
               
@@ -207,7 +206,7 @@ export default function HowItWorks() {
                     color: 'white',
                     lineHeight: 1.2,
                     textShadow: '0 2px 4px rgba(0, 0, 0, 0.3)'
-                  }}>Daily Reminders</h3>
+                  }}>Affirm Mode</h3>
                   <p style={{ 
                     color: '#e0e0e0', 
                     fontSize: '1.25rem', 
@@ -216,9 +215,8 @@ export default function HowItWorks() {
                     marginBottom: '1.5rem',
                     textShadow: '0 1px 2px rgba(0, 0, 0, 0.3)'
                   }}>
-                    Get daily reminders that remind you of who you want to become and how to act accordingly.
-                    These reminders powered by AI use your stored keys making them completely personalized. This constant
-                    alignment is essential to help you stay on track.
+                    When outside opinions get loud and doubt creeps in, open Affirm Mode.
+                    This is the AI trained to remind you of who you already are, grounded in your actual keys, not generic encouragement.
                   </p>
                   <div className="quote-bubble" style={{ 
                     display: 'inline-block',
@@ -231,7 +229,7 @@ export default function HowItWorks() {
                     boxShadow: '0 4px 12px rgba(212, 222, 149, 0.1)',
                     transition: 'transform 0.2s ease'
                   }}>
-                    &quot;You need to remind yourself daily of who you are.&quot;
+                    &quot;You don't need convincing. You need reminding.&quot;
                   </div>
                 </div>
               </div>
@@ -296,7 +294,7 @@ export default function HowItWorks() {
                     color: 'white',
                     lineHeight: 1.2,
                     textShadow: '0 2px 4px rgba(0, 0, 0, 0.3)'
-                  }}>Log Actions</h3>
+                  }}>Question Mode</h3>
                   <p style={{ 
                     color: '#e0e0e0', 
                     fontSize: '1.25rem', 
@@ -305,8 +303,7 @@ export default function HowItWorks() {
                     marginBottom: '1.5rem',
                     textShadow: '0 1px 2px rgba(0, 0, 0, 0.3)'
                   }}>
-                    Daily nudges aren't enough? Log your unaligned actions and receive powerful AI feedback on your continuous alignment.
-                    Recieve customized AI instructions you can take to better align your outward identity with your inner self.
+                    Certainty left unchecked becomes stagnation. Question Mode doesn't affirm you, it questions you. It asks about your beliefs, your identity, your purpose, and it doesn't hand you answers.
                   </p>
                   <div className="quote-bubble" style={{ 
                     display: 'inline-block',
@@ -319,7 +316,7 @@ export default function HowItWorks() {
                     boxShadow: '0 4px 12px rgba(212, 222, 149, 0.1)',
                     transition: 'transform 0.2s ease'
                   }}>
-                    &quot;Learn from your mistakes to align properly.&quot;
+                    &quot;It doesn't answer for you. It makes you answer for yourself.&quot;
                   </div>
                 </div>
               </div>
@@ -383,7 +380,7 @@ export default function HowItWorks() {
                     color: 'white',
                     lineHeight: 1.2,
                     textShadow: '0 2px 4px rgba(0, 0, 0, 0.3)'
-                  }}>Affirm Your Vision</h3>
+                  }}>Daily Reminders</h3>
                   <p style={{ 
                     color: '#e0e0e0', 
                     fontSize: '1.25rem', 
@@ -392,8 +389,7 @@ export default function HowItWorks() {
                     marginBottom: '1.5rem',
                     textShadow: '0 1px 2px rgba(0, 0, 0, 0.3)'
                   }}>
-                    Whenever you feel tension, effortlessly affirm your vision to help you stay connected to inner self.
-                    Remind yourself of what you're working towards and keep away all doubt and judgement that will inevitably arise.
+                    Affirming who you are and questioning who you're becoming can't just happen when you remember to open the app. Keystone sends daily reminders — powered by your own keys — to keep you grounded.
                   </p>
                   <div className="quote-bubble" style={{ 
                     display: 'inline-block',
@@ -406,7 +402,7 @@ export default function HowItWorks() {
                     boxShadow: '0 4px 12px rgba(212, 222, 149, 0.1)',
                     transition: 'transform 0.2s ease'
                   }}>
-                    &quot;Never let internal tension overtake you.&quot;
+                    &quot;You need to remind yourself daily of who you are.&quot;
                   </div>
                 </div>
               </div>

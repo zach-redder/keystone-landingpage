@@ -70,7 +70,7 @@ export default function Waitlist() {
               textShadow: '0 1px 2px rgba(0, 0, 0, 0.3)',
               padding: '0 clamp(1rem, 3vw, 0)'
             }}>
-              Be among the first to experience Keystone and transform your life.
+              You've read this far because some part of this is already true for you. Be among the first to experience Keystone.
             </p>
           </div>            <div className="animate-on-scroll delay-100" style={{ 
             background: 'linear-gradient(145deg, rgba(60, 60, 60, 0.4), rgba(30, 30, 30, 0.4))',

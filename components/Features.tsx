@@ -125,7 +125,7 @@ export default function Features() {
                   marginBottom: '1.25rem',
                   color: 'var(--accent)',
                   textShadow: '0 0 10px rgba(212, 222, 149, 0.3)'
-                }}>Storing Keys</h3>
+                }}>Your Keys</h3>
                 <p style={{ 
                   color: '#e0e0e0', 
                   fontSize: '1.125rem', 
@@ -133,7 +133,7 @@ export default function Features() {
                   marginBottom: '1.5rem',
                   textShadow: '0 1px 2px rgba(0, 0, 0, 0.3)'
                 }}>
-                  Save your core values, life goals, future self vision, and more in one secure place. Access them whenever you need to iterate or recieve guidance.
+                  Your core values, goals, and vision of who you're becoming all stored in one place, and updated as you grow instead of staying frozen the day you wrote them.
                 </p>
                 <div style={{ marginTop: 'auto', paddingTop: '1rem' }}>
                   <a href="#waitlist" className="feature-link" style={{ 
@@ -143,7 +143,7 @@ export default function Features() {
                     fontSize: '1.125rem',
                     gap: '0.5rem',
                     textDecoration: 'none',
-                    transition: 'transform 0.2s ease, color 0.2s ease',
+                    transition: 'transform 0.2s ease, color 0.2s ease, background 0.3s ease, box-shadow 0.3s ease',
                     textShadow: '0 0 8px rgba(212, 222, 149, 0.2)'
                   }}>
                     Learn more <span style={{ transition: 'transform 0.2s ease', display: 'inline-block' }}>→</span>
@@ -194,14 +194,14 @@ export default function Features() {
                   boxShadow: '0 8px 16px rgba(212, 222, 149, 0.1)',
                   transition: 'transform 0.3s ease'
                 }}>
-                  <span style={{ fontSize: '2.5rem', filter: 'drop-shadow(0 0 8px rgba(212, 222, 149, 0.3))' }}>🔔</span>
+                  <span style={{ fontSize: '2.5rem', filter: 'drop-shadow(0 0 8px rgba(212, 222, 149, 0.3))' }}>🪞</span>
                 </div>                <h3 style={{ 
                   fontSize: '1.75rem', 
                   fontWeight: 600, 
                   marginBottom: '1.25rem',
                   color: 'var(--accent)',
                   textShadow: '0 0 10px rgba(212, 222, 149, 0.3)'
-                }}>Daily Reminders</h3>
+                }}>Affirm Mode</h3>
                 <p style={{ 
                   color: '#e0e0e0', 
                   fontSize: '1.125rem', 
@@ -209,7 +209,7 @@ export default function Features() {
                   marginBottom: '1.5rem',
                   textShadow: '0 1px 2px rgba(0, 0, 0, 0.3)'
                 }}>
-                  These daily reminders take your personalized keys and constantly keep you aligned without being annoying.
+                  An AI that helps you hold your ground when doubt and other people's opinions start to feel louder than your own.
                 </p>
                 <div style={{ marginTop: 'auto', paddingTop: '1rem' }}>
                   <a href="#waitlist" className="feature-link" style={{ 
@@ -219,7 +219,7 @@ export default function Features() {
                     fontSize: '1.125rem',
                     gap: '0.5rem',
                     textDecoration: 'none',
-                    transition: 'transform 0.2s ease, color 0.2s ease',
+                    transition: 'transform 0.2s ease, color 0.2s ease, background 0.3s ease, box-shadow 0.3s ease',
                     textShadow: '0 0 8px rgba(212, 222, 149, 0.2)'
                   }}>
                     Learn more <span style={{ transition: 'transform 0.2s ease', display: 'inline-block' }}>→</span>
@@ -270,7 +270,7 @@ export default function Features() {
                   boxShadow: '0 8px 16px rgba(212, 222, 149, 0.1)',
                   transition: 'transform 0.3s ease'
                 }}>
-                  <span style={{ fontSize: '2.5rem', filter: 'drop-shadow(0 0 8px rgba(212, 222, 149, 0.3))' }}>💡</span>
+                  <span style={{ fontSize: '2.5rem', filter: 'drop-shadow(0 0 8px rgba(212, 222, 149, 0.3))' }}>❔</span>
                 </div>                
                 <h3 style={{ 
                   fontSize: '1.75rem', 
@@ -278,7 +278,7 @@ export default function Features() {
                   marginBottom: '1.25rem',
                   color: 'var(--accent)',
                   textShadow: '0 0 10px rgba(212, 222, 149, 0.3)'
-                }}>Two AI Modes</h3>
+                }}>Question Mode</h3>
                 <p style={{
                   color: '#e0e0e0',
                   fontSize: '1.125rem',
@@ -286,7 +286,7 @@ export default function Features() {
                   marginBottom: '1.5rem',
                   textShadow: '0 1px 2px rgba(0, 0, 0, 0.3)'
                 }}>
-                  Affirm Mode: an AI that helps you hold your ground when doubt and outside opinions creep in. Socratic Mode: an AI that asks the hard questions — about your beliefs, your identity, your purpose — so you find the answers yourself.
+                  An AI that asks the hard questions about what you believe and who you are, so you find the answers yourself, instead of being handed someone else's.
                 </p>
                 <div style={{ marginTop: 'auto', paddingTop: '1rem' }}>
                   <a href="#waitlist" className="feature-link" style={{ 
@@ -296,7 +296,7 @@ export default function Features() {
                     fontSize: '1.125rem',
                     gap: '0.5rem',
                     textDecoration: 'none',
-                    transition: 'transform 0.2s ease, color 0.2s ease',
+                    transition: 'transform 0.2s ease, color 0.2s ease, background 0.3s ease, box-shadow 0.3s ease',
                     textShadow: '0 0 8px rgba(212, 222, 149, 0.2)'
                   }}>
                     Learn more <span style={{ transition: 'transform 0.2s ease', display: 'inline-block' }}>→</span>                  </a>
@@ -319,9 +319,16 @@ export default function Features() {
           transform: scale(1.12) rotate(10deg);
           box-shadow: 0 12px 24px rgba(212, 222, 149, 0.2);
         }
+        .feature-link {
+          padding: 0.4rem 0.75rem;
+          margin: -0.4rem -0.75rem;
+          border-radius: 999px;
+        }
         .feature-link:hover {
           transform: translateX(8px);
           color: #f0f5a8;
+          background: rgba(212, 222, 149, 0.08);
+          box-shadow: 0 8px 20px rgba(212, 222, 149, 0.25), 0 0 16px rgba(212, 222, 149, 0.15);
           text-shadow: 0 0 12px rgba(212, 222, 149, 0.4);
         }
         .feature-link:hover span {

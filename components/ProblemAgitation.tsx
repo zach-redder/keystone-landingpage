@@ -92,13 +92,16 @@ export default function ProblemAgitation() {
           
           <div style={{ position: 'relative', zIndex: 1 }}>
             <p style={{ fontSize: '1.35rem', color: '#e0e0e0', marginBottom: '2.2rem', lineHeight: 1.7, fontWeight: 500, textShadow: '0 1px 2px rgba(0, 0, 0, 0.3)' }}>
-              It's easy to get stuck at either extreme.
+              Not because they don't have the drive. Because they get stuck at one of two extremes.
             </p>
             <p style={{ fontSize: '1.18rem', color: '#b0b0b0', marginBottom: '2.2rem', lineHeight: 1.7, textShadow: '0 1px 2px rgba(0, 0, 0, 0.3)' }}>
-              Too certain, and you calcify — closed off, performing a fixed idea of yourself.
+              Some people become stagnant — they decide who they are once, never question it, and spend the rest of their life performing a false version of themselves.
+            </p>
+            <p style={{ fontSize: '1.18rem', color: '#b0b0b0', marginBottom: '2.2rem', lineHeight: 1.7, textShadow: '0 1px 2px rgba(0, 0, 0, 0.3)' }}>
+              Others are paralyzed — every opinion and comparison from someone who doesn't know them chips away at their sense of self.
             </p>
             <p style={{ fontSize: '1.13rem', color: '#b0b0b0', fontStyle: 'italic', marginBottom: 0, textShadow: '0 1px 2px rgba(0, 0, 0, 0.3)' }}>
-              Too doubtful, and you dissolve — pulled apart by everyone else's opinion of who you should be.
+              Both are an incorrect way of living. One is close-minded stubbornness, and the other is constant doubt.
             </p>
             <div style={{ height: '1.5rem' }} />
             <p style={{
@@ -109,7 +112,7 @@ export default function ProblemAgitation() {
               marginBottom: 0,
               textShadow: '0 0 10px rgba(212, 222, 149, 0.3)'
             }}>
-              Keystone helps you find the mean between them: affirm what you know, question what you don't.
+              Keystone exists for the path between: know yourself well enough to hold your ground, stay honest enough to keep questioning.
             </p>
           </div>
         </div>
