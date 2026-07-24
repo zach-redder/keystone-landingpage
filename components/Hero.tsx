@@ -394,7 +394,7 @@ export default function Hero() {
                 width: '800px',
                 height: '800px',
                 transformOrigin: 'center center',
-                transform: 'translate(-50%, -50%) scale(calc(clamp(300px, min(50vw, calc(100vw - 420px)), 800px) / 800px))'
+                transform: 'translate(-50%, calc(-50% - 132px)) scale(calc(clamp(300px, min(50vw, calc(100vw - 420px)), 800px) / 800px))'
               }}>
                 <Spline
                   scene="https://prod.spline.design/A39kgRJgUzRIY4Qv/scene.splinecode"
