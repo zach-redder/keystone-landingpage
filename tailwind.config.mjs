@@ -2,13 +2,13 @@ export default {
   content: [
     './app/**/*.{js,ts,jsx,tsx}',
     './components/**/*.{js,ts,jsx,tsx}',
-    './sections/**/*.{js,ts,jsx,tsx}',
+    './hooks/**/*.{js,ts,jsx,tsx}',
     './lib/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
     extend: {
       colors: {
-        background: '#2B2B2B',
+        background: '#2A2A2A',
         accent: '#D4DE95',
         white: '#FFFFFF',
         gray: {

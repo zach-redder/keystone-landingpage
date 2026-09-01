@@ -1,20 +1,20 @@
 'use client';
 import React, { useState } from 'react';
 import Spline from '@splinetool/react-spline';
+import { waitlistEmailSchema } from '../lib/waitlistSchema';
+import { useWaitlistSubmit } from '../hooks/useWaitlistSubmit';
 
 export default function Hero() {
   const [email, setEmail] = useState('');
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle');
-  const [message, setMessage] = useState('');
   const [emailError, setEmailError] = useState('');
+  const { status, message, isSubmitting, submitEmail, reset: resetWaitlistStatus } = useWaitlistSubmit();
 
   // Move dynamic styles to constants
-  const formBorderStyle = emailError 
-    ? 'rgba(239, 68, 68, 0.5)' 
+  const formBorderStyle = emailError
+    ? 'rgba(239, 68, 68, 0.5)'
     : 'rgba(212, 222, 149, 0.2)';
 
-  const buttonBackground = isSubmitting 
+  const buttonBackground = isSubmitting
     ? 'rgba(100, 100, 100, 0.5)'
     : status === 'success'
     ? 'linear-gradient(135deg, var(--accent) 0%, #f0f5a8 100%)'
@@ -24,56 +24,18 @@ export default function Hero() {
   const buttonCursor = isSubmitting ? 'not-allowed' : 'pointer';
   const buttonOpacity = isSubmitting ? 0.7 : 1;
 
-  const validateEmail = (email: string) => {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailRegex.test(email);
-  };
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
-    // Reset previous states
     setEmailError('');
-    setStatus('idle');
-    setMessage('');
-    
-    // Validate email
-    if (!email.trim()) {
-      setEmailError('Please enter your email');
+
+    const parsed = waitlistEmailSchema.safeParse({ email });
+    if (!parsed.success) {
+      setEmailError(!email.trim() ? 'Please enter your email' : (parsed.error.issues[0]?.message || 'Please enter a valid email address'));
       return;
     }
-    
-    if (!validateEmail(email)) {
-      setEmailError('Please enter a valid email address');
-      return;
-    }
-    
-    setIsSubmitting(true);
-    
-    try {
-      const response = await fetch('/api/waitlist', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ email }),
-      });
-      
-      if (response.ok) {
-        setStatus('success');
-        setMessage("You're on the waitlist! Check your email for confirmation.");
-        setEmail('');
-      } else {
-        const err = await response.json();
-        setStatus('error');
-        setMessage(err.message || 'Something went wrong. Please try again.');
-      }
-    } catch (error) {
-      setStatus('error');
-      setMessage('Something went wrong. Please try again.');
-    } finally {
-      setIsSubmitting(false);
-    }
+
+    const success = await submitEmail(parsed.data.email);
+    if (success) setEmail('');
   };
   return (
     <section className="hero-section" style={{
@@ -259,7 +221,7 @@ export default function Hero() {
                     onChange={(e) => {
                       setEmail(e.target.value);
                       if (emailError) setEmailError('');
-                      if (status !== 'idle') setStatus('idle');
+                      if (status !== 'idle') resetWaitlistStatus();
                     }}
                     className="waitlist-email"
                     style={{

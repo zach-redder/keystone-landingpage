@@ -1,50 +1,23 @@
 'use client';
 import { useForm } from 'react-hook-form';
-import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { useState } from 'react';
-
-const schema = z.object({
-  email: z.string().email({ message: 'Please enter a valid email address.' }),
-});
-
-type FormData = z.infer<typeof schema>;
+import { waitlistEmailSchema, WaitlistFormData } from '../lib/waitlistSchema';
+import { useWaitlistSubmit } from '../hooks/useWaitlistSubmit';
 
 export default function WaitlistForm() {
-  const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle');
-  const [message, setMessage] = useState('');
+  const { status, message, submitEmail } = useWaitlistSubmit();
   const {
     register,
     handleSubmit,
     formState: { errors, isSubmitting },
     reset,
-  } = useForm<FormData>({
-    resolver: zodResolver(schema),
+  } = useForm<WaitlistFormData>({
+    resolver: zodResolver(waitlistEmailSchema),
   });
 
-  async function onSubmit(data: FormData) {
-    setStatus('idle');
-    setMessage('');
-    try {
-      const res = await fetch('/api/waitlist', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data),
-      });
-      if (res.ok) {
-        setStatus('success');
-        setMessage("You're on the waitlist! Check your email for confirmation.");
-        reset();
-      } else {
-        const err = await res.json();
-        setStatus('error');
-        setMessage(err.message || 'Something went wrong. Please try again.');
-      }
-    } catch (e) {
-      setStatus('error');
-      setMessage('Something went wrong. Please try again.');
-      console.error(e);
-    }
+  async function onSubmit(data: WaitlistFormData) {
+    const success = await submitEmail(data.email);
+    if (success) reset();
   }
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: 'clamp(1rem, 2vw, 1.5rem)' }}>

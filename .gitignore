@@ -17,6 +17,9 @@
 /.next/
 /out/
 
+# stray Expo config, unrelated to this Next.js project
+.expo/
+
 # production
 /build
 
