@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 
-const getDeepLinkPathForType = (type: string | null) => {
+const getDeepLinkPathForType = (type: string | null, hasCode: boolean) => {
   switch (type) {
     case 'signup':
       return 'emailconfirmation';
@@ -11,11 +11,19 @@ const getDeepLinkPathForType = (type: string | null) => {
     case 'recovery':
       return 'resetpassword';
     default:
-      return null;
+      // Supabase's PKCE-flow links -- the app's actual flowType -- redirect with only
+      // `code` and no `type` at all; `type` is only present on older token_hash/OTP-style
+      // links. Fall back to the most common bare-code case so the redirect still fires --
+      // the app's own _layout.js establishes the real session and checks it regardless of
+      // which auth screen this lands on.
+      return hasCode ? 'emailconfirmation' : null;
   }
 };
 
-const isMobile = () => /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+// Only hard-block on UAs that are unambiguously desktop. A Mac UA is ambiguous (iPadOS
+// 13+ Safari reports as Macintosh by default), so fail open there and still attempt the
+// redirect rather than dead-ending real iPad users on a "use mobile" message.
+const isDesktop = () => /Windows NT|X11/i.test(navigator.userAgent);
 
 export default function VerifyPage() {
   const [status, setStatus] = useState('Verifying...');
@@ -27,14 +35,15 @@ export default function VerifyPage() {
     const query = new URLSearchParams(window.location.search);
     const hash = new URLSearchParams(window.location.hash.substring(1));
     const type = query.get('type') || hash.get('type');
-    const path = getDeepLinkPathForType(type);
+    const hasCode = query.has('code') || hash.has('code');
+    const path = getDeepLinkPathForType(type, hasCode);
 
     if (!path) {
       setStatus('This verification link is invalid or has expired.');
       return;
     }
 
-    if (!isMobile()) {
+    if (isDesktop()) {
       setStatus('Please open this link on your mobile device to continue in the Keystone app.');
       return;
     }
