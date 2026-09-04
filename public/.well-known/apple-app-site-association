@@ -3,7 +3,7 @@
     "apps": [],
     "details": [
       {
-        "appID": "REPLACE_WITH_APPLE_TEAM_ID.com.reddermedia.keystone",
+        "appID": "Y9VC2228JF.com.reddermedia.keystone",
         "paths": ["/verify", "/verify/*"]
       }
     ]

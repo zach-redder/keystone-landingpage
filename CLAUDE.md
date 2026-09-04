@@ -10,7 +10,6 @@ Marketing/waitlist landing page for **Keystone**, a companion mobile app (deep-l
 
 - Next.js 15, App Router, React 18, TypeScript (strict)
 - Tailwind CSS (configured; see Styling below for how it's actually used)
-- `@supabase/ssr` — auth-callback handling only
 - Resend — waitlist signup
 - `@splinetool/react-spline` — hero 3D scene
 - Deployed on Vercel (implicit, no `vercel.json`)
@@ -36,7 +35,7 @@ Other routes are minimal, standalone pages: `app/privacy-policy`, `app/terms`, a
 
 **Waitlist signup flow**: `components/WaitlistForm.tsx` (react-hook-form) and `components/Hero.tsx` (plain controlled input) are two separate visual layouts that both need to submit a waitlist email, so they share logic instead of markup: `lib/waitlistSchema.ts` exports the one zod email schema both use, and `hooks/useWaitlistSubmit.ts` exports the one hook that does the actual `fetch('/api/waitlist', ...)` call and status/message state. If the API contract or validation rules change, update those two shared files — don't add new validation logic directly inside either component. `app/api/waitlist/route.ts` validates the email again server-side with zod, adds the contact to a Resend audience, and sends a welcome email via Resend. The Resend audience ID is hardcoded in that route. Required env var: `RESEND_API_KEY`.
 
-**Supabase**: `app/api/supabase.ts` exports a browser client (`createBrowserClient` from `@supabase/ssr`) used only by `app/verify/page.tsx` to exchange the auth callback hash for a session. Required env vars: `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY`. This is the same Supabase project used by `keystone-app` and `keystone-ai-service`.
+**Supabase**: this repo has no Supabase client of its own — `app/verify/page.tsx` never calls the Supabase SDK; it only reads the `type`/`code` params off the incoming URL and forwards them into the `keystone://` deep link unmodified (see the note above). An unused `app/api/supabase.ts` browser client (`createBrowserClient` from `@supabase/ssr`) previously existed here but was dead code — never imported anywhere — and has been removed. `NEXT_PUBLIC_SUPABASE_URL`/`NEXT_PUBLIC_SUPABASE_ANON_KEY` are still listed in `.env.example` for this route but are not currently read by any code in this repo. This is the same Supabase project used by `keystone-app` and `keystone-ai-service`.
 
 ## Styling conventions (as the code actually is, not as configured)
 
