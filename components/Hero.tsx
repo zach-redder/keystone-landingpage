@@ -1,42 +1,21 @@
 'use client';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Spline from '@splinetool/react-spline';
-import { waitlistEmailSchema } from '../lib/waitlistSchema';
-import { useWaitlistSubmit } from '../hooks/useWaitlistSubmit';
+import DownloadButtons from './DownloadButtons';
+
+// Spline is a heavy external WebGL script with real load-time cost, and the
+// scene provides the least value on the smallest phones where it's squeezed
+// under two large text blocks in a single stacked column -- skip mounting it
+// there entirely rather than just hiding it with CSS.
+const SPLINE_MIN_VIEWPORT_WIDTH = 480;
 
 export default function Hero() {
-  const [email, setEmail] = useState('');
-  const [emailError, setEmailError] = useState('');
-  const { status, message, isSubmitting, submitEmail, reset: resetWaitlistStatus } = useWaitlistSubmit();
+  const [showSplineScene, setShowSplineScene] = useState(true);
 
-  // Move dynamic styles to constants
-  const formBorderStyle = emailError
-    ? 'rgba(239, 68, 68, 0.5)'
-    : 'rgba(212, 222, 149, 0.2)';
+  useEffect(() => {
+    setShowSplineScene(window.innerWidth >= SPLINE_MIN_VIEWPORT_WIDTH);
+  }, []);
 
-  const buttonBackground = isSubmitting
-    ? 'rgba(100, 100, 100, 0.5)'
-    : status === 'success'
-    ? 'linear-gradient(135deg, var(--accent) 0%, #f0f5a8 100%)'
-    : 'linear-gradient(135deg, var(--accent) 0%, #f0f5a8 100%)';
-
-  const buttonColor = isSubmitting ? '#999' : '#1a1a1a';
-  const buttonCursor = isSubmitting ? 'not-allowed' : 'pointer';
-  const buttonOpacity = isSubmitting ? 0.7 : 1;
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setEmailError('');
-
-    const parsed = waitlistEmailSchema.safeParse({ email });
-    if (!parsed.success) {
-      setEmailError(!email.trim() ? 'Please enter your email' : (parsed.error.issues[0]?.message || 'Please enter a valid email address'));
-      return;
-    }
-
-    const success = await submitEmail(parsed.data.email);
-    if (success) setEmail('');
-  };
   return (
     <section className="hero-section" style={{
       padding: '4rem 0 6rem',
@@ -180,206 +159,66 @@ export default function Hero() {
              Affirm who you are. Question who you're becoming. Find the mean between certainty and doubt.
             </p>
             <div className="hero-cta" style={{ width: '100%', maxWidth: '450px' }}>
-              <form onSubmit={handleSubmit} className="waitlist-form" style={{
-                position: 'relative',
-                background: 'rgba(47, 47, 47, 0.8)',
-                backdropFilter: 'blur(10px)',
-                borderRadius: '16px',
-                border: `1px solid ${formBorderStyle}`,
-                boxShadow: '0 8px 32px rgba(0, 0, 0, 0.3), 0 0 20px rgba(212, 222, 149, 0.1)',
-                transition: 'all 0.3s ease',
-                overflow: 'hidden',
-                width: '100%',
-                maxWidth: '450px',
-                padding: '0.5rem'
-              }}>
-                {/* Subtle animated border glow */}
-                <div style={{
-                  position: 'absolute',
-                  top: 0,
-                  left: 0,
-                  right: 0,
-                  bottom: 0,
-                  background: 'linear-gradient(45deg, rgba(212, 222, 149, 0.1), rgba(212, 222, 149, 0.05), rgba(212, 222, 149, 0.1))',
-                  borderRadius: '16px',
-                  animation: 'border-glow 3s ease-in-out infinite',
-                  zIndex: -1
-                }}></div>
-                
-                <div style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  padding: '3px',
-                  gap: '3px',
-                  position: 'relative',
-                  width: '100%'
-                }}>
-                  <input
-                    type="email"
-                    placeholder="Enter your email"
-                    value={email}
-                    onChange={(e) => {
-                      setEmail(e.target.value);
-                      if (emailError) setEmailError('');
-                      if (status !== 'idle') resetWaitlistStatus();
-                    }}
-                    className="waitlist-email"
-                    style={{
-                      flex: 1,
-                      padding: '0.75rem 1rem',
-                      paddingRight: '120px',
-                      background: 'rgba(35, 35, 35, 0.9)',
-                      border: 'none',
-                      borderRadius: '12px',
-                      color: 'white',
-                      fontSize: '1rem',
-                      outline: 'none',
-                      transition: 'all 0.3s ease',
-                      fontFamily: 'inherit',
-                      width: '100%',
-                      position: 'relative'
-                    }}
-                  />
-                  <button 
-                    type="submit"
-                    disabled={isSubmitting}
-                    className="btn btn-primary waitlist-btn"
-                    style={{ 
-                      position: 'absolute',
-                      right: '6px',
-                      top: '50%',
-                      transform: 'translateY(-50%)',
-                      padding: '0.65rem 1.3rem', 
-                      fontSize: '0.9rem',
-                      fontWeight: '600',
-                      background: buttonBackground,
-                      border: 'none',
-                      borderRadius: '16px',
-                      color: buttonColor,
-                      cursor: buttonCursor,
-                      transition: 'all 0.3s ease',
-                      boxShadow: '0 4px 15px rgba(212, 222, 149, 0.3)',
-                      whiteSpace: 'nowrap',
-                      opacity: buttonOpacity,
-                      zIndex: 2,
-                      margin: '0'
-                    }}
-                  >
-                    {isSubmitting ? 'Joining...' : status === 'success' ? '✓ Joined!' : 'Join Waitlist'}
-                  </button>
-                </div>
-              </form>
-                {emailError && (
-                <p style={{
-                  fontSize: '0.875rem',
-                  color: '#ef4444',
-                  textAlign: 'left',
-                  marginTop: '0.5rem',
-                  textShadow: '0 1px 2px rgba(0, 0, 0, 0.3)'
-                }}>
-                  {emailError}
+              <div className="hero-cta-row-wrap">
+                <DownloadButtons size="hero" />
+                <p className="hero-cta-caption">
+                  Available now on iOS. Android coming soon.
                 </p>
-              )}
-              
-              {status === 'success' && (
-                <div style={{ 
-                  padding: '1rem 1.5rem', 
-                  borderRadius: '14px', 
-                  background: 'linear-gradient(145deg, rgba(212, 222, 149, 0.15), rgba(212, 222, 149, 0.08))', 
-                  border: '1px solid rgba(212, 222, 149, 0.3)', 
-                  color: 'white', 
-                  fontSize: '0.875rem',
-                  boxShadow: '0 8px 20px rgba(212, 222, 149, 0.1)',
-                  backdropFilter: 'blur(10px)',
-                  textShadow: '0 1px 2px rgba(0, 0, 0, 0.3)',
-                  textAlign: 'center',
-                  marginTop: '0.75rem'
-                }}>
-                  {message}
-                </div>
-              )}
-              
-              {status === 'error' && (
-                <div style={{ 
-                  padding: '1rem 1.5rem', 
-                  borderRadius: '14px', 
-                  background: 'linear-gradient(145deg, rgba(245, 101, 101, 0.15), rgba(245, 101, 101, 0.08))', 
-                  border: '1px solid rgba(245, 101, 101, 0.3)', 
-                  color: '#fc8181', 
-                  fontSize: '0.875rem',
-                  boxShadow: '0 8px 20px rgba(245, 101, 101, 0.1)',
-                  backdropFilter: 'blur(10px)',
-                  textShadow: '0 1px 2px rgba(0, 0, 0, 0.3)',
-                  textAlign: 'center',
-                  marginTop: '0.75rem'
-                }}>
-                  {message}
-                </div>
-              )}
-              
-              {status === 'idle' && !emailError && (
-                <p style={{
-                  fontSize: '0.875rem',
-                  color: 'rgba(224, 224, 224, 0.7)',
-                  textAlign: 'center',
-                  marginTop: '0.75rem',
-                  textShadow: '0 1px 2px rgba(0, 0, 0, 0.3)'
-                }}>
-                  Be the first to know when we launch.
-                </p>
-              )}
-            </div>
-          </div>
-          {/* Right side - Spline scene */}
-          <div className="hero-phone" style={{
-            order: 2,
-          }}>
-            {/* Fixed-size scene, scaled down visually per viewport so the camera framing never re-crops */}
-            <div
-              className="spline-wrapper"
-              onWheelCapture={(e) => e.stopPropagation()}
-              onPointerDownCapture={(e) => e.stopPropagation()}
-              onMouseDownCapture={(e) => e.stopPropagation()}
-              style={{
-              width: 'clamp(300px, min(50vw, calc(100vw - 420px)), 800px)',
-              aspectRatio: '1 / 1',
-              position: 'relative',
-              overflow: 'hidden',
-              borderRadius: '40px',
-              background: 'transparent'
-            }}>
-              {/* Scaled inner stage - the Spline canvas and the badge-cover patch move together */}
-              <div style={{
-                position: 'absolute',
-                top: '50%',
-                left: '50%',
-                width: '800px',
-                height: '800px',
-                transformOrigin: 'center center',
-                transform: 'translate(-50%, calc(-50% - 132px)) scale(calc(clamp(300px, min(50vw, calc(100vw - 420px)), 800px) / 800px))'
-              }}>
-                <Spline
-                  scene="https://prod.spline.design/A39kgRJgUzRIY4Qv/scene.splinecode"
-                  style={{
-                    display: 'block',
-                    width: '100%',
-                    height: '100%',
-                    background: 'transparent'
-                  }}
-                />
-                {/* Covers the Spline free-tier "Built with Spline" badge, which is baked into the canvas render itself */}
-                <div style={{
-                  position: 'absolute',
-                  right: 0,
-                  bottom: 0,
-                  width: '300px',
-                  height: '130px',
-                  background: 'radial-gradient(ellipse 260px 100px at 100% 100%, #2a2a2a 0%, #2a2a2a 75%, rgba(42,42,42,0) 100%)',
-                  pointerEvents: 'none'
-                }} />
               </div>
             </div>
           </div>
+          {/* Right side - Spline scene (skipped entirely below SPLINE_MIN_VIEWPORT_WIDTH -- see effect above) */}
+          {showSplineScene && (
+            <div className="hero-phone" style={{
+              order: 2,
+            }}>
+              {/* Fixed-size scene, scaled down visually per viewport so the camera framing never re-crops */}
+              <div
+                className="spline-wrapper"
+                onWheelCapture={(e) => e.stopPropagation()}
+                onPointerDownCapture={(e) => e.stopPropagation()}
+                onMouseDownCapture={(e) => e.stopPropagation()}
+                style={{
+                width: 'clamp(200px, 50vw, 800px)',
+                aspectRatio: '1 / 1',
+                position: 'relative',
+                overflow: 'hidden',
+                borderRadius: '40px',
+                background: 'transparent'
+              }}>
+                {/* Scaled inner stage - the Spline canvas and the badge-cover patch move together */}
+                <div style={{
+                  position: 'absolute',
+                  top: '50%',
+                  left: '50%',
+                  width: '800px',
+                  height: '800px',
+                  transformOrigin: 'center center',
+                  transform: 'translate(-50%, calc(-50% - 132px)) scale(calc(clamp(200px, 50vw, 800px) / 800px))'
+                }}>
+                  <Spline
+                    scene="https://prod.spline.design/A39kgRJgUzRIY4Qv/scene.splinecode"
+                    style={{
+                      display: 'block',
+                      width: '100%',
+                      height: '100%',
+                      background: 'transparent'
+                    }}
+                  />
+                  {/* Covers the Spline free-tier "Built with Spline" badge, which is baked into the canvas render itself */}
+                  <div style={{
+                    position: 'absolute',
+                    right: 0,
+                    bottom: 0,
+                    width: '300px',
+                    height: '130px',
+                    background: 'radial-gradient(ellipse 260px 100px at 100% 100%, #2a2a2a 0%, #2a2a2a 75%, rgba(42,42,42,0) 100%)',
+                    pointerEvents: 'none'
+                  }} />
+                </div>
+              </div>
+            </div>
+          )}
         </div>
       </div>      <style jsx global>{`
         .hero-section {
@@ -453,28 +292,29 @@ export default function Hero() {
           transform: translateY(0);
         }
 
-        .waitlist-form:hover {
-          transform: translateY(-2px);
-          box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4), 0 0 30px rgba(212, 222, 149, 0.15);
+        .hero-cta-row-wrap {
+          display: flex;
+          flex-direction: column;
+          width: fit-content;
+          margin: 0 auto;
         }
 
-        .waitlist-email:focus {
-          border-color: rgba(212, 222, 149, 0.4) !important;
-          box-shadow: 0 0 0 3px rgba(212, 222, 149, 0.1) !important;
+        .hero-cta-caption {
+          margin-top: 0.75rem;
+          font-size: 0.875rem;
+          color: rgba(224, 224, 224, 0.7);
+          text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+          text-align: center;
         }
 
-        .waitlist-email::placeholder {
-          color: rgba(224, 224, 224, 0.5);
-        }
+        @media (min-width: 768px) {
+          .hero-cta-row-wrap {
+            margin: 0;
+          }
 
-        .waitlist-btn:hover {
-          transform: translateY(-1px);
-          box-shadow: 0 6px 20px rgba(212, 222, 149, 0.4);
-          background: linear-gradient(135deg, #f0f5a8 0%, var(--accent) 100%);
-        }
-
-        .waitlist-btn:active {
-          transform: translateY(0);
+          .hero-cta-caption {
+            text-align: right;
+          }
         }
 
         /* Enhanced Mobile Responsiveness */
@@ -497,17 +337,6 @@ export default function Hero() {
             gap: 1.5rem !important;
           }
 
-          .waitlist-form {
-            flex-direction: column !important;
-            gap: 0.75rem !important;
-            padding: 1rem !important;
-          }
-
-          .waitlist-btn {
-            padding: 1rem !important;
-            font-size: 1.05rem !important;
-          }
-          
           .hero-phone {
             margin-top: 3rem !important;
           }          .hero-container {
@@ -533,25 +362,6 @@ export default function Hero() {
             padding: 0 1rem !important;
           }
 
-          .waitlist-form {
-            padding: 0.4rem !important;
-            border-radius: 14px !important;
-          }
-
-          .waitlist-email {
-            padding: 0.7rem 1rem !important;
-            padding-right: 110px !important;
-            font-size: 0.95rem !important;
-            border-radius: 10px !important;
-          }
-
-          .waitlist-btn {
-            right: 4px !important;
-            padding: 0.6rem 1.1rem !important;
-            font-size: 0.85rem !important;
-            border-radius: 8px !important;
-          }
-          
           .hero-phone {
             margin-top: 2.5rem !important;
           }
@@ -581,25 +391,6 @@ export default function Hero() {
             padding: 0 0.75rem !important;
           }
           
-          .waitlist-form {
-            padding: 0.3rem !important;
-            border-radius: 12px !important;
-          }
-
-          .waitlist-email {
-            padding: 0.65rem 0.875rem !important;
-            padding-right: 105px !important;
-            font-size: 0.9rem !important;
-            border-radius: 8px !important;
-          }
-
-          .waitlist-btn {
-            right: 3px !important;
-            padding: 0.55rem 1rem !important;
-            font-size: 0.8rem !important;
-            border-radius: 7px !important;
-          }
-
           .btn {
             padding: 0.875rem 1.75rem !important;
             font-size: 1rem !important;
@@ -624,11 +415,6 @@ export default function Hero() {
             .hero-content {
             padding: 0 0.5rem !important;
           }
-
-          .waitlist-btn {
-            font-size: 0.9rem !important;
-          }
-          
         }
       `}</style>
     </section>

@@ -258,7 +258,7 @@ export default function Testimonial() {
             marginTop: '6rem',
             transform: 'translateY(20px)'
           }}>
-            <a href="#waitlist" style={{ 
+            <a href="#download" style={{
               display: 'inline-flex',
               alignItems: 'center',
               justifyContent: 'center',

@@ -176,7 +176,7 @@ export default function WaitlistForm() {
             transition: 'transform 0.6s ease',
             pointerEvents: 'none'
           }}></div>
-          {isSubmitting ? 'Joining...' : 'Join Waitlist'}
+          {isSubmitting ? 'Sending...' : 'Get My Free Month'}
         </button>
       </form>
         {status === 'success' && (

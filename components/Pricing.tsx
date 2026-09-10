@@ -10,10 +10,10 @@ interface PricingTierProps {
 }
 
 const PricingTier: React.FC<PricingTierProps> = ({ name, price, period, description, features, isPopular }) => {
-  const scrollToWaitlist = () => {
-    const waitlistSection = document.getElementById('waitlist');
-    if (waitlistSection) {
-      waitlistSection.scrollIntoView({ behavior: 'smooth' });
+  const scrollToDownload = () => {
+    const downloadSection = document.getElementById('download');
+    if (downloadSection) {
+      downloadSection.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
@@ -122,8 +122,8 @@ const PricingTier: React.FC<PricingTierProps> = ({ name, price, period, descript
         ))}
       </ul>
 
-      <button 
-        onClick={scrollToWaitlist}
+      <button
+        onClick={scrollToDownload}
         className={`pricing-button ${isPopular ? 'popular' : ''}`}
         style={{
           background: isPopular 

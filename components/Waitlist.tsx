@@ -3,7 +3,7 @@ import WaitlistForm from './WaitlistForm';
 
 export default function Waitlist() {
   return (
-    <section id="waitlist" className="section-wrapper animate-on-scroll" style={{ position: 'relative', paddingBottom: '4rem' }}>
+    <section id="free-month" className="section-wrapper animate-on-scroll" style={{ position: 'relative', paddingBottom: '4rem' }}>
       <div className="accent-gradient-top" />
       <div className="accent-gradient-bottom" />
         {/* Floating decorative particles */}
@@ -60,17 +60,17 @@ export default function Waitlist() {
               WebkitTextFillColor: 'transparent',
               textShadow: '0 0 30px rgba(212, 222, 149, 0.3)',
               lineHeight: '1.2'
-            }}>Join the Waitlist</h2>
-            <p style={{ 
-              color: '#e0e0e0', 
-              fontSize: 'clamp(1.125rem, 2.5vw, 1.5rem)', 
+            }}>Get 1 Month Free</h2>
+            <p style={{
+              color: '#e0e0e0',
+              fontSize: 'clamp(1.125rem, 2.5vw, 1.5rem)',
               lineHeight: 1.7,
               margin: '0 auto',
               maxWidth: '900px',
               textShadow: '0 1px 2px rgba(0, 0, 0, 0.3)',
               padding: '0 clamp(1rem, 3vw, 0)'
             }}>
-              You've read this far because some part of this is already true for you. Be among the first to experience Keystone.
+              Keystone is live — want to try Pro before committing? Drop your email and we'll send you a code for 1 month free.
             </p>
           </div>            <div className="animate-on-scroll delay-100" style={{ 
             background: 'linear-gradient(145deg, rgba(60, 60, 60, 0.4), rgba(30, 30, 30, 0.4))',

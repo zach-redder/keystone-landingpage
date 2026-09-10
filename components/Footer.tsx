@@ -2,6 +2,7 @@
 import { Instagram, Mail, ArrowUp, Youtube } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { usePathname } from 'next/navigation';
 
 // Custom X icon since Lucide doesn't have an official X (Twitter) icon yet
 const XIcon = () => (
@@ -30,6 +31,10 @@ const TikTokIcon = () => (
 );
 
 export default function Footer() {
+  const pathname = usePathname();
+  const onHome = pathname === '/';
+  const hashHref = (id: string) => (onHome ? `#${id}` : `/#${id}`);
+
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -309,8 +314,8 @@ export default function Footer() {
               </h3>
               <ul style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                 <li>
-                  <a 
-                    href="#how-it-works" 
+                  <a
+                    href={hashHref('how-it-works')}
                     style={{ color: '#a0a0a0', transition: 'all 0.2s ease', display: 'inline-block' }}
                     className="footer-link"
                   >
@@ -324,8 +329,8 @@ export default function Footer() {
                   </a>
                 </li>
                 <li>
-                  <a 
-                    href="#features" 
+                  <a
+                    href={hashHref('features')}
                     style={{ color: '#a0a0a0', transition: 'all 0.2s ease', display: 'inline-block' }}
                     className="footer-link"
                   >
@@ -354,12 +359,12 @@ export default function Footer() {
                   </a>
                 </li> */}
                 <li>
-                  <a 
-                    href="#waitlist" 
+                  <a
+                    href={hashHref('download')}
                     style={{ color: '#a0a0a0', transition: 'all 0.2s ease', display: 'inline-block' }}
                     className="footer-link"
                   >
-                    Waitlist
+                    Download
                     <style jsx>{`
                       .footer-link:hover {
                         color: var(--accent);
@@ -369,8 +374,23 @@ export default function Footer() {
                   </a>
                 </li>
                 <li>
-                  <a 
-                    href="#community" 
+                  <Link
+                    href="/blog"
+                    style={{ color: '#a0a0a0', transition: 'all 0.2s ease', display: 'inline-block' }}
+                    className="footer-link"
+                  >
+                    Blog
+                    <style jsx>{`
+                      .footer-link:hover {
+                        color: var(--accent);
+                        transform: translateX(5px);
+                      }
+                    `}</style>
+                  </Link>
+                </li>
+                <li>
+                  <a
+                    href={hashHref('community')}
                     style={{ color: '#a0a0a0', transition: 'all 0.2s ease', display: 'inline-block' }}
                     className="footer-link"
                   >
@@ -384,8 +404,8 @@ export default function Footer() {
                   </a>
                 </li>
                 <li>
-                  <a 
-                    href="#pricing" 
+                  <a
+                    href={hashHref('pricing')}
                     style={{ color: '#a0a0a0', transition: 'all 0.2s ease', display: 'inline-block' }}
                     className="footer-link"
                   >
@@ -399,8 +419,8 @@ export default function Footer() {
                   </a>
                 </li>
                 <li>
-                  <a 
-                    href="#faq" 
+                  <a
+                    href={hashHref('faq')}
                     style={{ color: '#a0a0a0', transition: 'all 0.2s ease', display: 'inline-block' }}
                     className="footer-link"
                   >

@@ -6,6 +6,7 @@ import HowItWorks from '../components/HowItWorks';
 import ProblemAgitation from '../components/ProblemAgitation';
 import AboutFounder from '../components/AboutFounder';
 //import Testimonial from '../components/Testimonial';
+import Download from '../components/Download';
 import Waitlist from '../components/Waitlist';
 import FAQ from '../components/FAQ';
 import Community from '../components/Community';
@@ -44,6 +45,7 @@ export default function HomePage() {
       <Features />
       {/*<Testimonial />*/}
       <AboutFounder />
+      <Download />
       <Waitlist />
       <Community />
       <Pricing />

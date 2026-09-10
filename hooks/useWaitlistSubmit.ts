@@ -39,7 +39,7 @@ export function useWaitlistSubmit() {
 
       if (res.ok) {
         setStatus('success');
-        setMessage("You're on the waitlist! Check your email for confirmation.");
+        setMessage('Check your email for your free-month code!');
         return true;
       }
 

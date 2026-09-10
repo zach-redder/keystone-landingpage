@@ -248,7 +248,7 @@ export default function FAQ() {
                 minHeight: '48px',
                 lineHeight: '1.3'
               }}>
-                <span>When will Keystone launch?</span>
+                <span>Is Keystone available now?</span>
                 <span style={{ 
                   transition: 'transform 0.3s ease', 
                   display: 'inline-block', 
@@ -268,8 +268,7 @@ export default function FAQ() {
                 textShadow: '0 1px 2px rgba(0, 0, 0, 0.3)'
               }}>
                 <p>
-                  We&apos;re working hard to launch as soon as possible so stay tuned! Join the waitlist to get notified as soon as we go live.
-                  Early waitlist members will get development updates, priority access to the beta, and exclusive content.
+                  Yes — Keystone is live now on the App Store. Download it today and start building your keys, no waiting required.
                 </p>
               </div>
             </details>
@@ -398,8 +397,8 @@ export default function FAQ() {
                 textShadow: '0 1px 2px rgba(0, 0, 0, 0.3)'
               }}>
                 <p>
-                  Yes, Keystone will be available on both iOS and Android platforms once we launch. We&apos;re building in a way where
-                  no matter what phone you own, you will have the best experience possible.</p>
+                  Keystone is available on iOS now. Android is on the way — we&apos;re building it so that no matter what phone
+                  you own, you&apos;ll have the best experience possible.</p>
               </div>
             </details>
             

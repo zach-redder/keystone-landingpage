@@ -136,7 +136,7 @@ export default function Features() {
                   Your core values, goals, and vision of who you're becoming all stored in one place, and updated as you grow instead of staying frozen the day you wrote them.
                 </p>
                 <div style={{ marginTop: 'auto', paddingTop: '1rem' }}>
-                  <a href="#waitlist" className="feature-link" style={{ 
+                  <a href="#download" className="feature-link" style={{ 
                     color: 'var(--accent)', 
                     display: 'flex', 
                     alignItems: 'center',
@@ -212,7 +212,7 @@ export default function Features() {
                   An AI that helps you hold your ground when doubt and other people's opinions start to feel louder than your own.
                 </p>
                 <div style={{ marginTop: 'auto', paddingTop: '1rem' }}>
-                  <a href="#waitlist" className="feature-link" style={{ 
+                  <a href="#download" className="feature-link" style={{ 
                     color: 'var(--accent)', 
                     display: 'flex', 
                     alignItems: 'center',
@@ -289,7 +289,7 @@ export default function Features() {
                   An AI that asks the hard questions about what you believe and who you are, so you find the answers yourself, instead of being handed someone else's.
                 </p>
                 <div style={{ marginTop: 'auto', paddingTop: '1rem' }}>
-                  <a href="#waitlist" className="feature-link" style={{ 
+                  <a href="#download" className="feature-link" style={{ 
                     color: 'var(--accent)', 
                     display: 'flex', 
                     alignItems: 'center',
