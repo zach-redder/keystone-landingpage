@@ -3,10 +3,10 @@ import { getAllPosts } from '../../lib/blog';
 import BlogSearch from '../../components/BlogSearch';
 
 export const metadata: Metadata = {
-  title: 'Blog — Keystone',
+  title: 'Blog - Keystone',
   description: 'Ideas on identity, discipline, and becoming who you say you want to be — from the team building Keystone.',
   openGraph: {
-    title: 'Blog — Keystone',
+    title: 'Blog - Keystone',
     description: 'Ideas on identity, discipline, and becoming who you say you want to be — from the team building Keystone.',
     url: 'https://thekeystoneapp.com/blog',
   },

@@ -315,21 +315,6 @@ export default function Footer() {
               <ul style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                 <li>
                   <a
-                    href={hashHref('how-it-works')}
-                    style={{ color: '#a0a0a0', transition: 'all 0.2s ease', display: 'inline-block' }}
-                    className="footer-link"
-                  >
-                    How it Works
-                    <style jsx>{`
-                      .footer-link:hover {
-                        color: var(--accent);
-                        transform: translateX(5px);
-                      }
-                    `}</style>
-                  </a>
-                </li>
-                <li>
-                  <a
                     href={hashHref('features')}
                     style={{ color: '#a0a0a0', transition: 'all 0.2s ease', display: 'inline-block' }}
                     className="footer-link"
@@ -374,36 +359,6 @@ export default function Footer() {
                   </a>
                 </li>
                 <li>
-                  <Link
-                    href="/blog"
-                    style={{ color: '#a0a0a0', transition: 'all 0.2s ease', display: 'inline-block' }}
-                    className="footer-link"
-                  >
-                    Blog
-                    <style jsx>{`
-                      .footer-link:hover {
-                        color: var(--accent);
-                        transform: translateX(5px);
-                      }
-                    `}</style>
-                  </Link>
-                </li>
-                <li>
-                  <a
-                    href={hashHref('community')}
-                    style={{ color: '#a0a0a0', transition: 'all 0.2s ease', display: 'inline-block' }}
-                    className="footer-link"
-                  >
-                    Community
-                    <style jsx>{`
-                      .footer-link:hover {
-                        color: var(--accent);
-                        transform: translateX(5px);
-                      }
-                    `}</style>
-                  </a>
-                </li>
-                <li>
                   <a
                     href={hashHref('pricing')}
                     style={{ color: '#a0a0a0', transition: 'all 0.2s ease', display: 'inline-block' }}
@@ -418,25 +373,10 @@ export default function Footer() {
                     `}</style>
                   </a>
                 </li>
-                <li>
-                  <a
-                    href={hashHref('faq')}
-                    style={{ color: '#a0a0a0', transition: 'all 0.2s ease', display: 'inline-block' }}
-                    className="footer-link"
-                  >
-                    FAQ
-                    <style jsx>{`
-                      .footer-link:hover {
-                        color: var(--accent);
-                        transform: translateX(5px);
-                      }
-                    `}</style>
-                  </a>
-                </li>
               </ul>
             </div>
             
-            {/* Founder Column */}
+            {/* Community Column */}
             <div style={{ minWidth: '160px' }}>
               <h3 style={{ 
                 color: 'white', 
@@ -446,7 +386,7 @@ export default function Footer() {
                 position: 'relative',
                 paddingBottom: '0.75rem'
               }}>
-                The Founder
+                Community
                 <span style={{ 
                   position: 'absolute', 
                   bottom: 0, 
@@ -459,13 +399,12 @@ export default function Footer() {
               </h3>
               <ul style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                 <li>
-                  <a 
-                    href="https://zachredder.com" 
-                    target="_blank"
+                  <a
+                    href={hashHref('community')}
                     style={{ color: '#a0a0a0', transition: 'all 0.2s ease', display: 'inline-block' }}
                     className="footer-link"
                   >
-                    Learn More
+                    Discord Server
                     <style jsx>{`
                       .footer-link:hover {
                         color: var(--accent);
@@ -475,29 +414,12 @@ export default function Footer() {
                   </a>
                 </li>
                 <li>
-                  <a 
-                    href="https://zachredder.com/newsletter" 
-                    target="_blank"
+                  <a
+                    href="/blog"
                     style={{ color: '#a0a0a0', transition: 'all 0.2s ease', display: 'inline-block' }}
                     className="footer-link"
                   >
-                    Newsletter
-                    <style jsx>{`
-                      .footer-link:hover {
-                        color: var(--accent);
-                        transform: translateX(5px);
-                      }
-                    `}</style>
-                  </a>
-                </li>
-                <li>
-                  <a 
-                    href="mailto:zach@zachredder.com" 
-                    target="_blank"
-                    style={{ color: '#a0a0a0', transition: 'all 0.2s ease', display: 'inline-block' }}
-                    className="footer-link"
-                  >
-                    Contact
+                    Blog
                     <style jsx>{`
                       .footer-link:hover {
                         color: var(--accent);
@@ -519,7 +441,7 @@ export default function Footer() {
                 position: 'relative',
                 paddingBottom: '0.75rem'
               }}>
-                Legal
+                Support
                 <span style={{ 
                   position: 'absolute', 
                   bottom: 0, 
@@ -562,21 +484,21 @@ export default function Footer() {
                   </a>
                 </li>
                 <li>
-                    <a 
-                      href="mailto:zach@keystone.com" 
-                      target="_blank"
-                      style={{ color: '#a0a0a0', transition: 'all 0.2s ease', display: 'inline-block' }}
-                      className="footer-link"
-                    >
-                      Support
-                      <style jsx>{`
-                        .footer-link:hover {
-                          color: var(--accent);
-                          transform: translateX(5px);
-                        }
-                      `}</style>
-                    </a>
-                  </li>
+                  <a 
+                    href="mailto:zach@thekeystoneapp.com" 
+                    target="_blank"
+                    style={{ color: '#a0a0a0', transition: 'all 0.2s ease', display: 'inline-block' }}
+                    className="footer-link"
+                  >
+                    Contact
+                    <style jsx>{`
+                      .footer-link:hover {
+                        color: var(--accent);
+                        transform: translateX(5px);
+                      }
+                    `}</style>
+                  </a>
+                </li>
               </ul>
             </div>
           </div>
@@ -594,7 +516,7 @@ export default function Footer() {
           position: 'relative'
         }}>
           <div style={{ color: '#777777', fontSize: '0.875rem' }}>
-            © {new Date().getFullYear()} Keystone. All rights reserved.
+            © {new Date().getFullYear()} Redder Media LLC. All rights reserved.
           </div>
           <div style={{ display: 'flex', gap: '2rem', alignItems: 'center' }}>
             <Link 

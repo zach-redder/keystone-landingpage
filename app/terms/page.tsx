@@ -70,7 +70,7 @@ export default function Terms() {
           <section>
             <h2 className="text-2xl font-semibold mb-4 text-[#d4de95]">6. Limitations</h2>
             <p className="text-gray-300 leading-relaxed">
-              In no event shall Keystone or its suppliers be liable for any damages arising out of the use or inability to use our service, even if we have been notified of the possibility of such damages.
+              In no event shall Redder Media LLC or its suppliers be liable for any damages arising out of the use or inability to use our service, even if we have been notified of the possibility of such damages.
             </p>
           </section>
 

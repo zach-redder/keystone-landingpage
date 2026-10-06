@@ -9,16 +9,26 @@ const schema = z.object({
 });
 
 // Required env vars: RESEND_API_KEY, NEXT_PUBLIC_SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY
-const resend = new Resend(process.env.RESEND_API_KEY!);
+// Built lazily (not at import time) so `next build` / `next dev` don't crash when
+// env vars are absent -- a missing key only fails the request that needs it.
+function getResend(): Resend {
+  const apiKey = process.env.RESEND_API_KEY;
+  if (!apiKey) throw new Error('RESEND_API_KEY is not set');
+  return new Resend(apiKey);
+}
 
 // Server-only client: referral_codes has RLS enabled with no anon/authenticated
 // insert policy (codes are meant to be backend-inserted -- see keystone-app's
 // referralService.ts), so this route must use the service-role key, never the
 // anon key. This client is never exposed to the browser.
-const supabaseAdmin = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL!,
-  process.env.SUPABASE_SERVICE_ROLE_KEY!
-);
+function getSupabaseAdmin() {
+  const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
+  const serviceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
+  if (!url || !serviceRoleKey) {
+    throw new Error('NEXT_PUBLIC_SUPABASE_URL / SUPABASE_SERVICE_ROLE_KEY is not set');
+  }
+  return createClient(url, serviceRoleKey);
+}
 
 const CODE_ALPHABET = 'ABCDEFGHJKMNPQRSTUVWXYZ23456789'; // no 0/O, 1/I/L -- avoids ambiguous chars
 const CODE_LENGTH = 6;
@@ -35,7 +45,7 @@ function generateReferralCode(): string {
 }
 
 async function findReusableCode(email: string): Promise<string | null> {
-  const { data: existingSignup } = await supabaseAdmin
+  const { data: existingSignup } = await getSupabaseAdmin()
     .from('landing_free_month_signups')
     .select('referral_code')
     .eq('email', email)
@@ -43,7 +53,7 @@ async function findReusableCode(email: string): Promise<string | null> {
 
   if (!existingSignup) return null;
 
-  const { data: existingCode } = await supabaseAdmin
+  const { data: existingCode } = await getSupabaseAdmin()
     .from('referral_codes')
     .select('is_active, usage_limit, used_count, expires_at')
     .eq('code', existingSignup.referral_code)
@@ -64,7 +74,7 @@ async function mintNewCode(email: string): Promise<string> {
 
   for (let attempt = 0; attempt < MAX_GENERATE_ATTEMPTS; attempt++) {
     const code = generateReferralCode();
-    const { error } = await supabaseAdmin.from('referral_codes').insert({
+    const { error } = await getSupabaseAdmin().from('referral_codes').insert({
       code,
       subscription_type: 'monthly',
       description: `Landing page signup: ${email}`,
@@ -76,7 +86,7 @@ async function mintNewCode(email: string): Promise<string> {
     });
 
     if (!error) {
-      await supabaseAdmin
+      await getSupabaseAdmin()
         .from('landing_free_month_signups')
         .upsert({ email, referral_code: code, created_at: new Date().toISOString() });
       return code;
@@ -103,14 +113,14 @@ export async function POST(req: NextRequest) {
     const code = (await findReusableCode(email)) ?? (await mintNewCode(email));
 
     // Add to Resend audience
-    await resend.contacts.create({
+    await getResend().contacts.create({
       email,
       audience_id: '10d3a00b-093e-4b2d-8f1f-422a8774522b',
       unsubscribed: false
     });
 
     // Send the free-month code via Resend
-    await resend.emails.send({
+    await getResend().emails.send({
       to: email,
       from: '"Keystone" <zach@thekeystoneapp.com>',
       subject: 'Your 1 Month of Keystone Pro',

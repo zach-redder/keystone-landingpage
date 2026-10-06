@@ -72,7 +72,7 @@ export default function BlogSearch({ posts }: { posts: BlogPostMeta[] }) {
         <Search
           size={18}
           color="#a0a0a0"
-          style={{ position: 'absolute', left: '1.1rem', top: '50%', transform: 'translateY(-50%)' }}
+          style={{ position: 'absolute', left: '1.1rem', top: '50%', transform: 'translateY(-50%)', zIndex: 1, pointerEvents: 'none' }}
         />
         <input
           type="text"

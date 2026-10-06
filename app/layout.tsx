@@ -11,7 +11,7 @@ import { Metadata } from 'next';
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 
 export const metadata: Metadata = {
-  title: "Keystone — Overcome Doubt",
+  title: "Keystone - Overcome Doubt",
   description: "Affirm who you are. Question who you're becoming. Download Keystone today.",
   icons: {
     icon: '/icon.png',
@@ -19,15 +19,15 @@ export const metadata: Metadata = {
     apple: '/icon.png',
   },
   openGraph: {
-    title: "Keystone — Overcome Doubt",
-    description: "Affirm who you are. Question who you're becoming. Download Keystone today.",
+    title: "Keystone - Overcome Doubt",
+description: "Affirm who you are. Question who you're becoming. Download Keystone today.",
     url: "https://thekeystoneapp.com",
     images: ["https://thekeystoneapp.com/og-image.png"],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Keystone — Overcome Doubt",
-    description: "Affirm who you are. Question who you're becoming. Download Keystone today.",
+    title: "Keystone - Overcome Doubt",
+description: "Affirm who you are. Question who you're becoming. Download Keystone today.",
     images: ["https://thekeystoneapp.com/og-image.png"],
   },
 };

@@ -4,7 +4,7 @@ import Hero from '../components/Hero';
 import Features from '../components/Features';
 import HowItWorks from '../components/HowItWorks';
 import ProblemAgitation from '../components/ProblemAgitation';
-import AboutFounder from '../components/AboutFounder';
+//import AboutFounder from '../components/AboutFounder';
 //import Testimonial from '../components/Testimonial';
 import Download from '../components/Download';
 import Waitlist from '../components/Waitlist';
@@ -44,7 +44,7 @@ export default function HomePage() {
       <HowItWorks />
       <Features />
       {/*<Testimonial />*/}
-      <AboutFounder />
+      {/*<AboutFounder />*/}
       <Download />
       <Waitlist />
       <Community />

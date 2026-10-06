@@ -4,16 +4,20 @@ import Spline from '@splinetool/react-spline';
 import DownloadButtons from './DownloadButtons';
 
 // Spline is a heavy external WebGL script with real load-time cost, and the
-// scene provides the least value on the smallest phones where it's squeezed
-// under two large text blocks in a single stacked column -- skip mounting it
-// there entirely rather than just hiding it with CSS.
-const SPLINE_MIN_VIEWPORT_WIDTH = 480;
+// orb doesn't look good on mobile where it's squeezed under two large text
+// blocks in a single stacked column -- skip mounting it below the site's
+// mobile breakpoint rather than just hiding it with CSS.
+const SPLINE_MIN_VIEWPORT_WIDTH = 768;
 
 export default function Hero() {
   const [showSplineScene, setShowSplineScene] = useState(true);
 
   useEffect(() => {
-    setShowSplineScene(window.innerWidth >= SPLINE_MIN_VIEWPORT_WIDTH);
+    const query = window.matchMedia(`(min-width: ${SPLINE_MIN_VIEWPORT_WIDTH}px)`);
+    const update = () => setShowSplineScene(query.matches);
+    update();
+    query.addEventListener('change', update);
+    return () => query.removeEventListener('change', update);
   }, []);
 
   return (
