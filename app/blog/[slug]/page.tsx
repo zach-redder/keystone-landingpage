@@ -3,6 +3,14 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { getAllSlugs, getPostBySlug } from '../../../lib/blog';
 import DownloadButtons from '../../../components/DownloadButtons';
+import JsonLd from '../../../components/JsonLd';
+import {
+  absoluteUrl,
+  FOUNDER_NAME,
+  OG_IMAGE,
+  ORGANIZATION_NAME,
+  SITE_NAME,
+} from '../../../lib/seo';
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -17,19 +25,30 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const post = getPostBySlug(slug);
   if (!post) return {};
 
+  const path = `/blog/${encodeURIComponent(post.slug)}`;
+
   return {
-    title: `${post.title} - Keystone Blog`,
+    title: post.title,
     description: post.excerpt,
+    alternates: { canonical: path },
+    robots: post.isStub ? { index: false, follow: false } : undefined,
+    authors: [{ name: post.author }],
     openGraph: {
+      type: 'article',
+      siteName: SITE_NAME,
       title: post.title,
       description: post.excerpt,
-      url: `https://thekeystoneapp.com/blog/${post.slug}`,
-      type: 'article',
+      url: path,
+      publishedTime: post.date,
+      authors: [post.author],
+      tags: post.tags,
+      images: [OG_IMAGE],
     },
     twitter: {
       card: 'summary_large_image',
       title: post.title,
       description: post.excerpt,
+      images: [{ url: OG_IMAGE.url, alt: OG_IMAGE.alt }],
     },
   };
 }
@@ -47,8 +66,38 @@ export default async function BlogPostPage({ params }: PageProps) {
   const post = getPostBySlug(slug);
   if (!post) notFound();
 
+  const postUrl = absoluteUrl(`/blog/${encodeURIComponent(post.slug)}`);
+  // The page already has one H1 (the post title), so body-level H1s become H2s.
+  const bodyHtml = post.contentHtml.replace(/<(\/?)h1(?=[\s>])/g, '<$1h2');
+  const structuredData = [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'BlogPosting',
+      headline: post.title,
+      description: post.excerpt,
+      datePublished: post.date,
+      dateModified: post.date,
+      keywords: post.tags.join(', '),
+      image: absoluteUrl(OG_IMAGE.url),
+      mainEntityOfPage: postUrl,
+      url: postUrl,
+      author: { '@type': 'Person', name: post.author || FOUNDER_NAME },
+      publisher: { '@type': 'Organization', name: ORGANIZATION_NAME, url: absoluteUrl('/') },
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: SITE_NAME, item: absoluteUrl('/') },
+        { '@type': 'ListItem', position: 2, name: 'Blog', item: absoluteUrl('/blog') },
+        { '@type': 'ListItem', position: 3, name: post.title, item: postUrl },
+      ],
+    },
+  ];
+
   return (
     <div style={{ width: '100%', paddingTop: '80px' }}>
+      {!post.isStub && <JsonLd data={structuredData} />}
       <article style={{ padding: 'clamp(2.5rem, 6vw, 4rem) 0 clamp(3rem, 6vw, 5rem)' }}>
         <div className="container" style={{ maxWidth: '760px' }}>
           <Link
@@ -102,13 +151,13 @@ export default async function BlogPostPage({ params }: PageProps) {
           >
             <span>{post.author}</span>
             <span>·</span>
-            <span>{formatDate(post.date)}</span>
+            <time dateTime={post.date}>{formatDate(post.date)}</time>
             <span>·</span>
             <span>{post.readTime} min read</span>
           </div>
 
           {/* Trusted content: rendered from markdown files in content/blog/, authored only via this repo — not user-submitted input. */}
-          <div className="post-body" dangerouslySetInnerHTML={{ __html: post.contentHtml }} />
+          <div className="post-body" dangerouslySetInnerHTML={{ __html: bodyHtml }} />
 
           <div
             style={{

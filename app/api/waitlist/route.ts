@@ -3,10 +3,30 @@ import { z } from 'zod';
 import { Resend } from 'resend';
 import { createClient } from '@supabase/supabase-js';
 import { randomBytes } from 'crypto';
+import {
+  clientIp,
+  createRateLimiter,
+  GLOBAL_LIMIT,
+  GLOBAL_WINDOW_MS,
+  IP_LIMIT,
+  IP_WINDOW_MS,
+  isCodeRedeemed,
+  isCodeUsable,
+  isSameOrigin,
+  isWithinCooldown,
+  MAX_BODY_BYTES,
+  normalizeEmail,
+} from '@/lib/waitlistGuard';
+
+const MAX_EMAIL_LENGTH = 254; // the SMTP limit
 
 const schema = z.object({
-  email: z.string().email(),
+  email: z.string().max(MAX_EMAIL_LENGTH).email(),
 });
+
+// Per warm serverless instance, so this blunts casual abuse but is not a hard limit; see waitlistGuard.ts
+const ipLimiter = createRateLimiter(IP_LIMIT, IP_WINDOW_MS);
+const globalLimiter = createRateLimiter(GLOBAL_LIMIT, GLOBAL_WINDOW_MS);
 
 // Required env vars: RESEND_API_KEY, NEXT_PUBLIC_SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY
 // Built lazily (not at import time) so `next build` / `next dev` don't crash when
@@ -44,14 +64,18 @@ function generateReferralCode(): string {
   return `KEYSTONE-${suffix}`; // validateReferralCode() uppercases + exact-matches, so this must already be uppercase
 }
 
-async function findReusableCode(email: string): Promise<string | null> {
+type SignupDecision = { action: 'send'; code: string } | { action: 'skip' };
+
+// What to do for an address that asks for the free month. Skipping still answers "Success" to the caller,
+// so the endpoint can't be used to learn which addresses have signed up or redeemed.
+async function resolveSignup(email: string): Promise<SignupDecision> {
   const { data: existingSignup } = await getSupabaseAdmin()
     .from('landing_free_month_signups')
-    .select('referral_code')
+    .select('referral_code, created_at')
     .eq('email', email)
     .maybeSingle();
 
-  if (!existingSignup) return null;
+  if (!existingSignup) return { action: 'send', code: await mintNewCode(email) };
 
   const { data: existingCode } = await getSupabaseAdmin()
     .from('referral_codes')
@@ -59,14 +83,23 @@ async function findReusableCode(email: string): Promise<string | null> {
     .eq('code', existingSignup.referral_code)
     .maybeSingle();
 
-  if (!existingCode) return null;
+  // Already redeemed: this address has had its month. Another code would make the offer unlimited.
+  if (existingCode && isCodeRedeemed(existingCode)) return { action: 'skip' };
 
-  const stillUsable =
-    existingCode.is_active &&
-    (existingCode.usage_limit === null || existingCode.used_count < existingCode.usage_limit) &&
-    (!existingCode.expires_at || new Date(existingCode.expires_at) > new Date());
+  // created_at is the time the code was last emailed. Without this, anyone could re-submit an address
+  // over and over to mail that person from the founder's address.
+  if (isWithinCooldown(existingSignup.created_at, Date.now())) return { action: 'skip' };
 
-  return stillUsable ? existingSignup.referral_code : null;
+  if (existingCode && isCodeUsable(existingCode, Date.now())) {
+    await getSupabaseAdmin()
+      .from('landing_free_month_signups')
+      .update({ created_at: new Date().toISOString() })
+      .eq('email', email);
+    return { action: 'send', code: existingSignup.referral_code };
+  }
+
+  // Expired without ever being redeemed
+  return { action: 'send', code: await mintNewCode(email) };
 }
 
 async function mintNewCode(email: string): Promise<string> {
@@ -102,15 +135,42 @@ async function mintNewCode(email: string): Promise<string> {
 }
 
 export async function POST(req: NextRequest) {
+  if (!isSameOrigin(req.headers.get('origin'), req.headers.get('host'))) {
+    return NextResponse.json({ message: 'Forbidden.' }, { status: 403 });
+  }
+
+  const wait = ipLimiter(clientIp(req.headers)) || globalLimiter('all');
+  if (wait) {
+    return NextResponse.json(
+      { message: 'Too many requests. Please try again later.' },
+      { status: 429, headers: { 'Retry-After': String(wait) } }
+    );
+  }
+
   try {
-    const body = await req.json();
+    const raw = await req.text();
+    if (raw.length > MAX_BODY_BYTES) {
+      return NextResponse.json({ message: 'Invalid email address.' }, { status: 413 });
+    }
+
+    let body: unknown;
+    try {
+      body = JSON.parse(raw);
+    } catch {
+      return NextResponse.json({ message: 'Invalid email address.' }, { status: 400 });
+    }
+
     const result = schema.safeParse(body);
     if (!result.success) {
       return NextResponse.json({ message: 'Invalid email address.' }, { status: 400 });
     }
-    const { email } = result.data;
+    const email = normalizeEmail(result.data.email);
 
-    const code = (await findReusableCode(email)) ?? (await mintNewCode(email));
+    const decision = await resolveSignup(email);
+    if (decision.action === 'skip') {
+      return NextResponse.json({ message: 'Success' });
+    }
+    const { code } = decision;
 
     // Add to Resend audience
     await getResend().contacts.create({
@@ -138,7 +198,8 @@ export async function POST(req: NextRequest) {
 
     return NextResponse.json({ message: 'Success' });
   } catch (e) {
-    console.error(e);
+    // Provider errors can quote the address, so only the error type is logged
+    console.error('Waitlist signup failed:', e instanceof Error ? e.name : 'unknown error');
     return NextResponse.json({ message: 'Server error.' }, { status: 500 });
   }
 }
