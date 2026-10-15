@@ -67,7 +67,7 @@ const Community: React.FC = () => {
               lineHeight: '1.7',
               marginBottom: 'clamp(1.5rem, 4vw, 2rem)'
             }}>
-              Our community is a space to express yourself without the fear of outside judgment that keeps most people quiet. Your creative work, your business, your goals, your setbacks and your wins, whatever you&apos;re wokring towards, without filtering it through what other people expect of you.
+              Our community is a space to express yourself without the fear of outside judgment that keeps most people quiet. Your creative work, your business, your goals, your setbacks and your wins, whatever you&apos;re working towards, without filtering it through what other people expect of you.
             </p>
             <p style={{
               color: '#b0b0b0',

@@ -37,7 +37,7 @@ export default function Support() {
               <a href={`mailto:${CONTACT_EMAIL}`} className="text-[#d4de95] underline">
                 {CONTACT_EMAIL}
               </a>{' '}
-              and we will get back to you. [CONFIRM: typical response time, e.g. &quot;within two business days&quot;]
+              and we will get back to you within two business days.
             </p>
           </section>
 
@@ -55,19 +55,26 @@ export default function Support() {
               <div>
                 <h3 className="text-lg font-semibold text-white mb-1">How do I cancel my subscription?</h3>
                 <p>
-                  Subscriptions are managed by Apple, not by Keystone. On your iPhone, open Settings, tap your name, then
-                  Subscriptions, and choose Keystone. Deleting your Keystone account does not cancel an Apple subscription.
+                  Subscriptions are managed by Apple, not by Keystone. In Keystone, open Profile and tap My Subscription,
+                  or on your iPhone open Settings, tap your name, then Subscriptions, and choose Keystone. Deleting your
+                  Keystone account does not cancel an Apple subscription.
                 </p>
               </div>
               <div>
                 <h3 className="text-lg font-semibold text-white mb-1">How do I restore a purchase?</h3>
-                <p>[CONFIRM: where Restore Purchases lives in the app, and the steps to get there]</p>
+                <p>
+                  In Keystone, open Profile and tap Restore Purchases. If you subscribed with a different Apple ID, switch
+                  to it in iPhone Settings first. If nothing is found, you&apos;ll be offered the plans, where you can use
+                  the restore option. Your Pro access is also tied to your Keystone account, so signing in to the same
+                  account on a new phone brings it with you.
+                </p>
               </div>
               <div>
                 <h3 className="text-lg font-semibold text-white mb-1">I forgot my password.</h3>
                 <p>
-                  [CONFIRM: wording] On the sign-in screen, use the reset password option and follow the link in the email
-                  we send you. The link opens the Keystone app.
+                  On the sign-in screen, type your email address and tap Forgot Password?. Then open the link in the email we
+                  send you on the same iPhone where you asked for it. It opens Keystone, where you can choose a new password.
+                  If the link says it has expired, request a new one.
                 </p>
               </div>
               <div>

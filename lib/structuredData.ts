@@ -94,7 +94,7 @@ export function homeStructuredData(): Record<string, unknown>[] {
       description: APP_DEFINITION,
       url: SITE_URL,
       image: absoluteUrl(OG_IMAGE.url),
-      applicationCategory: 'LifestyleApplication',
+      applicationCategory: 'Lifestyle',
       operatingSystem: 'iOS',
       inLanguage: 'en',
       installUrl: APPLE_APP_STORE_URL,
