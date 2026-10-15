@@ -11,6 +11,8 @@ import Waitlist from '../components/Waitlist';
 import FAQ from '../components/FAQ';
 import Community from '../components/Community';
 import Pricing from '../components/Pricing';
+import JsonLd from '../components/JsonLd';
+import { homeStructuredData } from '../lib/structuredData';
 
 export default function HomePage() {
   // Add an intersection observer to detect when elements are in view
@@ -39,6 +41,7 @@ export default function HomePage() {
       width: '100%',
       paddingTop: '80px'
     }}>
+      <JsonLd data={homeStructuredData()} />
       <Hero />
       <ProblemAgitation />
       <HowItWorks />

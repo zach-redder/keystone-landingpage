@@ -1,4 +1,15 @@
 import React from 'react';
+import type { Metadata } from 'next';
+import { OG_IMAGE } from '../../lib/seo';
+
+const DESCRIPTION = 'How Keystone collects, uses, and protects your data.';
+
+export const metadata: Metadata = {
+  title: 'Privacy Policy',
+  description: DESCRIPTION,
+  alternates: { canonical: '/privacy-policy' },
+  openGraph: { title: 'Privacy Policy', description: DESCRIPTION, url: '/privacy-policy', images: [OG_IMAGE] },
+};
 
 export default function PrivacyPolicy() {
   return (

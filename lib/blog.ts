@@ -14,6 +14,7 @@ export interface BlogPostMeta {
   tags: string[];
   author: string;
   readTime: number;
+  isStub: boolean;
 }
 
 export interface BlogPost extends BlogPostMeta {
@@ -24,6 +25,11 @@ function readPostFile(slug: string) {
   const filePath = path.join(BLOG_DIR, `${slug}.md`);
   const raw = fs.readFileSync(filePath, 'utf8');
   return matter(raw);
+}
+
+// Placeholder posts ("# COMING SOON") must stay out of the sitemap and search index.
+function isStubContent(content: string): boolean {
+  return /^#\s*coming soon\s*$/i.test(content.trim());
 }
 
 function computeReadTime(content: string): number {
@@ -51,6 +57,7 @@ export function getAllPosts(): BlogPostMeta[] {
         tags: (data.tags as string[]) ?? [],
         author: data.author as string,
         readTime: computeReadTime(content),
+        isStub: isStubContent(content),
       };
     })
     .sort((a, b) => (a.date < b.date ? 1 : -1));
@@ -69,6 +76,7 @@ export function getPostBySlug(slug: string): BlogPost | null {
     tags: (data.tags as string[]) ?? [],
     author: data.author as string,
     readTime: computeReadTime(content),
+    isStub: isStubContent(content),
     contentHtml: marked.parse(content, { async: false }) as string,
   };
 }

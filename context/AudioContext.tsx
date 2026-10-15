@@ -109,7 +109,7 @@ export function AudioProvider({ children }: { children: ReactNode }) {
   return (
     <AudioContext.Provider value={{ muted: volume === 0, volume, setVolume, toggleMuted }}>
       {children}
-      <audio ref={audioRef} src="/audio/ambient.mp3" loop preload="auto" />
+      <audio ref={audioRef} src="/audio/ambient.mp3" loop preload="none" />
     </AudioContext.Provider>
   );
 }

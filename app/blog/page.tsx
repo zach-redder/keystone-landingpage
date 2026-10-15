@@ -1,14 +1,28 @@
 import { Metadata } from 'next';
 import { getAllPosts } from '../../lib/blog';
 import BlogSearch from '../../components/BlogSearch';
+import { OG_IMAGE, SITE_NAME } from '../../lib/seo';
+
+const BLOG_DESCRIPTION =
+  'Ideas on identity, core values, self-doubt, and becoming who you say you want to be — from the team building Keystone, the AI self-reflection app.';
 
 export const metadata: Metadata = {
-  title: 'Blog - Keystone',
-  description: 'Ideas on identity, discipline, and becoming who you say you want to be — from the team building Keystone.',
+  title: 'Blog',
+  description: BLOG_DESCRIPTION,
+  alternates: { canonical: '/blog' },
   openGraph: {
-    title: 'Blog - Keystone',
-    description: 'Ideas on identity, discipline, and becoming who you say you want to be — from the team building Keystone.',
-    url: 'https://thekeystoneapp.com/blog',
+    type: 'website',
+    siteName: SITE_NAME,
+    title: 'The Keystone Blog',
+    description: BLOG_DESCRIPTION,
+    url: '/blog',
+    images: [OG_IMAGE],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'The Keystone Blog',
+    description: BLOG_DESCRIPTION,
+    images: [{ url: OG_IMAGE.url, alt: OG_IMAGE.alt }],
   },
 };
 

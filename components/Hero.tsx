@@ -1,7 +1,12 @@
 'use client';
 import React, { useEffect, useState } from 'react';
-import Spline from '@splinetool/react-spline';
+import dynamic from 'next/dynamic';
 import DownloadButtons from './DownloadButtons';
+import { APP_DEFINITION } from '../lib/seo';
+
+// Code-split so the Spline runtime never lands in the initial bundle, which
+// would delay hydration (and the reveal of the H1) on every viewport.
+const SplineScene = dynamic(() => import('./SplineScene'), { ssr: false });
 
 // Spline is a heavy external WebGL script with real load-time cost, and the
 // orb doesn't look good on mobile where it's squeezed under two large text
@@ -10,7 +15,8 @@ import DownloadButtons from './DownloadButtons';
 const SPLINE_MIN_VIEWPORT_WIDTH = 768;
 
 export default function Hero() {
-  const [showSplineScene, setShowSplineScene] = useState(true);
+  // Starts false so the Spline chunk is only requested after we've confirmed a desktop viewport.
+  const [showSplineScene, setShowSplineScene] = useState(false);
 
   useEffect(() => {
     const query = window.matchMedia(`(min-width: ${SPLINE_MIN_VIEWPORT_WIDTH}px)`);
@@ -141,7 +147,9 @@ export default function Hero() {
                 WebkitTextFillColor: 'transparent',
                 textShadow: '0 0 20px rgba(212, 222, 149, 0.3)'
               }}> YOU</span>?
-            </h1>    
+            </h1>
+            {/* Plain-language definition for search engines and AI assistants; the visible headline stays as designed. */}
+            <p className="sr-only">{APP_DEFINITION}</p>
             <p className="hero-description animate-on-scroll" style={{
               fontSize: 'clamp(1.25rem, 3.5vw, 1.75rem)',
               color: '#e0e0e0',
@@ -172,13 +180,16 @@ export default function Hero() {
             </div>
           </div>
           {/* Right side - Spline scene (skipped entirely below SPLINE_MIN_VIEWPORT_WIDTH -- see effect above) */}
-          {showSplineScene && (
+          {/* Wrapper always renders (reserves space, no layout shift); CSS hides it below the breakpoint. */}
+          {(
             <div className="hero-phone" style={{
               order: 2,
             }}>
               {/* Fixed-size scene, scaled down visually per viewport so the camera framing never re-crops */}
               <div
                 className="spline-wrapper"
+                role="img"
+                aria-label="Animated 3D orb representing the Keystone app"
                 onWheelCapture={(e) => e.stopPropagation()}
                 onPointerDownCapture={(e) => e.stopPropagation()}
                 onMouseDownCapture={(e) => e.stopPropagation()}
@@ -200,15 +211,7 @@ export default function Hero() {
                   transformOrigin: 'center center',
                   transform: 'translate(-50%, calc(-50% - 132px)) scale(calc(clamp(200px, 50vw, 800px) / 800px))'
                 }}>
-                  <Spline
-                    scene="https://prod.spline.design/A39kgRJgUzRIY4Qv/scene.splinecode"
-                    style={{
-                      display: 'block',
-                      width: '100%',
-                      height: '100%',
-                      background: 'transparent'
-                    }}
-                  />
+                  {showSplineScene && <SplineScene />}
                   {/* Covers the Spline free-tier "Built with Spline" badge, which is baked into the canvas render itself */}
                   <div style={{
                     position: 'absolute',
@@ -228,6 +231,12 @@ export default function Hero() {
         .hero-section {
           min-height: 100vh;
           min-height: 100dvh;
+        }
+
+        @media (max-width: ${SPLINE_MIN_VIEWPORT_WIDTH - 1}px) {
+          .hero-phone {
+            display: none !important;
+          }
         }
 
         @keyframes shimmer {

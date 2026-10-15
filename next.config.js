@@ -2,6 +2,9 @@ const { securityHeaders } = require('./lib/securityHeaders');
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  images: {
+    formats: ['image/avif', 'image/webp'],
+  },
   // apple-app-site-association has no file extension, so static serving needs an
   // explicit content-type or some clients/CDNs won't accept it as valid JSON.
   async headers() {

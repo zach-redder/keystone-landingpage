@@ -543,6 +543,18 @@ export default function Footer() {
                 }
               `}</style>
             </Link>
+            <Link 
+              href="/support" 
+              style={{ color: '#777777', fontSize: '0.875rem', transition: 'color 0.2s' }}
+              className="footer-bottom-link"
+            >
+              Support
+              <style jsx>{`
+                .footer-bottom-link:hover {
+                  color: var(--accent);
+                }
+              `}</style>
+            </Link>
           </div>
         </div>
       </div>

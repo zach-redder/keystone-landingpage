@@ -1,4 +1,15 @@
 import React from 'react';
+import type { Metadata } from 'next';
+import { OG_IMAGE } from '../../lib/seo';
+
+const DESCRIPTION = 'The terms and conditions for using the Keystone app and website.';
+
+export const metadata: Metadata = {
+  title: 'Terms & Conditions',
+  description: DESCRIPTION,
+  alternates: { canonical: '/terms' },
+  openGraph: { title: 'Terms & Conditions', description: DESCRIPTION, url: '/terms', images: [OG_IMAGE] },
+};
 
 export default function Terms() {
   return (
