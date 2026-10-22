@@ -64,7 +64,7 @@ export default function HowItWorks() {
               maxWidth: '800px',
               textShadow: '0 1px 2px rgba(0, 0, 0, 0.3)'
             }}>
-              Two ways to use Keystone. One to affirm who you are. One to question who you're becoming.
+              Four steps, two modes. One to affirm who you are. One to question who you're becoming.
             </p>
           </div>          <div style={{ maxWidth: '900px', margin: '0 auto', position: 'relative' }}>
             <div style={{ display: 'flex', flexDirection: 'column' }}>
@@ -216,7 +216,7 @@ export default function HowItWorks() {
                     textShadow: '0 1px 2px rgba(0, 0, 0, 0.3)'
                   }}>
                     When outside opinions get loud and doubt creeps in, open Affirm Mode.
-                    This is the AI trained to remind you of who you already are, grounded in your actual keys, not generic encouragement.
+                    This is the AI built to remind you of who you already are, grounded in your actual keys, not generic encouragement.
                   </p>
                   <div className="quote-bubble" style={{ 
                     display: 'inline-block',

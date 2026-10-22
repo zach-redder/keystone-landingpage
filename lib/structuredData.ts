@@ -23,12 +23,22 @@ const FAQ_ITEMS = [
   {
     question: 'What is Keystone?',
     answer:
-      "Keystone is an app built around one idea: the mean between certainty and doubt. Talk to an AI that helps you affirm who you are when outside opinions get loud, or one that questions who you're becoming when you start to feel stagnant.",
+      "Keystone is an AI self-reflection app built around one idea: the mean between certainty and doubt. Talk to an AI that helps you affirm who you are when outside opinions get loud, or one that questions who you're becoming when you start to feel stagnant.",
   },
   {
     question: "What's the difference between the two AI modes?",
     answer:
       "Affirm Mode is there to ground you — it reminds you of who you are, using your own stored keys, when doubt or other people's opinions start to drown that out. Question Mode questions your beliefs and identity instead of affirming them, asking hard questions so you find your own answers rather than being handed one.",
+  },
+  {
+    question: 'Am I talking to a real person?',
+    answer:
+      "No. Keystone's replies come from an AI, not a person. That's the point: it's a private place to think out loud with no judgment and no audience, so you can get clear before you take it to the people in your life.",
+  },
+  {
+    question: 'Is Keystone therapy?',
+    answer:
+      "Keystone is a self-reflection tool, not a substitute for professional care. Plenty of people use it to think through hard things, and that's welcome. If you're in crisis, please reach out to someone who can help right now: in the US, call or text 988 or text HOME to 741741; elsewhere, findahelpline.com lists services by country. If you might be in immediate danger, call your local emergency number.",
   },
   {
     question: 'Is Keystone available now?',
@@ -38,7 +48,7 @@ const FAQ_ITEMS = [
   {
     question: 'How will my data be used?',
     answer:
-      "Your data will be kept private and only used to improve your experience. We'll never share your information to third parties. Your identity information will be encrypted and secured safely.",
+      "Your messages and keys are sent to our AI provider so Keystone can reply, and your information is stored securely. We don't sell your data or use it for advertising, and you can delete everything any time from your profile.",
   },
   {
     question: 'Is Keystone available on iOS and Android?',
@@ -48,7 +58,7 @@ const FAQ_ITEMS = [
   {
     question: 'Will the app be free?',
     answer:
-      'Yes, the free tier of the app offers enough features where you can benefit fully from Keystone. The premium tier of the app will unlock the full app experience, advanced AI options, and additional tools/benefits for committed users.',
+      'Yes, the free tier of the app offers enough features where you can benefit fully from Keystone. The premium tier of the app unlocks the full app experience, advanced AI options, and additional tools/benefits for committed users.',
   },
 ];
 

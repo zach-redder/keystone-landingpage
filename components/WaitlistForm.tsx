@@ -220,7 +220,7 @@ export default function WaitlistForm() {
         paddingTop: 'clamp(0.5rem, 1vw, 0.75rem)',
         textShadow: '0 1px 2px rgba(0, 0, 0, 0.3)'
       }}>
-        We respect your privacy and will never share your information.
+        We respect your privacy. We&apos;ll only use your email to send your code and Keystone updates.
       </p>
     </div>
   );

@@ -190,7 +190,8 @@ export async function POST(req: NextRequest) {
           <p style="font-size: 16px; margin-bottom: 20px;">It's Zach here, the creator of Keystone. Here's your code for 1 month of Keystone Pro, free:</p>
           <p style="font-size: 28px; font-weight: bold; letter-spacing: 2px; text-align: center; margin: 24px 0; padding: 16px; background: #f5f5f5; border-radius: 12px;">${code}</p>
           <p style="font-size: 16px; margin-bottom: 20px;">Open the Keystone app, then go to <strong>Settings &rarr; Enter Referral Code</strong> (or enter it during onboarding) to redeem it.</p>
-          <p style="font-size: 16px; margin-bottom: 20px;">You can also join our <a href="https://discord.me/thealignedcore" style="color: #007bff; text-decoration: none;">Discord</a> community!</p>
+          <p style="font-size: 16px; margin-bottom: 20px;">Keystone is an AI self-reflection app: talk to an AI that helps you affirm who you are and question who you're becoming.</p>
+          <p style="font-size: 16px; margin-bottom: 20px;">You can also join our <a href="https://discord.gg/qgkuRUWaD9" style="color: #007bff; text-decoration: none;">Discord</a> community!</p>
           <p style="font-size: 16px; margin-top: 30px;">Best,<br/>Zach</p>
         </div>
       `

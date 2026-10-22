@@ -2,7 +2,7 @@ import React from 'react';
 import type { Metadata } from 'next';
 import { OG_IMAGE } from '../../lib/seo';
 
-const DESCRIPTION = 'How Keystone collects, uses, and protects your data.';
+const DESCRIPTION = 'How Keystone collects, uses, and protects your data, including how its AI uses what you write.';
 
 export const metadata: Metadata = {
   title: 'Privacy Policy',
@@ -13,18 +13,18 @@ export const metadata: Metadata = {
 
 export default function PrivacyPolicy() {
   return (
-    <div className="min-h-screen" style={{ 
+    <div className="min-h-screen" style={{
       background: 'linear-gradient(to bottom, rgba(43, 43, 43, 1) 0%, rgba(42, 42, 42, 0.95) 50%, rgba(41, 41, 41, 0.9) 100%)',
       paddingTop: '100px'
     }}>
       <div className="container mx-auto px-4 py-16 max-w-4xl">
         <h1 className="text-4xl md:text-5xl font-bold mb-8 text-[#d4de95]">Privacy Policy</h1>
-        
+
         <div className="space-y-8">
           <section>
             <h2 className="text-2xl font-semibold mb-4 text-[#d4de95]">Introduction</h2>
             <p className="text-gray-300 leading-relaxed">
-              At Redder Media LLC, we take your privacy seriously. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our application. Please read this privacy policy carefully. If you do not agree with the terms of this privacy policy, please do not access the application.
+              At Redder Media LLC, we take your privacy seriously. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use the Keystone mobile app and this website. Keystone is an AI self-reflection app, so a large part of this policy explains how the AI works with what you write. Please read it carefully. If you do not agree with this policy, please do not use Keystone.
             </p>
           </section>
 
@@ -32,13 +32,17 @@ export default function PrivacyPolicy() {
             <h2 className="text-2xl font-semibold mb-4 text-[#d4de95]">Information We Collect</h2>
             <div className="space-y-4">
               <p className="text-gray-300 leading-relaxed">
-                We collect information that you provide directly to us, including:
+                We collect information that you provide directly to us or generate by using Keystone, including:
               </p>
               <ul className="list-disc list-inside text-gray-300 space-y-2 ml-4">
-                <li>Personal information (name, email address)</li>
-                <li>User-generated content (values, goals, identity traits)</li>
-                <li>Usage data and preferences</li>
+                <li>Account information (name, email address, and, if you sign in with Apple or Google, the details you choose to share with us)</li>
+                <li>Your identity keys (the core values, goals, traits, and other statements you save)</li>
+                <li>Your conversations with the AI, including the text of your messages, the AI&apos;s replies, and, in voice mode, a text transcript of each turn</li>
+                <li>Preferences and onboarding answers (for example, your reminder time, your chosen AI personality, and your age)</li>
+                <li>Subscription and purchase status, and any referral or promo code you redeem</li>
+                <li>Basic usage information, such as when a voice session started and ended and how many messages it contained</li>
                 <li>Communication data when you contact us</li>
+                <li>On this website, your email address if you request a free-month code, and standard request data collected by our hosting provider</li>
               </ul>
             </div>
           </section>
@@ -50,42 +54,128 @@ export default function PrivacyPolicy() {
                 We use the information we collect to:
               </p>
               <ul className="list-disc list-inside text-gray-300 space-y-2 ml-4">
-                <li>Provide and maintain our service</li>
-                <li>Send you personalized reminders and updates</li>
+                <li>Provide and maintain our service, including generating AI replies and proposing changes to your keys</li>
+                <li>Create your account, manage your subscription, and apply codes you redeem</li>
+                <li>Send you reminders you ask for and updates about Keystone</li>
                 <li>Improve and personalize your experience</li>
-                <li>Communicate with you about our service</li>
-                <li>Analyze usage patterns to improve our application</li>
+                <li>Keep the service secure, prevent abuse, and enforce usage limits</li>
+                <li>Communicate with you about our service and respond to your requests</li>
+                <li>Understand how this website is used, through basic website analytics</li>
               </ul>
             </div>
           </section>
 
           <section>
-            <h2 className="text-2xl font-semibold mb-4 text-[#d4de95]">Data Security</h2>
+            <h2 className="text-2xl font-semibold mb-4 text-[#d4de95]">How the AI Uses What You Write</h2>
+            <div className="space-y-4 text-gray-300 leading-relaxed">
+              <p>
+                Keystone&apos;s replies are generated by AI, not by a person. To reply, Keystone sends what you write and the identity keys you save to OpenAI, our AI provider. In voice mode, your speech is streamed to OpenAI as audio. Keystone does not keep the audio. It saves a text transcript of each turn in your chat history, the same as typed messages.
+              </p>
+              <p>
+                Under OpenAI&apos;s API data policies, content sent through its API is not used to train its models by default, and may be retained for a limited period for abuse and safety monitoring. OpenAI&apos;s handling of that data is governed by its own terms and privacy policy.
+              </p>
+              <p>
+                Keystone may suggest changes to your identity keys based on your conversations. Nothing is added, changed, or removed unless you accept it.
+              </p>
+              <p>
+                AI replies can be wrong or incomplete. Please see our Terms &amp; Conditions for important information about relying on them.
+              </p>
+            </div>
+          </section>
+
+          <section>
+            <h2 className="text-2xl font-semibold mb-4 text-[#d4de95]">Sensitive Information</h2>
             <p className="text-gray-300 leading-relaxed">
-              We implement appropriate technical and organizational security measures to protect your personal information. However, no method of transmission over the Internet or electronic storage is 100% secure, and we cannot guarantee absolute security.
+              Keystone is a place to think out loud, so what you write may be personal and may touch on your beliefs, relationships, or wellbeing. You decide what to share. We do not sell this information, we do not use it for advertising, and we use it only to run Keystone and to provide the features described in this policy. Please avoid sharing information you would not want sent to our AI provider, such as other people&apos;s private details, financial account numbers, or government ID numbers.
             </p>
           </section>
 
           <section>
-            <h2 className="text-2xl font-semibold mb-4 text-[#d4de95]">Your Rights</h2>
+            <h2 className="text-2xl font-semibold mb-4 text-[#d4de95]">Who We Share Information With</h2>
+            <div className="space-y-4">
+              <p className="text-gray-300 leading-relaxed">
+                We do not sell your personal information and we do not share it for advertising. We use these service providers to run Keystone. They process information on our behalf:
+              </p>
+              <ul className="list-disc list-inside text-gray-300 space-y-2 ml-4">
+                <li><strong>Supabase</strong>: accounts and our database (your account, keys, chat history, preferences, and subscription status)</li>
+                <li><strong>OpenAI</strong>: generating AI replies and voice conversations (your messages, your saved keys, and, in voice mode, your spoken audio)</li>
+                <li><strong>Resend</strong>: sending email, such as welcome emails and free-month codes (your email address)</li>
+                <li><strong>Superwall and Apple</strong>: subscriptions, purchases, and paywalls (purchase and subscription status and an account identifier)</li>
+                <li><strong>Apple and Google</strong>: if you choose to sign in with them (the details you choose to share)</li>
+                <li><strong>Vercel and Render</strong>: hosting for this website and for Keystone&apos;s servers (standard request data), and basic analytics for this website</li>
+              </ul>
+              <p className="text-gray-300 leading-relaxed">
+                We may also use error-monitoring tools that receive technical diagnostics rather than the content of your messages. We may disclose information if required by law, to protect the safety or rights of others, or in connection with a business transfer such as a merger or sale, in which case this policy would continue to apply to your information unless you are told otherwise.
+              </p>
+            </div>
+          </section>
+
+          <section>
+            <h2 className="text-2xl font-semibold mb-4 text-[#d4de95]">How Long We Keep Your Information</h2>
+            <p className="text-gray-300 leading-relaxed">
+              We keep your account information, keys, and chat history for as long as your account is open. On your device, Keystone stores your sign-in session, your onboarding progress, and a cached copy of your keys so the app opens quickly. Reminders are scheduled locally on your device. When you delete your account, we delete the information described below. Some information may remain in backups of our providers for a limited period before it is overwritten.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="text-2xl font-semibold mb-4 text-[#d4de95]">Deleting Your Data</h2>
+            <p className="text-gray-300 leading-relaxed">
+              In the app, open Profile and choose Delete Account. This permanently deletes your account, your keys, your conversations, your preferences, and your voice session records, and removes you from our mailing list. It cannot be undone. We keep only a record that a referral code was used, which does not identify you. If you cannot get into the app, email us from the address on your account and we will delete it for you. Deleting your account does not cancel an Apple subscription, which you manage in your iPhone&apos;s Settings.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="text-2xl font-semibold mb-4 text-[#d4de95]">Data Security</h2>
+            <p className="text-gray-300 leading-relaxed">
+              We implement appropriate technical and organizational security measures to protect your personal information, including keeping your sign-in session in your device&apos;s secure storage and requiring you to be signed in to use the AI. However, no method of transmission over the Internet or electronic storage is 100% secure, and we cannot guarantee absolute security.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="text-2xl font-semibold mb-4 text-[#d4de95]">Where Your Information Is Processed</h2>
+            <p className="text-gray-300 leading-relaxed">
+              Keystone is operated from the United States, and our providers process information in the United States and other countries where they operate. By using Keystone, you understand that your information may be transferred to and processed in countries that may have different data protection laws than where you live.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="text-2xl font-semibold mb-4 text-[#d4de95]">Children&apos;s Privacy</h2>
+            <p className="text-gray-300 leading-relaxed">
+              Keystone is not intended for children under 13, and we do not knowingly collect personal information from them. If you believe a child under 13 has given us information, please contact us and we will delete it.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="text-2xl font-semibold mb-4 text-[#d4de95]">Not Therapy, and Getting Help</h2>
+            <p className="text-gray-300 leading-relaxed">
+              Keystone is a self-reflection tool, not a substitute for professional care. It is not therapy, medical advice, or a crisis service, and we do not monitor conversations in real time. If you are thinking about harming yourself, in the US you can call or text 988 (Suicide &amp; Crisis Lifeline) or text HOME to 741741 (Crisis Text Line). Elsewhere, findahelpline.com lists services by country. If you might be in immediate danger, call your local emergency number.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="text-2xl font-semibold mb-4 text-[#d4de95]">Your Rights and Choices</h2>
             <div className="space-y-4">
               <p className="text-gray-300 leading-relaxed">
                 You have the right to:
               </p>
               <ul className="list-disc list-inside text-gray-300 space-y-2 ml-4">
                 <li>Access your personal information</li>
-                <li>Correct inaccurate data</li>
-                <li>Request deletion of your data</li>
-                <li>Object to processing of your data</li>
-                <li>Data portability</li>
+                <li>Correct inaccurate data (you can edit your profile and keys in the app)</li>
+                <li>Request deletion of your data (you can delete your account in the app)</li>
+                <li>Object to or ask us to limit the processing of your data</li>
+                <li>Receive a copy of your data in a portable format</li>
+                <li>Unsubscribe from marketing emails at any time</li>
               </ul>
+              <p className="text-gray-300 leading-relaxed">
+                Depending on where you live, such as California, the European Economic Area, or the United Kingdom, you may have additional rights under local law. To exercise any right, contact us at the address below. We will respond within the time required by applicable law.
+              </p>
             </div>
           </section>
 
           <section>
             <h2 className="text-2xl font-semibold mb-4 text-[#d4de95]">Changes to This Policy</h2>
             <p className="text-gray-300 leading-relaxed">
-              We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Last Updated" date.
+              We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the &quot;Last Updated&quot; date. If we make a material change to how we use your information, we will give you notice in the app or by email.
             </p>
           </section>
 
@@ -101,10 +191,10 @@ export default function PrivacyPolicy() {
           </section>
 
           <p className="text-gray-400 text-sm mt-8">
-            Last Updated: {new Date().toLocaleDateString()}
+            Last Updated: October 22, 2026
           </p>
         </div>
       </div>
     </div>
   );
-} 
+}

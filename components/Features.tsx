@@ -65,7 +65,7 @@ export default function Features() {
               maxWidth: '800px',
               textShadow: '0 1px 2px rgba(0, 0, 0, 0.3)'
             }}>
-              Everything you need to affirm who you are and question who you're becoming.
+              Two AI modes and your own keys, to affirm who you are and question who you're becoming.
             </p>
           </div>
           
@@ -146,7 +146,7 @@ export default function Features() {
                     transition: 'transform 0.2s ease, color 0.2s ease, background 0.3s ease, box-shadow 0.3s ease',
                     textShadow: '0 0 8px rgba(212, 222, 149, 0.2)'
                   }}>
-                    Learn more <span style={{ transition: 'transform 0.2s ease', display: 'inline-block' }}>→</span>
+                    Get the app <span style={{ transition: 'transform 0.2s ease', display: 'inline-block' }}>→</span>
                   </a>
                 </div>
               </div>
@@ -222,7 +222,7 @@ export default function Features() {
                     transition: 'transform 0.2s ease, color 0.2s ease, background 0.3s ease, box-shadow 0.3s ease',
                     textShadow: '0 0 8px rgba(212, 222, 149, 0.2)'
                   }}>
-                    Learn more <span style={{ transition: 'transform 0.2s ease', display: 'inline-block' }}>→</span>
+                    Get the app <span style={{ transition: 'transform 0.2s ease', display: 'inline-block' }}>→</span>
                   </a>
                 </div>
               </div>
@@ -299,7 +299,7 @@ export default function Features() {
                     transition: 'transform 0.2s ease, color 0.2s ease, background 0.3s ease, box-shadow 0.3s ease',
                     textShadow: '0 0 8px rgba(212, 222, 149, 0.2)'
                   }}>
-                    Learn more <span style={{ transition: 'transform 0.2s ease', display: 'inline-block' }}>→</span>                  </a>
+                    Get the app <span style={{ transition: 'transform 0.2s ease', display: 'inline-block' }}>→</span>                  </a>
                 </div>
               </div>
             </div>

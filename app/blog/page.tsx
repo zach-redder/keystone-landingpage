@@ -4,7 +4,7 @@ import BlogSearch from '../../components/BlogSearch';
 import { OG_IMAGE, SITE_NAME } from '../../lib/seo';
 
 const BLOG_DESCRIPTION =
-  'Ideas on identity, core values, self-doubt, and becoming who you say you want to be — from the team building Keystone, the AI self-reflection app.';
+  'Ideas on identity, core values, self-doubt, and becoming who you say you want to be — from the founder building Keystone, the AI self-reflection app.';
 
 export const metadata: Metadata = {
   title: 'Blog',

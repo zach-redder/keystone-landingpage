@@ -3,8 +3,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { CONTACT_EMAIL, OG_IMAGE } from '../../lib/seo';
 
-// DRAFT for the owner's review. Everything marked [CONFIRM] is a placeholder to check against the real app
-// or business before publishing. The page is noindex until then; remove `robots` below once it is approved,
+// The page is noindex until the owner approves it; remove `robots` below once it is approved,
 // and add /support to app/sitemap.ts.
 const DESCRIPTION = 'Get help with Keystone: contact us, manage your subscription, delete your account, and more.';
 
@@ -49,7 +48,7 @@ export default function Support() {
                 <p>
                   In the app, open Profile and tap Delete Account. This permanently removes your account and everything
                   you have saved. It can&apos;t be undone. If you can&apos;t get into the app, email us from the address you
-                  signed up with and we will delete it for you. [CONFIRM: that manual deletion is something you will do]
+                  signed up with and we will delete it for you.
                 </p>
               </div>
               <div>

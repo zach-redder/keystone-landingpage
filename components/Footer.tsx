@@ -153,7 +153,7 @@ export default function Footer() {
               }}>Keystone</span>
             </Link>
             <p style={{ color: '#a0a0a0', fontSize: '1.125rem', marginBottom: '2rem', lineHeight: 1.6 }}>
-              Affirm who you are. Question who you're becoming. Find your mean.
+              Affirm who you are. Question who you're becoming.
             </p>
             
             <div style={{ display: 'flex', gap: '1.25rem' }}>
@@ -517,6 +517,9 @@ export default function Footer() {
         }}>
           <div style={{ color: '#777777', fontSize: '0.875rem' }}>
             © {new Date().getFullYear()} Redder Media LLC. All rights reserved.
+            <div style={{ marginTop: '0.5rem' }}>
+              AI-powered self-reflection tool. Not a substitute for professional care.
+            </div>
           </div>
           <div style={{ display: 'flex', gap: '2rem', alignItems: 'center' }}>
             <Link 

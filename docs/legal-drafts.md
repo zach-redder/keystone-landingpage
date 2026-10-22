@@ -1,7 +1,9 @@
 # Privacy Policy and Terms: suggested additions (DRAFT, not legal advice)
 
-These are starting points for you and your lawyer, not final text. Nothing here has been put on the live
-pages. Items marked **[CONFIRM]** are facts only you can verify. Every other statement was checked against
+UPDATE (Oct 22, 2026): most of this has now been written into `app/privacy-policy/page.tsx` and
+`app/terms/page.tsx`. Still for you and a lawyer to review: the minimum age (13), the governing-law state, the
+OpenAI data-retention wording, and the backup-retention wording. Items below marked **[CONFIRM]** are facts
+only you can verify. Every other statement was checked against
 what the app, the backend and the database actually do as of this audit.
 
 ## What the current pages are missing
@@ -122,5 +124,4 @@ Keep these in step with each other, because they're what users and App Review co
 - The consent screen in the app, the Privacy Policy, and the App Store privacy labels must describe the same
   data going to the same providers.
 - The Support URL in App Store Connect should point to `/support` once it is reviewed and no longer `noindex`.
-- The waitlist email links to `discord.me/thealignedcore`, while the site uses `discord.gg/qgkuRUWaD9`.
-  Decide which one is current.
+- The Discord invite is `discord.gg/qgkuRUWaD9` everywhere (site, waitlist email, welcome email, app).

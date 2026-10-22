@@ -38,7 +38,7 @@ export default function ProblemAgitation() {
           WebkitTextFillColor: 'transparent',
           textShadow: '0 0 20px rgba(212, 222, 149, 0.2)'
         }}>
-          92% of people fail to achieve their dreams.
+          Too many people never say the thing they actually want.
         </h2>
         <div className="accent-divider animate-on-scroll" style={{ 
           width: '60px', 
@@ -101,7 +101,7 @@ export default function ProblemAgitation() {
               Others are paralyzed — every opinion and comparison from someone who doesn't know them chips away at their sense of self.
             </p>
             <p style={{ fontSize: '1.13rem', color: '#b0b0b0', fontStyle: 'italic', marginBottom: 0, textShadow: '0 1px 2px rgba(0, 0, 0, 0.3)' }}>
-              Both are an incorrect way of living. One is close-minded stubbornness, and the other is constant doubt.
+              Both keep you stuck. One is close-minded stubbornness, and the other is constant doubt.
             </p>
             <div style={{ height: '1.5rem' }} />
             <p style={{

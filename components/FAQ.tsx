@@ -139,7 +139,7 @@ export default function FAQ() {
                 textShadow: '0 1px 2px rgba(0, 0, 0, 0.3)'
               }}>
                 <p>
-                  Keystone is an app built around one idea: the mean between certainty and doubt. Talk to an AI that helps you affirm
+                  Keystone is an AI self-reflection app built around one idea: the mean between certainty and doubt. Talk to an AI that helps you affirm
                   who you are when outside opinions get loud, or one that questions who you're becoming when you start to feel stagnant.
                 </p>
               </div>
@@ -206,6 +206,133 @@ export default function FAQ() {
                   Affirm Mode is there to ground you — it reminds you of who you are, using your own stored keys, when doubt or other 
                   people's opinions start to drown that out. Question Mode questions your beliefs 
                   and identity instead of affirming them, asking hard questions so you find your own answers rather than being handed one.
+                </p>
+              </div>
+            </details>            {/* FAQ Item - Is it AI */}            <details className="animate-on-scroll delay-200" style={{
+              background: 'linear-gradient(145deg, rgba(60, 60, 60, 0.4), rgba(30, 30, 30, 0.4))',
+              borderRadius: 'clamp(15px, 2vw, 20px)',
+              border: '1px solid rgba(212, 222, 149, 0.15)',
+              backdropFilter: 'blur(10px)',
+              transition: 'all 0.3s ease',
+              transform: 'translateY(20px)',
+              boxShadow: '0 8px 25px rgba(0, 0, 0, 0.15), 0 4px 10px rgba(212, 222, 149, 0.05)',
+              position: 'relative',
+              cursor: 'pointer'
+            }}>
+              <div style={{
+                position: 'absolute',
+                top: '0',
+                left: '0',
+                right: '0',
+                bottom: '0',
+                background: 'radial-gradient(ellipse at center, rgba(212, 222, 149, 0.02) 0%, transparent 70%)',
+                borderRadius: 'clamp(15px, 2vw, 20px)',
+                zIndex: 0,
+                pointerEvents: 'none'
+              }}></div>
+
+              <summary style={{
+                display: 'flex',
+                justifyContent: 'space-between',
+                alignItems: 'center',
+                padding: 'clamp(1rem, 2vw, 1.35rem) clamp(1rem, 2vw, 1.5rem)',
+                cursor: 'pointer',
+                fontSize: 'clamp(1rem, 2vw, 1.2rem)',
+                fontWeight: '600',
+                color: 'var(--accent)',
+                userSelect: 'none',
+                position: 'relative',
+                zIndex: 1,
+                textShadow: '0 0 8px rgba(212, 222, 149, 0.2)',
+                minHeight: '48px',
+                lineHeight: '1.3'
+              }}>
+                <span>Am I talking to a real person?</span>
+                <span style={{
+                  transition: 'transform 0.3s ease',
+                  display: 'inline-block',
+                  fontSize: 'clamp(1.2rem, 2vw, 1.4rem)',
+                  fontWeight: '300',
+                  filter: 'drop-shadow(0 0 4px rgba(212, 222, 149, 0.3))'
+                }}>+</span>
+              </summary>
+              <div style={{
+                padding: 'clamp(0.5rem, 1vw, 0.75rem) clamp(1rem, 2vw, 1.5rem) clamp(1rem, 2vw, 1.5rem)',
+                color: '#e0e0e0',
+                fontSize: 'clamp(0.95rem, 2vw, 1.125rem)',
+                lineHeight: '1.7',
+                borderTop: '1px solid rgba(212, 222, 149, 0.1)',
+                position: 'relative',
+                zIndex: 1,
+                textShadow: '0 1px 2px rgba(0, 0, 0, 0.3)'
+              }}>
+                <p>
+                  No. Keystone&apos;s replies come from an AI, not a person. That&apos;s the point: it&apos;s a private place to think out loud with no judgment
+                  and no audience, so you can get clear before you take it to the people in your life.
+                </p>
+              </div>
+            </details>            {/* FAQ Item - Therapy */}            <details className="animate-on-scroll delay-200" style={{
+              background: 'linear-gradient(145deg, rgba(60, 60, 60, 0.4), rgba(30, 30, 30, 0.4))',
+              borderRadius: 'clamp(15px, 2vw, 20px)',
+              border: '1px solid rgba(212, 222, 149, 0.15)',
+              backdropFilter: 'blur(10px)',
+              transition: 'all 0.3s ease',
+              transform: 'translateY(20px)',
+              boxShadow: '0 8px 25px rgba(0, 0, 0, 0.15), 0 4px 10px rgba(212, 222, 149, 0.05)',
+              position: 'relative',
+              cursor: 'pointer'
+            }}>
+              <div style={{
+                position: 'absolute',
+                top: '0',
+                left: '0',
+                right: '0',
+                bottom: '0',
+                background: 'radial-gradient(ellipse at center, rgba(212, 222, 149, 0.02) 0%, transparent 70%)',
+                borderRadius: 'clamp(15px, 2vw, 20px)',
+                zIndex: 0,
+                pointerEvents: 'none'
+              }}></div>
+
+              <summary style={{
+                display: 'flex',
+                justifyContent: 'space-between',
+                alignItems: 'center',
+                padding: 'clamp(1rem, 2vw, 1.35rem) clamp(1rem, 2vw, 1.5rem)',
+                cursor: 'pointer',
+                fontSize: 'clamp(1rem, 2vw, 1.2rem)',
+                fontWeight: '600',
+                color: 'var(--accent)',
+                userSelect: 'none',
+                position: 'relative',
+                zIndex: 1,
+                textShadow: '0 0 8px rgba(212, 222, 149, 0.2)',
+                minHeight: '48px',
+                lineHeight: '1.3'
+              }}>
+                <span>Is Keystone therapy?</span>
+                <span style={{
+                  transition: 'transform 0.3s ease',
+                  display: 'inline-block',
+                  fontSize: 'clamp(1.2rem, 2vw, 1.4rem)',
+                  fontWeight: '300',
+                  filter: 'drop-shadow(0 0 4px rgba(212, 222, 149, 0.3))'
+                }}>+</span>
+              </summary>
+              <div style={{
+                padding: 'clamp(0.5rem, 1vw, 0.75rem) clamp(1rem, 2vw, 1.5rem) clamp(1rem, 2vw, 1.5rem)',
+                color: '#e0e0e0',
+                fontSize: 'clamp(0.95rem, 2vw, 1.125rem)',
+                lineHeight: '1.7',
+                borderTop: '1px solid rgba(212, 222, 149, 0.1)',
+                position: 'relative',
+                zIndex: 1,
+                textShadow: '0 1px 2px rgba(0, 0, 0, 0.3)'
+              }}>
+                <p>
+                  Keystone is a self-reflection tool, not a substitute for professional care. Plenty of people use it to think through hard things, and that&apos;s welcome.
+                  If you&apos;re in crisis, please reach out to someone who can help right now: in the US, call or text 988 or text HOME to 741741;
+                  elsewhere, findahelpline.com lists services by country. If you might be in immediate danger, call your local emergency number.
                 </p>
               </div>
             </details>            {/* FAQ Item 2 - Enhanced */}            <details className="animate-on-scroll delay-200" style={{
@@ -332,8 +459,8 @@ export default function FAQ() {
                 zIndex: 1,
                 textShadow: '0 1px 2px rgba(0, 0, 0, 0.3)'
               }}>
-                <p>Your data will be kept private and only used to improve your experience. We&apos;ll never share your information to third parties.
-                  Your identity information will be encrypted and secured safely.</p>
+                <p>Your messages and keys are sent to our AI provider so Keystone can reply, and your information is stored securely.
+                  We don&apos;t sell your data or use it for advertising, and you can delete everything any time from your profile.</p>
               </div>
             </details>
             
@@ -462,7 +589,7 @@ export default function FAQ() {
                 textShadow: '0 1px 2px rgba(0, 0, 0, 0.3)'
               }}>
                 <p>
-                  Yes, the free tier of the app offers enough features where you can benefit fully from Keystone. The premium tier of the app will unlock the full app experience, 
+                  Yes, the free tier of the app offers enough features where you can benefit fully from Keystone. The premium tier of the app unlocks the full app experience,
                   advanced AI options, and additional tools/benefits for committed users.
                 </p>
               </div>
