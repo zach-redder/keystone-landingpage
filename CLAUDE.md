@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-Marketing/waitlist landing page for **Keystone**, a companion mobile app (deep-link scheme `keystone://`). This repo is the public website only — the mobile app lives in `../keystone-app`, its AI backend in `../keystone-ai-service`. The site's job is to collect waitlist emails, explain the product, and link out to the Discord community.
+Marketing landing page for **Keystone**, an AI self-reflection mobile app (deep-link scheme `keystone://`). This repo is the public website only — the mobile app lives in `../keystone-app`, its AI backend in `../keystone-ai-service`. The site's job is to collect waitlist emails, explain the product, and link out to the Discord community.
 
 ## Tech Stack
 
@@ -27,7 +27,7 @@ There is no test suite configured.
 
 ## Architecture
 
-Single locale, mostly client components (`'use client'`). Almost everything renders on `/` (`app/page.tsx`) as a stack of section components imported from `components/`, in this order: `Hero → ProblemAgitation → HowItWorks → Features → AboutFounder → Waitlist → Community → Pricing → FAQ`. `Testimonial` exists but is currently commented out of the page — it contains placeholder/fabricated testimonials, so don't re-enable it without replacing the content with real ones. `app/layout.tsx` wraps every route with the fixed `Header` and `Footer` plus Vercel `Analytics`.
+Single locale, mostly client components (`'use client'`). Almost everything renders on `/` (`app/page.tsx`) as a stack of section components imported from `components/`, in this order: `Hero → ProblemAgitation → HowItWorks → Features → Download → Waitlist → Community → Pricing → FAQ` (`AboutFounder` is commented out). `Testimonial` exists but is currently commented out of the page — it contains placeholder/fabricated testimonials, so don't re-enable it without replacing the content with real ones. `app/layout.tsx` wraps every route with the fixed `Header` and `Footer` plus Vercel `Analytics`.
 
 Other routes are minimal, standalone pages: `app/privacy-policy`, `app/terms`, and `app/verify`.
 

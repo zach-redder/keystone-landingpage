@@ -170,6 +170,16 @@ export default function Hero() {
             }}>
              Affirm who you are. Question who you're becoming. Find the mean between certainty and doubt.
             </p>
+            <p className="hero-description animate-on-scroll" style={{
+              fontSize: 'clamp(0.95rem, 2.2vw, 1.05rem)',
+              color: '#e0e0e0',
+              maxWidth: '450px',
+              lineHeight: 1.6,
+              marginBottom: '1.5rem',
+              textShadow: '0 2px 4px rgba(0, 0, 0, 0.3)'
+            }}>
+             An AI you can think out loud with. Private, no judgment.
+            </p>
             <div className="hero-cta" style={{ width: '100%', maxWidth: '450px' }}>
               <div className="hero-cta-row-wrap">
                 <DownloadButtons size="hero" />
